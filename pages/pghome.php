@@ -10,7 +10,7 @@
         <select id="avaliacoes">
             <option value="0">Selecione a avaliação</option>
             <?php foreach ($avaliacoes as $av) { ?>
-            <option <?php echo ($av['referente'] == $avaliacao[0]['referente'] ? "selected" : "")?> value="<?php echo $av['id']; ?>"><?php echo $av['referente']; ?></option>
+                <option <?php echo ($av['referente'] == $avaliacao[0]['referente'] ? "selected" : "") ?> value="<?php echo $av['id']; ?>"><?php echo $av['referente']; ?></option>
             <?php } ?>
         </select>
         <img id="informacoes" src="imagens/informacoes.png">
@@ -58,110 +58,121 @@
         <div id="setaBaixo">
             <img width="25" height="25" src="imagens/seta_baixo.gif">
         </div>
-    </div>
+    </div>    
     <div id="menu">
         <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info clicado" name="infog" target="conteudos">Informações Gerais</a>
-        <a href="includes/incautoav.php<?php echo $infoURL; ?>" class="info naoClicado" name="autoav" target="conteudos">Como eu me avaliaria</a>
+        <?php
+        if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
+
+            echo "<a href='includes/incautoav.php{$infoURL}' class='info naoClicado' name='autoav' target='conteudos'>Como eu me avaliaria</a>";
+        }
+        ?>
         <a href="includes/incavaliacaoPassada.php<?php echo $infoURL; ?>" class="info naoClicado" name="avpassada" target="conteudos">Avaliação passada</a>
     </div>
     <iframe src="includes/incinfogerais.php<?php echo $infoURL; ?>" class="conteudos" id="conteudo" scrolling="no" name="conteudos" ></iframe>
-    <div id="comentario-negativo">
-        <div id="titulo-negativo">
-            <a href="#lightbox-negativo" name="lightbox-negativo" rel="leanModal" id="edita-comentario-negativo">
-                <img id="lapis-negativo" src="imagens/lapis.png">
-            </a>
-            <p id="texto-negativo">Pontos Negativos</p>
+    <?php
+    if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
+        ?>
+        <div id="comentario-negativo">
+            <div id="titulo-negativo">
+                <a href="#lightbox-negativo" name="lightbox-negativo" rel="leanModal" id="edita-comentario-negativo">
+                    <img id="lapis-negativo" src="imagens/lapis.png">
+                </a>
+                <p id="texto-negativo">Pontos Negativos</p>
+            </div>
         </div>
-    </div>
-    <div id="comentario-positivo">
-        <div id="titulo-positivo">
-            <a href="#lightbox-positivo" name="lightbox-positivo" rel="leanModal" id="edita-comentario-positivo">
-                <img id="lapis-positivo" src="imagens/lapis.png">
-            </a>
-            <p id="texto-positivo">Pontos Positivos</p>
+        <div id="comentario-positivo">
+            <div id="titulo-positivo">
+                <a href="#lightbox-positivo" name="lightbox-positivo" rel="leanModal" id="edita-comentario-positivo">
+                    <img id="lapis-positivo" src="imagens/lapis.png">
+                </a>
+                <p id="texto-positivo">Pontos Positivos</p>
+            </div>
         </div>
-    </div>
-    <table id="tbl-comentario">
-        <tr>
-            <td id="negativo">
-                <?php
-                foreach ($comentariosNegativos as $c) {
-                    ?>
-                    <p class="comentario">
-                        <?php echo $c['comentario']; ?>
-                    </p>
+        <table id="tbl-comentario">
+            <tr>
+                <td id="negativo">
                     <?php
-                }
-                ?>
-            </td>
+                    foreach ($comentariosNegativos as $c) {
+                        ?>
+                        <p class="comentario">
+                        <?php echo $c['comentario']; ?>
+                        </p>
+                        <?php
+                    }
+                    ?>
+                </td>
 
-            <td id="positivo">
-                <?php
-                foreach ($comentariosPositivos as $c) {
-                    ?>
-                    <p class="comentario">
-                        <?php echo $c['comentario']; ?>
-                    </p>
+                <td id="positivo">
                     <?php
-                }
-                ?>
-            </td>
-        </tr>
-    </table>
-    <div id="lightbox-negativo" class="caixaComentarios">
-        <form action="" class="frmComentarios">
-            <div id="cabecalho-negativo">
-                <p>Pontos Negativos</p>
-                <a class="modal_close"></a>
-            </div>
-            <div class="txt-comentario-negativo">
-                <input type="hidden" id="idUsuario" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" />
-                <input type="hidden" id="idAvaliacao" value="<?php echo $avaliacao[0]['id']; ?>" />
-                <input type="hidden" id="idUsuarioLogado" value="<?php echo $idUsuario; ?>" />
-                <input type="hidden" id="tipo" value="<?php echo '0'; ?>" />
-                <label for="">Comentário: </label><br/>
-                <textarea name="" id="comentario"></textarea>
-                <button id="salvar-negativo" type="submit">Salvar</button>
-            </div>
-        </form>
-    </div>
-    <div id="lightbox-positivo" class="caixaComentarios">
-        <form action="" class="frmComentarios">
-            <div id="cabecalho-positivo">
-                <p>Pontos Positivo</p>
-                <a class="modal_close"></a>
-            </div>
-            <div class="txt-comentario-positivo">
-                <input type="hidden" id="idUsuario" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" />
-                <input type="hidden" id="idAvaliacao" value="<?php echo $avaliacao[0]['id']; ?>" />
-                <input type="hidden" id="idUsuarioLogado" value="<?php echo $idUsuario; ?>" />
-                <input type="hidden" id="tipo" value="<?php echo '1'; ?>" />
-                <label for="">Comentário: </label><br/>
-                <textarea name="" id="comentario"></textarea>
-                <button id="salvar-positivo" type="submit">Salvar</button>
-            </div>
-        </form>
-    </div>
-    <div id="comentario-positivo" style="visibility: hidden">
-        <div id="titulo-positivo">
-            <a href="#lightbox-autoava" name="lightbox-positivo" rel="leanModal" id="edita-autoava-click">
-                <img id="lapis-positivo" src="imagens/lapis.png">
-            </a>
-            <p id="texto-positivo">Pontos Positivos</p>
+                    foreach ($comentariosPositivos as $c) {
+                        ?>
+                        <p class="comentario">
+                        <?php echo $c['comentario']; ?>
+                        </p>
+                        <?php
+                    }
+                    ?>
+                </td>
+            </tr>
+        </table>
+        <div id="lightbox-negativo" class="caixaComentarios">
+            <form action="" class="frmComentarios">
+                <div id="cabecalho-negativo">
+                    <p>Pontos Negativos</p>
+                    <a class="modal_close"></a>
+                </div>
+                <div class="txt-comentario-negativo">
+                    <input type="hidden" id="idUsuario" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" />
+                    <input type="hidden" id="idAvaliacao" value="<?php echo $avaliacao[0]['id']; ?>" />
+                    <input type="hidden" id="idUsuarioLogado" value="<?php echo $idUsuario; ?>" />
+                    <input type="hidden" id="tipo" value="<?php echo '0'; ?>" />
+                    <label for="">Comentário: </label><br/>
+                    <textarea name="" id="comentario"></textarea>
+                    <button id="salvar-negativo" type="submit">Salvar</button>
+                </div>
+            </form>
         </div>
-    </div>
-    <!-- div para lightbox auto-avaliação /-->
-    <div id="lightbox-autoava" class="caixaAutoAva">
-        <form action="" class="frmAutoAva">
-            <div id="cabecalho-autoava">
-                <p>Auto-avaliação</p>
-                <a class="modal_close"></a>
+        <div id="lightbox-positivo" class="caixaComentarios">
+            <form action="" class="frmComentarios">
+                <div id="cabecalho-positivo">
+                    <p>Pontos Positivo</p>
+                    <a class="modal_close"></a>
+                </div>
+                <div class="txt-comentario-positivo">
+                    <input type="hidden" id="idUsuario" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" />
+                    <input type="hidden" id="idAvaliacao" value="<?php echo $avaliacao[0]['id']; ?>" />
+                    <input type="hidden" id="idUsuarioLogado" value="<?php echo $idUsuario; ?>" />
+                    <input type="hidden" id="tipo" value="<?php echo '1'; ?>" />
+                    <label for="">Comentário: </label><br/>
+                    <textarea name="" id="comentario"></textarea>
+                    <button id="salvar-positivo" type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+        <div id="comentario-positivo" style="visibility: hidden">
+            <div id="titulo-positivo">
+                <a href="#lightbox-autoava" name="lightbox-positivo" rel="leanModal" id="edita-autoava-click">
+                    <img id="lapis-positivo" src="imagens/lapis.png">
+                </a>
+                <p id="texto-positivo">Pontos Positivos</p>
             </div>
-            <div class="txt-cabecalho-autoava">
-                <label for="">Comentário: </label><br/>
-                <textarea name="" id="comentario"></textarea>
-                <button id="salvar-autoava" type="submit">Salvar</button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <!-- div para lightbox auto-avaliação /-->
+        <div id="lightbox-autoava" class="caixaAutoAva">
+            <form action="" class="frmAutoAva">
+                <div id="cabecalho-autoava">
+                    <p>Auto-avaliação</p>
+                    <a class="modal_close"></a>
+                </div>
+                <div class="txt-cabecalho-autoava">
+                    <label for="">Comentário: </label><br/>
+                    <textarea name="" id="comentario"></textarea>
+                    <button id="salvar-autoava" type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+        <?php
+    }
+    ?>
 </div>

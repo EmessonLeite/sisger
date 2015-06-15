@@ -58,17 +58,35 @@ class Usuario {
         $dados = array($id);
         return $this->conexao->Buscar($query, $dados);
     }
-    
+
     /**
      * addComentarios
      * Incrementa o numero de comentarios do usuario
+     * 
      * @param string
      * @return array
      */
-
     public function addComentarios($id, $idAvaliacao) {
-        $query = "UPDATE usuarioavaliacao SET comentarios = comentarios + 1 WHERE idUsuario = ? AND idAvaliacao = ?";
-        $dados = array("id" => $id,"idAvaliacao" => $idAvaliacao);
+        if ($this->usuarioCadastrado($id, $idAvaliacao)) {
+            $query = "UPDATE usuarioavaliacao SET comentarios = comentarios + 1 WHERE idUsuario = ? AND idAvaliacao = ?";
+            $dados = array("id" => $id, "idAvaliacao" => $idAvaliacao);
+            return $this->conexao->Buscar($query, $dados);
+        } else {
+            return 0;
+        }
+    }
+
+    /**
+     * usuarioCadastrado
+     * Verifica se o usuario esta cadastrado na avaliacao
+     * 
+     * @param int $id
+     * @param int $idAvaliacao
+     * @return array
+     */
+    private function usuarioCadastrado($id, $idAvaliacao) {
+        $query = "SELECT COUNT(id) FROM usuarioavaliacao WHERE idUsuario = ? AND idAvaliacao = ?";
+        $dados = array("id" => $id, "idAvaliacao" => $idAvaliacao);
         return $this->conexao->Buscar($query, $dados);
     }
 

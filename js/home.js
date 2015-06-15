@@ -12,15 +12,15 @@ $(document).ready(function () {
 
     /** Direção atual da animação. Pode ser: parado, cima, baixo */
     var direcao = "parado";
-    
+
     /** Redireciona para o funcionario clicado */
     $('.funcionarios').click(function () {
         $(this).attr('href', $(this).attr('href') + '/' + ((-1) * top));
     });
-    
+
     /** Redireciona para a avaliacao clicada */
-    $('select#avaliacoes option').click(function(){
-        if($(this).val() !== "0"){
+    $('select#avaliacoes option').click(function () {
+        if ($(this).val() !== "0") {
             window.location = "home/" + $(this).html() + "/" + $('#idSelecionado').val() + "/0";
         }
     });
@@ -56,8 +56,14 @@ $(document).ready(function () {
             data: {idUsuario: iIdusuario, idAvaliacao: iIdAvaliacao, tipo: iTipo, comentario: iComentario, idUsuarioLogado: iIdusuarioLogado}
         })
                 .done(function (resultado) {
-                    $('.frmComentarios').find('#comentario').val('');
-                    $('.frmComentarios').find('.modal_close').click();
+                    alert(resultado);
+                    if (resultado > 0) {
+                        $('.frmComentarios').find('#comentario').val('');
+                        $('.frmComentarios').find('.modal_close').click();
+                    } else {
+                        alert("Usuário não cadastrado nesta avaliação.");
+                    }
+
                 });
         return false;
     });
