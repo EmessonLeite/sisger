@@ -1,58 +1,68 @@
 <?php
 
 class Avaliacao {
-    
+
     /** @var ConexaoDAO */
     private $conexao;
-    
+
     /** @var string */
     private $avaliacao;
-    
+
     /**
      * __construct
      * Recebe a avaliacao e inicializa a conexao
-     * @param string
+     * 
+     * @param string referencia da avaliacao atual
      */
-    public function __construct($avaliacao){
+    public function __construct($avaliacao) {
         $this->conexao = new ConexaoDAO('avaliacao');
         $this->avaliacao = $avaliacao;
     }
-    
+
     /**
      * buscar
      * Retorna os dados da avaliacao indicada na variavel $avaliacao
-     * @return array
+     * 
+     * @return array Dados de todas as avaliacoes
      */
-    public function buscar(){
-        if($this->avaliacao != ""){
+    public function buscar() {
+        if ($this->avaliacao != "") {
             $query = "SELECT id, inicio, fim, referente FROM [tabela] WHERE referente = ?";
             $dados = array($this->avaliacao);
-        }else{
+        } else {
             $query = "SELECT id, inicio, fim, referente FROM [tabela] WHERE NOW() > inicio ORDER BY inicio DESC LIMIT 0, 1";
             $dados = array();
         }
-        
+
         /** @var array */
         $result = $this->conexao->Buscar($query, $dados);
-        
+
         /** Seta o valor da referencia com o valor retornado da pesquisa */
         $this->avaliacao = $result[0]['referente'];
-        
+
         return $result;
     }
-    
+
     /**
      * buscarTodas
      * Retorna todas as avaliações cadastradas
-     * @return array
+     * 
+     * @return array Dados de todas as avaliacoes
      */
-    public function buscarTodas(){
-        $query = "SELECT id, referente, inicio, fim FROM avaliacao ORDER BY inicio";
-        return $this->buscar($query);
+    public function buscarTodas() {
+        $query = "SELECT id, referente, inicio, fim FROM [tabela] ORDER BY inicio";
+        return $this->conexao->buscar($query);
     }
 
-
-    public function buscarDadosUsuario($idUsuario){
+    /**
+     * buscarDadosUsuario
+     * Retorna todos os dados do usuario selecionado
+     * 
+     * @param int $idUsuario ID do usuario selecionado
+     * @return array Dados do usuario selecionado
+     */
+    public function buscarDadosUsuario($idUsuario) {
+        /** @var string */
         $query = "SELECT horasTrabalhadas, folgas, faltas, atrasos, videosLivros, comentarios, cargo
                   FROM usuarioavaliacao
                   INNER JOIN avaliacao as a
@@ -60,18 +70,37 @@ class Avaliacao {
                   LEFT OUTER JOIN cargos as c
                   ON idCargoAvaliacao = c.id
                   WHERE referente = ? AND idUsuario = ?";
+
+        /** @var array */
         $dados = array($this->avaliacao, $idUsuario);
-        return $this->conexao->Buscar($query, $dados);
+
+        /** @var array */
+        $retorno = $this->conexao->Buscar($query, $dados);
+
+        if (!$retorno) {
+            $retorno = array(array(
+                    "comentarios" => "0",
+                    "cargo" => "-",
+                    "horasTrabalhadas" => "-",
+                    "folgas" => "-",
+                    "faltas" => "-",
+                    "atrasos" => "-",
+                    "videosLivros" => "-",
+                    "erro" => "Usuário não cadastrado nesta avaliação."
+            ));
+        }
+
+        return $retorno;
     }
-    
-    
+
     /**
+     * getInstance
      * Retorna uma instância única de uma classe.
+     * 
      * @staticvar Singleton $instance A instância única dessa classe.
      * @return Singleton A Instância única.
      */
-    public static function getInstance($avaliacao)
-    {
+    public static function getInstance($avaliacao) {
         /** Inicializa a var instance e retorna */
         static $instance = null;
         if (null === $instance) {
@@ -80,4 +109,5 @@ class Avaliacao {
 
         return $instance;
     }
+
 }

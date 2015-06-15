@@ -28,13 +28,16 @@ $dadosUsuarioSelecionado = $usuarioBusiness->buscarPorID($idUsuarioSelecionado);
 $dadosUsuarioAvaliacao = $avaliacaoBusiness->buscarDadosUsuario($idUsuarioSelecionado);
 $usuariosAvaliacao = $usuarioBusiness->buscarTodos($avaliacao[0]['referente']);
 
-/** URL para pgInfogerais */
+/** @var array Dados de todas as avaliações */
+$avaliacoes = $avaliacaoBusiness->buscarTodas();
+
+/** @var string URL para pgInfogerais */
 $infoURL = "?referencia={$avaliacao[0]['referente']}&id={$idUsuarioSelecionado}" ;
 
-/** @var array  */
+/** @var array Comentarios negativos deste usuario nesta avaliacao */
 $comentariosPositivos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]['id'], '1');
 
-/** @var array  */
+/** @var array Comentarios positivos deste usuario nesta avaliacao  */
 $comentariosNegativos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]['id'], '0');
 
 /** Include a pagina home */

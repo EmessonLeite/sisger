@@ -12,23 +12,28 @@ $(document).ready(function () {
 
     /** Direção atual da animação. Pode ser: parado, cima, baixo */
     var direcao = "parado";
-
-    $('.funcionarios').click(function (e) {
-        //e.preventDefault();
+    
+    /** Redireciona para o funcionario clicado */
+    $('.funcionarios').click(function () {
         $(this).attr('href', $(this).attr('href') + '/' + ((-1) * top));
-
-
     });
     
+    /** Redireciona para a avaliacao clicada */
+    $('select#avaliacoes option').click(function(){
+        if($(this).val() !== "0"){
+            window.location = "home/" + $(this).html() + "/" + $('#idSelecionado').val() + "/" + ((-1) * top);
+        }
+    });
+
     /**
      * Clique do botão de auto avalicao dentro do iframe conteudo
      */
-    $('#conteudo').load(function(){
-        $('#conteudo').contents().find('#edita-autoava').click(function (){
+    $('#conteudo').load(function () {
+        $('#conteudo').contents().find('#edita-autoava').click(function () {
             $('#edita-autoava-click').click();
         });
     });
-    
+
     $(".caixaComentarios").draggable();
     $(".caixaAutoAva").draggable();
 

@@ -1,18 +1,17 @@
 <?php ?>
 <div id="todo">
-    <input type="hidden" id="top" value="<?php echo $top ; ?>" />
+    <input type="hidden" id="top" value="<?php echo $top; ?>" />
+    <?php
+    if (isset($dadosUsuarioAvaliacao[0]['erro'])) {
+        echo "<div id='erro'>{$dadosUsuarioAvaliacao[0]['erro']}</div>";
+    }
+    ?>
     <div id="geral">
-        <!--<label>Avaliações</label><br />/-->
         <select id="avaliacoes">
-
-            <option value="">Selecione a avaliação</option>
-            <!--
-            <?php foreach ($cargos as $cargo) { ?>
-                                <option value="<?php echo $cargo['id']; ?>">
-                <?php echo $cargo['cargo']; ?>
-                                </option>
+            <option value="0">Selecione a avaliação</option>
+            <?php foreach ($avaliacoes as $av) { ?>
+            <option <?php echo ($av['referente'] == $avaliacao[0]['referente'] ? "selected" : "")?> value="<?php echo $av['id']; ?>"><?php echo $av['referente']; ?></option>
             <?php } ?>
-            /-->
         </select>
         <img id="informacoes" src="imagens/informacoes.png">
         <div id="imgperfil">
@@ -20,6 +19,7 @@
         </div>
         <div id="dados">
             <label id="nome"><?php echo $dadosUsuarioSelecionado[0]['apelido']; ?></label>
+            <input type="hidden" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" id="idSelecionado" />
             <label id="comentarios"><?php echo $dadosUsuarioAvaliacao[0]['comentarios']; ?> comentários</label></br>
             <label id="posto">Posto: <?php echo $dadosUsuarioAvaliacao[0]['cargo']; ?></label></br>
             <label id="email">Email: <?php echo $dadosUsuarioSelecionado[0]['email']; ?></label>
