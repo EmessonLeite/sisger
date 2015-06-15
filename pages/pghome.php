@@ -1,17 +1,18 @@
 <?php ?>
 <div id="todo">
-    <input type="hidden" id="top" value="<?php echo $top; ?>" />
+    <input type="hidden" id="top" value="<?php echo $top ; ?>" />
     <div id="geral">
         <!--<label>Avaliações</label><br />/-->
-        <?php var_dump($avaliacoes); ?>
         <select id="avaliacoes">
 
             <option value="">Selecione a avaliação</option>
-            <?php foreach ($avaliacoes as $av) { ?>
-                <option value="<?php echo $av['id']; ?>">
-                    <?php echo $av['referente']; ?>
-                </option>
+            <!--
+            <?php foreach ($cargos as $cargo) { ?>
+                                <option value="<?php echo $cargo['id']; ?>">
+                <?php echo $cargo['cargo']; ?>
+                                </option>
             <?php } ?>
+            /-->
         </select>
         <img id="informacoes" src="imagens/informacoes.png">
         <div id="imgperfil">
@@ -108,7 +109,6 @@
         </tr>
     </table>
     <div id="lightbox-negativo" class="caixaComentarios">
-
         <form action="" class="frmComentarios">
             <div id="cabecalho-negativo">
                 <p>Pontos Negativos</p>
@@ -126,7 +126,6 @@
         </form>
     </div>
     <div id="lightbox-positivo" class="caixaComentarios">
-
         <form action="" class="frmComentarios">
             <div id="cabecalho-positivo">
                 <p>Pontos Positivo</p>
@@ -140,6 +139,28 @@
                 <label for="">Comentário: </label><br/>
                 <textarea name="" id="comentario"></textarea>
                 <button id="salvar-positivo" type="submit">Salvar</button>
+            </div>
+        </form>
+    </div>
+    <div id="comentario-positivo" style="visibility: hidden">
+        <div id="titulo-positivo">
+            <a href="#lightbox-autoava" name="lightbox-positivo" rel="leanModal" id="edita-autoava-click">
+                <img id="lapis-positivo" src="imagens/lapis.png">
+            </a>
+            <p id="texto-positivo">Pontos Positivos</p>
+        </div>
+    </div>
+    <!-- div para lightbox auto-avaliação /-->
+    <div id="lightbox-autoava" class="caixaAutoAva">
+        <form action="" class="frmAutoAva">
+            <div id="cabecalho-autoava">
+                <p>Auto-avaliação</p>
+                <a class="modal_close"></a>
+            </div>
+            <div class="txt-cabecalho-autoava">
+                <label for="">Comentário: </label><br/>
+                <textarea name="" id="comentario"></textarea>
+                <button id="salvar-autoava" type="submit">Salvar</button>
             </div>
         </form>
     </div>

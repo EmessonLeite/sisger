@@ -10,10 +10,11 @@
 <div id="tabela-auto">
     <div id="toda-autoava">
         <div id="titulo">
-            <label id="titulo-autoava">Como eu me avaliaria</label>
-            <img id="lapis-positivo" src="../imagens/lapis.png">
+            <div id="titulo-label">
+                <label id="titulo-autoava">Como eu me avaliaria</label>
+            </div>
             <a href="#lightbox-autoava" name="lightbox-autoava" rel="leanModal" id="edita-autoava">
-                
+                <img id="lapis-positivo" src="../imagens/lapis.png" style="color: #000000; position: relative; margin-left: 625px; margin-top: -15px;">
             </a>
         </div>
         <table id="autoava" cellspacing="0" cellpadding="0">
@@ -123,18 +124,4 @@
             </tr>
         </table>
     </div>
-</div>
-
-<div id="lightbox-autoava" class="caixaComentarios">
-    <form action="" class="frmComentarios">
-        <div id="cabecalho-negativo">
-            <p>Pontos Negativos</p>
-            <a class="modal_close"></a>
-        </div>
-        <div class="txt-comentario-negativo">
-            <label for="">Comentário: </label><br/>
-            <textarea name="" id="comentario"></textarea>
-            <button id="salvar-negativo" type="submit">Salvar</button>
-        </div>
-    </form>
 </div>

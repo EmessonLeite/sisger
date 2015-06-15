@@ -14,19 +14,23 @@ $(document).ready(function () {
     var direcao = "parado";
 
     $('.funcionarios').click(function (e) {
+        //e.preventDefault();
         $(this).attr('href', $(this).attr('href') + '/' + ((-1) * top));
+
+
     });
     
     /**
      * Clique do botão de auto avalicao dentro do iframe conteudo
      */
     $('#conteudo').load(function(){
-        $('#conteudo').contents().find('#titulo-autoava').click(function (){
-            $('#edita-comentario-positivo').click();
+        $('#conteudo').contents().find('#edita-autoava').click(function (){
+            $('#edita-autoava-click').click();
         });
     });
     
     $(".caixaComentarios").draggable();
+    $(".caixaAutoAva").draggable();
 
     $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
 

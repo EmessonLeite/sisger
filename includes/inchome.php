@@ -28,9 +28,6 @@ $dadosUsuarioSelecionado = $usuarioBusiness->buscarPorID($idUsuarioSelecionado);
 $dadosUsuarioAvaliacao = $avaliacaoBusiness->buscarDadosUsuario($idUsuarioSelecionado);
 $usuariosAvaliacao = $usuarioBusiness->buscarTodos($avaliacao[0]['referente']);
 
-/** Todas as avaliacoes */
-$avaliacoes = $avaliacaoBusiness->buscarTodas();
-
 /** URL para pgInfogerais */
 $infoURL = "?referencia={$avaliacao[0]['referente']}&id={$idUsuarioSelecionado}" ;
 
