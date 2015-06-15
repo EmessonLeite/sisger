@@ -21,7 +21,7 @@ $(document).ready(function () {
     /** Redireciona para a avaliacao clicada */
     $('select#avaliacoes option').click(function(){
         if($(this).val() !== "0"){
-            window.location = "home/" + $(this).html() + "/" + $('#idSelecionado').val() + "/" + ((-1) * top);
+            window.location = "home/" + $(this).html() + "/" + $('#idSelecionado').val() + "/0";
         }
     });
 
