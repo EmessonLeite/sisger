@@ -1,0 +1,276 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#todo {
+    width: 1000px;
+    /*height: 100%;*/
+    height: 1273px;
+    margin: auto;
+    background-color: #ebefe8;
+
+}
+
+/*******************************************************************************************************************************************************************************/
+
+select#avaliacoes {
+    position:relative;
+    float: right;
+    width: 225px;
+    height: 29px;
+    margin-top: 30px;
+    margin-right: -90px;
+    border: 1px solid #666666;
+    border-radius: 3px;
+}
+
+div#imgperfil {
+    position: relative;
+    width: 138px;
+    height: 136px;
+    margin-top: -140px;
+    margin-left: 20px;
+    z-index: 10;
+}
+
+img#perfil {
+    position: relative;
+    width: 148px;
+    height: 146px;
+    border-radius: 73px;
+}
+
+img#informacoes {
+    position: relative;
+    z-index: 0;
+    margin-top: 15px;
+    margin-left: 65px;
+}
+
+div#dados {
+    position: relative;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin-top: -190px;
+    margin-left: 180px;
+    z-index: 5;
+    width: 500px;
+}
+
+img#comp-comentario {
+    position: absolute;
+    width: 25px;
+    height: 24px;
+    margin-left: -25px;
+    margin-top: 9px;
+}
+
+label#comentarios {
+    position: relative;
+    background-image: url('../imagens/comentario.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #ffffff;
+    font-size: 13pt;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 120px;
+    text-align: center;
+    top: 65px;
+    left: 5px;
+    margin-left: 0px;
+    padding: 2px 7px ;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+label#nome {
+    position: relative;
+    font-size: 1.5em;
+    top: 70px;
+}
+
+label#posto {
+    position: relative;
+    top: 80px;
+}
+
+label#email {
+    position: relative;
+    top: 97px;
+    border-top: 1px solid #f98445;
+    padding-top: 7px;
+}
+
+/*******************************************************************************************************************************************************************************/
+
+#listagem-geral{
+    height: 515px;
+    overflow:hidden;
+}
+
+div#pessoas{
+    background-color: #282829;
+    width: 256px;
+    height: 650px;
+    border-radius: 5px;
+    margin-left: 72.2% ;
+    margin-top: -1.5%;
+}
+
+label#titulo{
+    position: relative;
+    font-size: 1.7em;
+    font-family: 'Trebuchet MS',sans-serif;
+    color: #c36539;
+    z-index: 10;
+    top: 16px;
+    margin-left: 60%;
+}
+
+div#todo hr.linha{
+    position: relative;
+    width: 205px;
+    color: #c36539;
+    z-index: 10;
+    border-bottom: 1px solid #c36539;
+}
+
+div#lista-pessoas{
+    position: relative;
+    z-index: 10;
+    margin-top: 4px;
+}
+
+table#funcionarios td{
+    width: 150px;
+    text-align: center;
+}
+
+.fotos-perfil{
+    width: 78px;
+    height: 78px;
+    border-radius: 39px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.nomes{position: relative;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 80px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#linhaCima{
+    margin-top: 45px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+}
+
+#linhaBaixo{
+    margin-top: 13px;
+    margin-left: 45px;
+}
+
+#setaCima{
+    position: relative;
+    z-index: 11;
+    margin-left: 88%;
+    margin-top: -35px;
+}
+
+#setaBaixo{
+    position: relative;
+    z-index: 11;
+    margin-left: 88%;
+}
+
+/*******************************************************************************************************************************************************************************/
+
+div#menu {
+    position: relative;
+    margin-left: 13px;
+    margin-bottom: -34px;
+}
+
+a.clicado{
+    background-color: #282829;
+    color: #ffffff;
+}
+
+a.naoClicado{
+    background-color: #ffffff;
+    color: #282829;
+}
+
+a.info {
+    position:relative;
+    margin-left: 49px;
+    top: -460px;
+    margin-left: 11px;
+    padding: 16px 37px 16px 37px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    box-shadow: 1px 1px 5px rgba(94,94,94,0.5);
+    cursor: pointer;
+}
+
+#autoav{
+    margin-left: 9px;
+}
+
+#avpassada{
+    margin-left: 9px;
+}
+
+iframe.conteudos {
+     position: relative;
+     background-color: #ffffff;
+     width: 675px;
+     height: 38.7%;
+     margin-left: 24px;
+     margin-top: -680px;
+     z-index: 0;
+
+ }
+iframe.conteudos::-webkit-scrollbar{
+    display: none;
+}
+
+/*******************************************************************************************************************************************************************************/
+
+div#comentario-negativo {
+    position: relative;
+    width: 450px;
+    height: 500px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-left: 24px;
+}
+
+div#comentario-positivo {
+    position: relative;
+    width: 450px;
+    min-height: 500px;
+    background-color: #ffffff;
+    margin-top: -500px;
+    margin-left: 527px;
+}

@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body{
+    background-color: #2e2e2e;
+    min-width: 50%;
+}
+#login{
+    width: 400px;
+    background-color: #e2e2e2;
+    border: 1px #d2e3eb solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.75);
+}
+#icon{
+    margin-left: 13%;
+    margin-top: 25px;
+}
+
+input{
+    width: 80%;
+    height: 50px;
+    border: 3px solid #cdcdcd ;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #6a6a6a;
+}
+#inputs{
+    margin-top: 30px;
+    margin-left: 25px;
+}
+#id{
+    padding-left: 55px;
+    background-image: url("../imagens/login.png");
+    background-repeat: no-repeat;
+}
+#pass{
+    padding-left: 55px;
+    background-image: url("../imagens/senha.png");
+    background-repeat: no-repeat;
+}
+#button{
+    width: 95%;
+    height: 50px;
+    background-color:#ed4900;
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 1.5em;
+    text-align: center;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#info{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    width: 340px;
+}
+
+.erro{
+    padding: 8px;
+    background-color: #c9493f;
+    border: 3px solid #cdcdcd ;
+    color: white;
+}
+
+.processando{
+    padding: 8px;
+    background-color: #5fb3d3;
+    border: 3px solid #cdcdcd ;
+    color: white;
+}
+
+.logado{
+    padding: 8px;
+    background-color: #5fb3d3;
+    border: 3px solid #cdcdcd ;
+    color: white;
+}

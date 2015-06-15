@@ -1,0 +1,75 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+a {
+    text-decoration: none;
+}
+body {
+    background-color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+/*******************************************************************************************************************************************************************************/
+
+div#topo {
+    width: 100%;
+    height: 53px;
+    background-color: #c36539;
+}
+
+div#central {
+    width: 1000px;
+    margin: auto;
+}
+
+img#logo {
+    position: relative;
+    margin-top: 5px;
+}
+
+div#usuario {
+    position: relative;
+    margin-top: -5px;
+    margin-left: 250px;
+}
+
+div#imgusuario {
+    float: right;
+    width: 40px;
+    position: relative;
+    right: 85px;
+    top: -15px;
+}
+
+div#imgusuario img.usuario {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: -40px;
+}
+
+div#usuario a#apelido {
+    position: relative;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    color: #ffffff;
+    float: right;
+    right: 75px;
+    top: -33px;
+    border-right: 1px solid #ff9c66;
+    padding-right: 15px;
+}
+
+div#icons {
+    position: relative;
+    margin-left: 940px;
+    top: -58px;
+}
+
+div#icons img#config {
+    padding-right: 10px;
+}

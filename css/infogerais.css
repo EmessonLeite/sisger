@@ -1,0 +1,51 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#toda-infogerais {
+    position: relative;
+    margin-left: 50px;
+    width: 479px;
+    height: auto;
+    background-color: #ffffff;
+    top: 0;
+}
+
+div#toda-infogerais div#titulo label {
+    position: relative;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    top: 10px;
+    margin-left: 20px;
+}
+
+div#titulo {
+    position: relative;
+    //width: 400px;
+    width: 675px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #c36539;
+    margin-left: -58px;
+    margin-top: -8px;
+}
+
+div#conteudo-info {
+    margin-top: -2px;
+    margin-left: -35px;
+}
+
+p.titulo-inf {
+    position: relative;
+    font-weight: bold;
+    font-size: 13pt;
+    margin-bottom: -5px;
+}
+
+label.sub-titulo-inf {
+    position: relative;
+    font-weight: normal;
+    color: #535353;
+    font-size: 13pt;
+}

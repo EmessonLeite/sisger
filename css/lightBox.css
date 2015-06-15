@@ -1,0 +1,179 @@
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index:100;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background: #000;
+    display: none;
+}
+
+.modal_close {
+    background: url("../imagens/fechar.png");
+    background-repeat: no-repeat;
+    background-position: top -10px;
+    display: block;
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    right: 12px;
+    top: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+div#lightbox-negativo {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    display: none;
+    padding-bottom: 2px;
+    width: 504px;
+    z-index: 0;
+}
+
+div#cabecalho-negativo {
+    border-bottom: 2px solid #CCCCCC;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+
+div#cabecalho-negativo p {
+    color: #222222;
+    font-size: 18pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+div#lightbox-negativo div.txt-comentario-negativo {
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div#lightbox-negativo div.txt-comentario-negativo label {
+    color: #222222;
+    display: block;
+    float: left;
+    font-size: 1.3em;
+    padding-top: 8px;
+    text-align: left;
+    width: 90px;
+}
+
+div#lightbox-negativo div.txt-comentario-negativo textarea {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-color: #CCCCCC #E7E6E6 #E7E6E6 #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #222222;
+    font-size: 1.2em;
+    outline: medium none;
+    padding: 8px;
+    width: 427px;
+    min-height: 100px;
+    margin-bottom: 16px;
+    margin-top: 5px;
+    resize: vertical;
+}
+
+button#salvar-negativo {
+    background: none repeat scroll 0 0 #c36539;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    float: right;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    overflow: visible;
+    padding: 4px 10px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/*******************************************************************************************************************************************************************************/
+
+div#lightbox-positivo {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    display: none;
+    padding-bottom: 2px;
+    width: 504px;
+}
+
+div#cabecalho-positivo {
+    border-bottom: 2px solid #CCCCCC;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+
+div#cabecalho-positivo p {
+    color: #222222;
+    font-size: 18pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+div#lightbox-positivo div.txt-comentario-positivo {
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div#lightbox-positivo div.txt-comentario-positivo label {
+    color: #222222;
+    display: block;
+    float: left;
+    font-size: 1.3em;
+    padding-top: 8px;
+    text-align: left;
+    width: 90px;
+}
+
+div#lightbox-positivo div.txt-comentario-positivo textarea {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border-color: #CCCCCC #E7E6E6 #E7E6E6 #CCCCCC;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #222222;
+    font-size: 1.2em;
+    outline: medium none;
+    padding: 8px;
+    width: 427px;
+    min-height: 100px;
+    margin-bottom: 16px;
+    margin-top: 5px;
+    resize: vertical;
+}
+
+button#salvar-positivo {
+    background: none repeat scroll 0 0 #c36539;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    float: right;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    overflow: visible;
+    padding: 4px 10px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
