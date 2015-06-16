@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:$PROJECT_DIR$/../../..//$PROJECT_DIR$/.idea/preAvaliacaoWeb.iml" filepath="$PROJECT_DIR$/.idea/preAvaliacaoWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/preAvaliacaoWeb.iml" filepath="$PROJECT_DIR$/.idea/preAvaliacaoWeb.iml" />
+      <module fileurl="file://file:C:/VertrigoServ//C:/VertrigoServ/www/preAvaliacaoWeb/preAvaliacaoWeb/.idea/preAvaliacaoWeb.iml" filepath="file:$PROJECT_DIR$/../..//C:/VertrigoServ/www/preAvaliacaoWeb/preAvaliacaoWeb/.idea/preAvaliacaoWeb.iml" />
     </modules>
   </component>
 </project>
-

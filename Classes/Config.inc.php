@@ -5,13 +5,13 @@ define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
 define('DBSA', 'preavaliacao');
-define('RAIZ', 'http:///preAvaliacaoWEB/');
+define('RAIZ', 'http://localhost:8080/preAvaliacaoWEB/');
 
 // AUTO LOAD DE CLASSES ####################
 function __autoload($Class) {
 
     $cDir = array('DAO', 'Business', 'Entity', 'Exception');
-    
+
     $iDir = null;
 
     foreach ($cDir as $dirName){
