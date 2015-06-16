@@ -417,7 +417,7 @@ table#autoava th#quesito {
     height:34px;
     border: 1px solid #ffffff;
     padding-left: 8px;
-    width: 225px
+    width: 245px
 }
 
 table#autoava th#np {
@@ -438,15 +438,25 @@ table#autoava th#obs {
     width: 205px
 }
 
-table#autoava tr td {
+table#autoava tr td.auto-quesito {
     border: 1px solid #ffffff;
     background-color: #dedede;
     padding-left: 8px;
     height: 30px;
 }
 
-table#autoava td.auto-nota {
-    text-align: left;
+table#autoava tr td.auto-nota {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#autoava tr td.auto-obs {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
 }
 
 p {
@@ -454,4 +464,20 @@ p {
     color: #282829;
 }
 
+input.nota {
+    width: 98%;
+    height: 34px;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    text-align: center;
+}
+
+input.obs {
+    width: 99%;
+    height: 34px;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+}
 
