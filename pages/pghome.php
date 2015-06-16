@@ -170,11 +170,15 @@
                     <table id="autoava" cellspacing="0" cellpadding="0">
                         <tr>
                             <th id="quesito">Quesito:</th>
+                            <th id="np">NP:</th>
                             <th id="obs">Obs:</th>
                         </tr>
                         <tr>
                             <td>
                                 <p>União e cooperação</p>
+                            </td>
+                            <td>
+                                <label>100</label>
                             </td>
                             <td>
                                 <p>dggfdg</p>
@@ -185,12 +189,18 @@
                                 <p>Disciplina</p>
                             </td>
                             <td>
+                                <label>100</label>
+                            </td>
+                            <td>
                                 <p>dfgdgdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Dedicação</p>
+                            </td>
+                            <td>
+                                <label>100</label>
                             </td>
                             <td>
                                 <p>fgdfg</p>
@@ -201,12 +211,18 @@
                                 <p>Consciência Crítica</p>
                             </td>
                             <td>
+                                <label>100</label>
+                            </td>
+                            <td>
                                 <p>sdfdsf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Bom domínio e agilidade nas rotinas</p>
+                            </td>
+                            <td>
+                                <label>100</label>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
@@ -217,12 +233,18 @@
                                 <p>Boa organização nos processos</p>
                             </td>
                             <td>
+                                <label>100</label>
+                            </td>
+                            <td>
                                 <p>dfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Boa criatividade</p>
+                            </td>
+                            <td>
+                                <label>100</label>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
@@ -233,12 +255,18 @@
                                 <p>Boa interação com seus coordenadores</p>
                             </td>
                             <td>
+                                <label>100</label>
+                            </td>
+                            <td>
                                 <p>sdfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p>Iniciativa</p>
+                            </td>
+                            <td>
+                                <label>100</label>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
