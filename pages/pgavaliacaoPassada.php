@@ -169,8 +169,11 @@
                 </td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="4"></td>
+                <td class="inativo"></td>
+                <td class="inativo"></td>
+                <td class="inativo"></td>
+                <td class="inativo"></td>
+                <td class="obs" colspan="4">68,4</td>
             </tr>
         </table>
     </div>

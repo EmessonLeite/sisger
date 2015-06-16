@@ -27,7 +27,9 @@
     cursor: pointer;
 }
 
-/**Comentario-negativo*****************************************************************************************************************************************************************************/
+/**
+Comentario-negativo
+*/
 
 div#lightbox-negativo {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -104,7 +106,9 @@ button#salvar-negativo {
     margin-bottom: 20px;
 }
 
-/**Comentario-positivo*****************************************************************************************************************************************************************************/
+/**
+Comentario-positivo
+*/
 
 div#lightbox-positivo {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -180,7 +184,9 @@ button#salvar-positivo {
     margin-bottom: 20px;
 }
 
-/**Auto-Avaliação*****************************************************************************************************************************************************************************/
+/**
+Auto-Avaliação
+*/
 
 div#lightbox-autoava {
     background: none repeat scroll 0 0 #FFFFFF;
