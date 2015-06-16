@@ -177,8 +177,8 @@
                             <td>
                                 <p>União e cooperação</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>dggfdg</p>
@@ -188,8 +188,8 @@
                             <td>
                                 <p>Disciplina</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>dfgdgdf</p>
@@ -199,8 +199,8 @@
                             <td>
                                 <p>Dedicação</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>fgdfg</p>
@@ -210,8 +210,8 @@
                             <td>
                                 <p>Consciência Crítica</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>sdfdsf</p>
@@ -221,8 +221,8 @@
                             <td>
                                 <p>Bom domínio e agilidade nas rotinas</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
@@ -232,8 +232,8 @@
                             <td>
                                 <p>Boa organização nos processos</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>dfsdfsdf</p>
@@ -243,8 +243,8 @@
                             <td>
                                 <p>Boa criatividade</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
@@ -254,8 +254,8 @@
                             <td>
                                 <p>Boa interação com seus coordenadores</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
@@ -265,8 +265,8 @@
                             <td>
                                 <p>Iniciativa</p>
                             </td>
-                            <td>
-                                <label>100</label>
+                            <td class="auto-nota">
+                                <p>100</p>
                             </td>
                             <td>
                                 <p>sdfsdfsdf</p>
