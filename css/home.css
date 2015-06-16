@@ -417,7 +417,16 @@ table#autoava th#quesito {
     height:34px;
     border: 1px solid #ffffff;
     padding-left: 8px;
-    width: 95px
+    width: 295px
+}
+
+table#autoava th#np {
+    background-color: #282829;
+    color: #ffffff;
+    height: 34px;
+    border: 1px solid #ffffff;
+    width: 35px;
+    text-align: center;
 }
 
 table#autoava th#obs {
@@ -434,6 +443,7 @@ table#autoava tr td {
     background-color: #dedede;
     padding-left: 8px;
     height: 30px;
+    text-align: center;
 }
 
 p {
