@@ -158,6 +158,7 @@
                 <p id="texto-positivo">Pontos Positivos</p>
             </div>
         </div>
+
         <!-- div para lightbox auto-avaliação /-->
         <div id="lightbox-autoava" class="caixaAutoAva">
             <form action="" class="frmAutoAva">
@@ -166,8 +167,112 @@
                     <a class="modal_close"></a>
                 </div>
                 <div class="txt-cabecalho-autoava">
-                    <label for="">Comentário: </label><br/>
-                    <textarea name="" id="comentario"></textarea>
+                    <table id="autoava" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th id="quesito">Quesito:</th>
+                            <th id="np">NP:</th>
+                            <th id="obs">Obs:</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>União e cooperação</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>dggfdg</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Disciplina</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>dfgdgdf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Dedicação</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>fgdfg</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Consciência Crítica</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>sdfdsf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Bom domínio e agilidade nas rotinas</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>sdfsdfsdf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Boa organização nos processos</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>dfsdfsdf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Boa criatividade</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>sdfsdfsdf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Boa interação com seus coordenadores</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>sdfsdfsdf</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Iniciativa</label>
+                            </td>
+                            <td>
+                                <label>100</label>
+                            </td>
+                            <td>
+                                <label>sdfsdfsdf</label>
+                            </td>
+                        </tr>
+                    </table>
                     <button id="salvar-autoava" type="submit">Salvar</button>
                 </div>
             </form>
