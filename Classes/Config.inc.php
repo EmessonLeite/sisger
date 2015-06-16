@@ -7,7 +7,7 @@ define('PASS', 'vertrigo');
 define('DBSA', 'preavaliacao');
 define('RAIZ', 'http://10.100.10.91/preAvaliacaoWEB/');
 
-// AUTO LOAD DE CLASSES ####################
+// AUTO LOAD DE CLASSES ####################/
 function __autoload($Class) {
 
     $cDir = array('DAO', 'Business', 'Entity', 'Exception');
