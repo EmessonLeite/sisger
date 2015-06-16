@@ -174,102 +174,102 @@
                             <th id="obs">Obs:</th>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>União e cooperação</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>dggfdg</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Disciplina</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>dfgdgdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Dedicação</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>fgdfg</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Consciência Crítica</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>sdfdsf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Bom domínio e agilidade nas rotinas</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>sdfsdfsdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Boa organização nos processos</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>dfsdfsdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Boa criatividade</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>sdfsdfsdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Boa interação com seus coordenadores</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>sdfsdfsdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="auto-quesito">
                                 <p>Iniciativa</p>
                             </td>
                             <td class="auto-nota">
-                                <p>100</p>
+                                <input type="text" class="nota" name="np">
                             </td>
-                            <td>
-                                <p>sdfsdfsdf</p>
+                            <td class="auto-obs">
+                                <input type="text" class="obs" name="obs">
                             </td>
                         </tr>
                     </table>
