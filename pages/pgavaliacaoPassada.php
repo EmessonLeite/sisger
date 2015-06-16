@@ -20,16 +20,16 @@
                     <label>União e cooperação</label>
                 </td>
                 <td class="pa">
-                    <label>33</label>
+                    <label>39</label>
                 </td>
                 <td class="ab">
-                    <label>6</label>
+                    <label>4</label>
                 </td>
                 <td class="pq">
-                    <label>2166</label>
+                    <label>2745</label>
                 </td>
                 <td class="obs">
-                    <label>66</label>
+                    <label>70</label>
                 </td>
             </tr>
             <tr>
@@ -37,30 +37,13 @@
                     <label>Disciplina</label>
                 </td>
                 <td class="pa">
-                    <label>33</label>
-                </td>
-                <td class="ab">
-                    <label>6</label>
-                </td>
-                <td class="pq">
-                    <label>2290</label>
-                </td>
-                <td class="obs">
-                    <label>69</label>
-                </td>
-            </tr>
-            <tr>
-                <td class="quesito">
-                    <label>Dedicação</label>
-                </td>
-                <td class="pa">
-                    <label>35</label>
+                    <label>39</label>
                 </td>
                 <td class="ab">
                     <label>4</label>
                 </td>
                 <td class="pq">
-                    <label>2543</label>
+                    <label>2831</label>
                 </td>
                 <td class="obs">
                     <label>73</label>
@@ -68,33 +51,33 @@
             </tr>
             <tr>
                 <td class="quesito">
-                    <label>Consciência Crítica</label>
+                    <label>Dedicação</label>
                 </td>
                 <td class="pa">
-                    <label>30</label>
-                </td>
-                <td class="ab">
-                    <label>9</label>
-                </td>
-                <td class="pq">
-                    <label>1878</label>
-                </td>
-                <td class="obs">
-                    <label>63</label>
-                </td>
-            </tr>
-            <tr>
-                <td class="quesito">
-                    <label>Bom domínio e agilidade nas rotinas</label>
-                </td>
-                <td class="pa">
-                    <label>35</label>
+                    <label>39</label>
                 </td>
                 <td class="ab">
                     <label>4</label>
                 </td>
                 <td class="pq">
-                    <label>2411</label>
+                    <label>2812</label>
+                </td>
+                <td class="obs">
+                    <label>72</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="quesito">
+                    <label>Consciência Crítica</label>
+                </td>
+                <td class="pa">
+                    <label>26</label>
+                </td>
+                <td class="ab">
+                    <label>17</label>
+                </td>
+                <td class="pq">
+                    <label>1793</label>
                 </td>
                 <td class="obs">
                     <label>69</label>
@@ -102,19 +85,36 @@
             </tr>
             <tr>
                 <td class="quesito">
+                    <label>Bom domínio e agilidade nas rotinas</label>
+                </td>
+                <td class="pa">
+                    <label>29</label>
+                </td>
+                <td class="ab">
+                    <label>14</label>
+                </td>
+                <td class="pq">
+                    <label>2080</label>
+                </td>
+                <td class="obs">
+                    <label>72</label>
+                </td>
+            </tr>
+            <tr>
+                <td class="quesito">
                     <label>Boa organização nos processos</label>
                 </td>
                 <td class="pa">
-                    <label>30</label>
+                    <label>22</label>
                 </td>
                 <td class="ab">
-                    <label>9</label>
+                    <label>21</label>
                 </td>
                 <td class="pq">
-                    <label>2007</label>
+                    <label>1602</label>
                 </td>
                 <td class="obs">
-                    <label>67</label>
+                    <label>73</label>
                 </td>
             </tr>
             <tr>
@@ -122,16 +122,16 @@
                     <label>Boa criatividade</label>
                 </td>
                 <td class="pa">
-                    <label>28</label>
+                    <label>22</label>
                 </td>
                 <td class="ab">
-                    <label>11</label>
+                    <label>21</label>
                 </td>
                 <td class="pq">
-                    <label>1894</label>
+                    <label>1540</label>
                 </td>
                 <td class="obs">
-                    <label>68</label>
+                    <label>70</label>
                 </td>
             </tr>
             <tr>
@@ -139,16 +139,16 @@
                     <label>Boa interação com seus coordenadores</label>
                 </td>
                 <td class="pa">
-                    <label>35</label>
+                    <label>29</label>
                 </td>
                 <td class="ab">
-                    <label>4</label>
+                    <label>14</label>
                 </td>
                 <td class="pq">
-                    <label>2574</label>
+                    <label>2207</label>
                 </td>
                 <td class="obs">
-                    <label>74</label>
+                    <label>76</label>
                 </td>
             </tr>
             <tr>
@@ -156,24 +156,21 @@
                     <label>Iniciativa</label>
                 </td>
                 <td class="pa">
-                    <label>30</label>
+                    <label>25</label>
                 </td>
                 <td class="ab">
-                    <label>9</label>
+                    <label>18</label>
                 </td>
                 <td class="pq">
-                    <label>1995</label>
+                    <label>1702</label>
                 </td>
                 <td class="obs">
-                    <label>67</label>
+                    <label>68</label>
                 </td>
             </tr>
             <tr>
                 <td class="inativo"></td>
-                <td class="inativo"></td>
-                <td class="inativo"></td>
-                <td class="inativo"></td>
-                <td class="obs" colspan="4">68,4</td>
+                <td class="obs" colspan="4">71,5</td>
             </tr>
         </table>
     </div>
