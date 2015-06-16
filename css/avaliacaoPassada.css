@@ -28,6 +28,7 @@ div#titulo {
     background-color: #c36539;
     margin-left: -58px;
     margin-top: -8px;
+    margin-bottom: -17px;
 }
 
 table#ava-passada {
@@ -99,6 +100,10 @@ table#ava-passada tr td.quesito {
 
 table#ava-passada tr td.pa, td.ab, td.pq, td.obs {
     text-align: center;
+}
+
+table#ava-passada tr td.inativo {
+    visibility: hidden;
 }
 
 

@@ -159,7 +159,7 @@
             </div>
         </div>
 
-        <!-- div para lightbox auto-avaliação /-->
+        <!-- div para lightbox auto-avaliação. /-->
         <div id="lightbox-autoava" class="caixaAutoAva">
             <form action="" class="frmAutoAva">
                 <div id="cabecalho-autoava">
