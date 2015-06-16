@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 // CONFIGRAÇÕES DO SITE ####################
@@ -15,44 +14,15 @@ function __autoload($Class) {
 
     $iDir = null;
 
-    foreach ($cDir as $dirName){
-        if (!$iDir && file_exists(__DIR__."/{$dirName}/{$Class}.class.php")){
-            include_once (__DIR__."/{$dirName}/{$Class}.class.php");
+    foreach ($cDir as $dirName) {
+        if (!$iDir && file_exists(__DIR__ . "/{$dirName}/{$Class}.class.php")) {
+            include_once (__DIR__ . "/{$dirName}/{$Class}.class.php");
             $iDir = true;
         }
     }
 
-    if (!$iDir){
+    if (!$iDir) {
         trigger_error("Não foi possível incluir {$Class}.class.php", E_USER_ERROR);
         die;
     }
-=======
-<?php
-
-// CONFIGRAÇÕES DO SITE ####################
-define('HOST', 'localhost');
-define('USER', 'root');
-define('PASS', 'vertrigo');
-define('DBSA', 'preavaliacao');
-define('RAIZ', 'http://10.100.10.91/preAvaliacaoWEB/');
-
-// AUTO LOAD DE CLASSES ####################/
-function __autoload($Class) {
-
-    $cDir = array('DAO', 'Business', 'Entity', 'Exception');
-
-    $iDir = null;
-
-    foreach ($cDir as $dirName){
-        if (!$iDir && file_exists(__DIR__."/{$dirName}/{$Class}.class.php")){
-            include_once (__DIR__."/{$dirName}/{$Class}.class.php");
-            $iDir = true;
-        }
-    }
-
-    if (!$iDir){
-        trigger_error("Não foi possível incluir {$Class}.class.php", E_USER_ERROR);
-        die;
-    }
->>>>>>> origin/master
 }
