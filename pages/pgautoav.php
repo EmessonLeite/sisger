@@ -1,4 +1,6 @@
 <?php
+include_once("../Classes/Config.inc.php");
+var_dump($_GET);
 
 ?>
 <link rel='stylesheet' href='../css/autoava.css'/>

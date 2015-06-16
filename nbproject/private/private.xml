@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/Config.inc.php</file>
-            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/Business/Login.class.php</file>
             <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/includes/inchome.php</file>
-            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/DAO/ConexaoDAO.class.php</file>
-            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/Business/Avaliacao.php</file>
+            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/pages/pgautoav.php</file>
+            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/pages/pghome.php</file>
+            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/Business/AutoAvaliacao.class.php</file>
+            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/js/home.js</file>
+            <file>file:/C:/VertrigoServ/www/preAvaliacaoWeb/Classes/Business/Avaliacao.class.php</file>
         </group>
     </open-files>
 </project-private>
