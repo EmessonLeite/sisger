@@ -178,10 +178,10 @@
                                 <p>União e cooperação</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -189,10 +189,10 @@
                                 <p>Disciplina</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -200,10 +200,10 @@
                                 <p>Dedicação</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -211,10 +211,10 @@
                                 <p>Consciência Crítica</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -222,10 +222,10 @@
                                 <p>Bom domínio e agilidade nas rotinas</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -233,10 +233,10 @@
                                 <p>Boa organização nos processos</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -244,10 +244,10 @@
                                 <p>Boa criatividade</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -255,10 +255,10 @@
                                 <p>Boa interação com seus coordenadores</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                         <tr>
@@ -266,10 +266,10 @@
                                 <p>Iniciativa</p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="np">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
                     </table>
