@@ -170,106 +170,78 @@
                     <table id="autoava" cellspacing="0" cellpadding="0">
                         <tr>
                             <th id="quesito">Quesito:</th>
-                            <th id="np">NP:</th>
                             <th id="obs">Obs:</th>
                         </tr>
                         <tr>
                             <td>
-                                <label>União e cooperação</label>
+                                <p>União e cooperação</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>dggfdg</label>
+                                <p>dggfdg</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Disciplina</label>
+                                <p>Disciplina</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>dfgdgdf</label>
+                                <p>dfgdgdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Dedicação</label>
+                                <p>Dedicação</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>fgdfg</label>
+                                <p>fgdfg</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Consciência Crítica</label>
+                                <p>Consciência Crítica</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>sdfdsf</label>
+                                <p>sdfdsf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Bom domínio e agilidade nas rotinas</label>
+                                <p>Bom domínio e agilidade nas rotinas</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>sdfsdfsdf</label>
+                                <p>sdfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Boa organização nos processos</label>
+                                <p>Boa organização nos processos</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>dfsdfsdf</label>
+                                <p>dfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Boa criatividade</label>
+                                <p>Boa criatividade</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>sdfsdfsdf</label>
+                                <p>sdfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Boa interação com seus coordenadores</label>
+                                <p>Boa interação com seus coordenadores</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>sdfsdfsdf</label>
+                                <p>sdfsdfsdf</p>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <label>Iniciativa</label>
+                                <p>Iniciativa</p>
                             </td>
                             <td>
-                                <label>100</label>
-                            </td>
-                            <td>
-                                <label>sdfsdfsdf</label>
+                                <p>sdfsdfsdf</p>
                             </td>
                         </tr>
                     </table>
