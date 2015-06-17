@@ -56,7 +56,7 @@ $(document).ready(function () {
             data: {idUsuario: iIdusuario, idAvaliacao: iIdAvaliacao, tipo: iTipo, comentario: iComentario, idUsuarioLogado: iIdusuarioLogado}
         })
                 .done(function (resultado) {
-                    alert(resultado);
+                    //alert(resultado);
                     if (resultado > 0) {
                         $('.frmComentarios').find('#comentario').val('');
                         $('.frmComentarios').find('.modal_close').click();
