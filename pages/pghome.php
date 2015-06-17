@@ -69,7 +69,7 @@
         ?>
         <a href="includes/incavaliacaoPassada.php<?php echo $infoURL; ?>" class="info naoClicado" name="avpassada" target="conteudos">Avaliação passada</a>
     </div>
-    <iframe src="includes/incinfogerais.php<?php echo $infoURL; ?>" class="conteudos" id="conteudo" scrolling="no" name="conteudos" ></iframe>
+    <iframe src="includes/incinfogerais.php<?php echo $infoURL; ?>" class="conteudos" id="conteudo" scrolling="yes" name="conteudos" ></iframe>
     <?php
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
         ?>
