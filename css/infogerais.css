@@ -3,12 +3,12 @@
 }
 
 #toda-infogerais {
-    position: relative;
+    position: fixed;
     margin-left: 50px;
     width: 479px;
     height: auto;
     background-color: #ffffff;
-    top: 0;
+    top: 8px;
 }
 
 div#toda-infogerais div#titulo label {
