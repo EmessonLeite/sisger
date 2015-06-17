@@ -28,8 +28,8 @@
 }
 
 /**
-Comentario-negativo
-*/
+ * Comentario-negativo
+ */
 
 div#lightbox-negativo {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -107,8 +107,8 @@ button#salvar-negativo {
 }
 
 /**
-Comentario-positivo
-*/
+ * Comentario-positivo
+ */
 
 div#lightbox-positivo {
     background: none repeat scroll 0 0 #FFFFFF;
@@ -185,8 +185,8 @@ button#salvar-positivo {
 }
 
 /**
-Auto-Avaliação
-*/
+ * Auto-Avaliação
+ */
 
 div#lightbox-autoava {
     background: none repeat scroll 0 0 #FFFFFF;
