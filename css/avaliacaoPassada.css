@@ -3,12 +3,12 @@
 }
 
 #toda-ava-passada {
-    position: relative;
+    position: fixed;
     margin-left: 50px;
     width: 60%;
     height: auto;
     background-color: #ffffff;
-    top: 0;
+    top: 8px;
 }
 
 div#toda-ava-passada div#titulo label {
