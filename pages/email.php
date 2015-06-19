@@ -37,7 +37,7 @@
     }
 
     function validaUsuario($nome, $email) {
-        $pdo = new PDO("mysql:host=localhost;dbname=preavaliacao","root", "vertrigo");
+        $pdo = new PDO("mysql:host=" . HOST . ";dbname=" . DBSA,USER, PASS);
         $verifica = $pdo->prepare("SELECT * FROM usuarios WHERE nome = ? AND email = ?");
         $verifica->bindValue(1, $nome);
         $verifica->bindValue(2, $email);
@@ -46,7 +46,7 @@
     }
 
     function atualizaSenha($senha, $id) {
-        $pdo = new PDO("mysql:host=localhost;dbname=preavaliacao","root", "vertrigo");
+        $pdo = new PDO("mysql:host=" . HOST . ";dbname=" . DBSA,USER, PASS);
         $atualiza = $pdo->prepare("UPDATE usuarios set senha = PASSWORD(?) WHERE id = ?");
         $atualiza->bindValue(1, $senha);
         $atualiza->bindValue(2, $id);
