@@ -42,8 +42,9 @@ input{
 }
 #pass{
     padding-left: 55px;
-    background-image: url("../imagens/senha.png");
+    background-image: url("../imagens/email.png");
     background-repeat: no-repeat;
+    background-position: 10px ;
 }
 #button{
     width: 95%;

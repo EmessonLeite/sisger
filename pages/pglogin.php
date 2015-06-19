@@ -17,11 +17,12 @@
             <form name="login">
                 <div id="inputs">
                     <p id="info"></p>
-                    <input type="text" name="usuario" class="id" id="id"  maxlength="24" placeholder="Login" >
+                    <input type="text" name="usuario" class="id" id="id"  required="required" maxlength="24" placeholder="Login" >
                     <br />
-                    <input type="password" name="senha" class="log" id="pass"  maxlength="20" placeholder="Senha">
+                    <input type="password" name="senha" class="log" id="pass" required="required"  maxlength="20" placeholder="Senha">
                     <br />
                     <input  value="Entrar"  type="submit" id="button" name="button">
+                    <p id="txt-esqueceu-senha">Esqueceu sua senha? <span><a id="link-esqueceu-senha" href="recuperaSenha"> Click aqui.</a></span></p><br/>
                 </div>
             </form>
         </div>
