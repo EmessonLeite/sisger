@@ -10,7 +10,7 @@ body{
     min-width: 50%;
 }
 #login{
-    width: 400px;
+    width: 450px;
     background-color: #e2e2e2;
     border: 1px #d2e3eb solid;
     margin-left: auto;
@@ -19,7 +19,7 @@ body{
     box-shadow: 0px 0px 40px -9px rgba(0,0,0,0.75);
 }
 #icon{
-    margin-left: 13%;
+    margin-left: 14.5%;
     margin-top: 25px;
 }
 
@@ -65,7 +65,7 @@ input{
 #info{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    width: 340px;
+    width: 379px;
 }
 
 .erro{
@@ -94,6 +94,7 @@ p#txt-esqueceu-senha {
     margin-left: 3px;
     font-size: 13pt;
     color: #6a6a6a;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a#link-esqueceu-senha {

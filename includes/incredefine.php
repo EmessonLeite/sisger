@@ -7,8 +7,6 @@ $dataAtual = strtotime(date("Y-m-d H:i:s"));
 $id = substr($parametro, 10);
 $erro = '';
 
-echo $id;
-
 if ($dataAtual < $data + 1800) {
     if (isset($_POST['enviar']) && is_string($_POST['enviar'])) {
         $senha = $_POST['senha'];
@@ -17,16 +15,16 @@ if ($dataAtual < $data + 1800) {
         if ($senha == $confSenha) {
             if (atualizaSenha($senha, $id)) {
                 $info = "Senha redefinida com sucesso.";
-                echo "<meta http-equiv='refresh' content=5;url='" . RAIZ . "login'>";
+                echo "<meta http-equiv='refresh' content=1;url='" . RAIZ . "login'>";
             } else {
-                $erro = "Erro ao redefinir senha. Digite novamente";
+                $erro = "Erro ao redefinir senha. Digite novamente.";
             }
         } else {
-            $erro = "As senha não combinam. Digite novamente";
+            $erro = "As senha não combinam. Digite novamente.";
         }
     }
 } else {
-    $erro = "O link expirou.";
+    $erro = "O link expirou. Solicite outro email.";
     echo "<meta http-equiv='refresh' content=5;url='" . RAIZ . "recuperaSenha'>";
 }
 

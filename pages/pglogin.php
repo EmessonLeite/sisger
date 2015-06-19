@@ -7,6 +7,7 @@
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/login.js"></script>
         <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="shortcut icon" href="imagens/icon.ico" type="image/gif">
     </head>
     <body>
         <input type="hidden" value="<?php echo RAIZ; ?>" id="raiz" />

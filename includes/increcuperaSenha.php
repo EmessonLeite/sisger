@@ -1,6 +1,7 @@
 <?php
 
 $info = '';
+$erro = '';
 /**
  * Inclui classes de envio de email
  */
@@ -31,9 +32,11 @@ if (isset($_POST['enviar']) && is_string($_POST['enviar'])) {
         $info = "Foi enviado um link pro seu email.";
         echo "<meta http-equiv='refresh' content=5;url='" . RAIZ . "login'>";
     } else {
-        $info = "Nome ou email não cadastrado.";
+        $erro = "Nome ou email não cadastrado.";
     }
 }
 $info = ($info != '') ? "<p id='info'>{$info}</p>" : '';
+$erro = ($erro != '') ? "<p id='erro'>{$erro}</p>" : '';
+
 
 include_once('pages/pgrecuperaSenha.php');
