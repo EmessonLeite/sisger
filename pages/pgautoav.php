@@ -60,7 +60,7 @@ include_once("../Classes/Config.inc.php");
             </tr>
             <tr>
                 <td>
-                    <label>Consciência Crítica</label>
+                    <label>Consciência crítica</label>
                 </td>
                 <td>
                     <label>100</label>
