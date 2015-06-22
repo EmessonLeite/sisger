@@ -23,7 +23,7 @@
                     <input type="password" name="senha" class="log" id="pass" required="required"  maxlength="20" placeholder="Senha">
                     <br />
                     <input  value="Entrar"  type="submit" id="button" name="button">
-                    <p id="txt-esqueceu-senha">Esqueceu sua senha? <span><a id="link-esqueceu-senha" href="recuperaSenha"> Click aqui.</a></span></p><br/>
+                    <p id="txt-esqueceu-senha">Esqueceu sua senha? <span><a id="link-esqueceu-senha" href="recuperaSenha"> Clique aqui.</a></span></p><br/>
                 </div>
             </form>
         </div>

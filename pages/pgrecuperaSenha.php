@@ -17,7 +17,7 @@
                 </div>
                 <div id="inputs">
                     <?php echo $erro . $info; ?>
-                    <input type="text" name="usuario" class="id" id="id" required="required" placeholder="Nome" >
+                    <input type="text" name="usuario" class="id" id="id" required="required" placeholder="Nome Completo" >
                     <br />
                     <input type="email" name="email" class="log" id="pass" required="required" placeholder="Email">
                     <br />

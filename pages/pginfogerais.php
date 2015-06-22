@@ -12,7 +12,7 @@
 
             <p class="titulo-inf">E-mail: <label class="sub-titulo-inf"><?php echo $dadosUsuarioSelecionado[0]['email']; ?></label></p>
 
-            <p class="titulo-inf">Telefone <label class="sub-titulo-inf"><?php echo $dadosUsuarioSelecionado[0]['telefone']; ?></label></p>
+            <p class="titulo-inf">Telefone: <label class="sub-titulo-inf"><?php echo $dadosUsuarioSelecionado[0]['telefone']; ?></label></p>
 
             <p class="titulo-inf">Horas trabalhadas: <label class="sub-titulo-inf"><?php echo $dadosUsuarioAvaliacao[0]['horasTrabalhadas']; ?></label></p>
 

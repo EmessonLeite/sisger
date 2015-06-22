@@ -319,7 +319,7 @@ p#texto-negativo {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 14pt;
     margin-left: 15px;
-    margin-top: -30px;
+    margin-top: -23px;
 }
 
 div#titulo-negativo {
@@ -330,10 +330,12 @@ div#titulo-negativo {
     background-color: #282829;
 }
 
-img#lapis-negativo {
+a#edita-comentario-negativo {
     position: relative;
     margin-left: 421px;
-    padding-top: 7px;
+    margin-top: 10px;
+    top: 7px;
+    width: 20px;
 }
 
 p#texto-positivo {

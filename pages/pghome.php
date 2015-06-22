@@ -22,7 +22,7 @@
             <input type="hidden" value="<?php echo $dadosUsuarioSelecionado[0]['id']; ?>" id="idSelecionado" />
             <label id="comentarios"><?php echo $dadosUsuarioAvaliacao[0]['comentarios']; ?> comentários</label></br>
             <label id="posto">Posto: <?php echo $dadosUsuarioAvaliacao[0]['cargo']; ?></label></br>
-            <label id="email">Email: <?php echo $dadosUsuarioSelecionado[0]['email']; ?></label>
+            <label id="email">E-mail: <?php echo $dadosUsuarioSelecionado[0]['email']; ?></label>
         </div>
     </div>
     <div id="pessoas">
@@ -60,7 +60,7 @@
         </div>
     </div>    
     <div id="menu">
-        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info clicado" name="infog" target="conteudos">Informações Gerais</a>
+        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info clicado" name="infog" target="conteudos">Informações gerais</a>
         <?php
         if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
 
@@ -136,7 +136,7 @@
         <div id="lightbox-positivo" class="caixaComentarios">
             <form action="" class="frmComentarios">
                 <div id="cabecalho-positivo">
-                    <p>Pontos Positivo</p>
+                    <p>Pontos Positivos</p>
                     <a class="modal_close"></a>
                 </div>
                 <div class="txt-comentario-positivo">
