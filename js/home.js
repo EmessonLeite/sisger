@@ -31,9 +31,12 @@ $(document).ready(function () {
     /**
      * Redireciona para a avaliacao clicada
      */
-    $('select#avaliacoes option').click(function () {
-        if ($(this).val() !== "0") {
-            window.location = "home/" + $(this).html() + "/" + $('#idSelecionado').val() + "/0";
+    $('select#avaliacoes').change(function () {
+        var referente = $(this).find('option:selected').html();
+        var ID = $(this).find('option:selected').val();
+
+        if (ID !== "0") {
+            window.location = $('#raiz').val() + "home/" + referente + "/" + ID + "/0";
         }
     });
 
