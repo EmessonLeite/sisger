@@ -1,10 +1,10 @@
 <?php
     function validaUsuario($nome, $email) {
-
         /** Conecta com o banco */
-        $pdo = new PDO("mysql:host=" . HOST . ";dbname=" . DBSA,USER, PASS);
+        $pdo = new PDO("mysql:host=" . HOST . ";dbname=" . DBSA, USER, PASS);
+        $pdo->exec("SET CHARACTER SET utf8");
 
-        /** Escreve a query que seleciona o email e o nome do usuario*/
+        /** Escreve a query que seleciona o email e o nome do usuario */
         $verifica = $pdo->prepare("SELECT * FROM usuarios WHERE nome = ? AND email = ?");
         $verifica->bindValue(1, $nome);
         $verifica->bindValue(2, $email);

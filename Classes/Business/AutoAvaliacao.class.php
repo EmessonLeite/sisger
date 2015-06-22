@@ -52,5 +52,11 @@ class AutoAvaliacao {
 
         return $result;
     }
+    
+    private function verificarSeExiste(){
+        $query = "";
+        $dados = array();
+        //$result = $this->
+    }
 
 }
