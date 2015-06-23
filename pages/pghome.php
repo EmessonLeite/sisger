@@ -72,50 +72,77 @@
     <iframe src="includes/incinfogerais.php<?php echo $infoURL; ?>" class="conteudos" id="conteudo" scrolling="yes" name="conteudos" ></iframe>
     <?php
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
+        if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {
+            echo "
+                <div id='comentario-negativo'>
+                    <div id='titulo-negativo'>
+                        <a href='#lightbox-negativo' name='lightbox-negativo' rel='leanModal' id='edita-comentario-negativo'>
+                            <img id='lapis-negativo' src='imagens/lapis.png'>
+                        </a>
+                        <p id='texto-negativo'>Pontos Negativos</p>
+                    </div>
+                </div>
+                <div id='comentario-positivo'>
+                    <div id='titulo-positivo'>
+                        <a href='#lightbox-positivo' name='lightbox-positivo' rel='leanModal' id='edita-comentario-positivo'>
+                            <img id='lapis-positivo' src='imagens/lapis.png'>
+                        </a>
+                        <p id='texto-positivo'>Pontos Positivos</p>
+                    </div>
+                </div>
+            ";
+        }
+        else {
+            echo "<div id='erro' style='margin-top: 20px; margin-bottom: 20px;'>Não pode adicionar comentários pois a avaliação já foi fechada.</div>";
+            echo "
+                <div id='comentario-negativo'>
+                    <div id='titulo-negativo'>
+                        <p id='texto-negativo' style='position: absolute; margin-top: 10px;'>Pontos Negativos</p>
+                    </div>
+                </div>
+                <div id='comentario-positivo'>
+                    <div id='titulo-positivo'>
+                        <p id='texto-positivo' style='position: absolute; margin-top: 10px;'>Pontos Positivos</p>
+                    </div>
+                </div>
+            ";
+        }
         ?>
-        <div id="comentario-negativo">
-            <div id="titulo-negativo">
-                <a href="#lightbox-negativo" name="lightbox-negativo" rel="leanModal" id="edita-comentario-negativo">
-                    <img id="lapis-negativo" src="imagens/lapis.png">
-                </a>
-                <p id="texto-negativo">Pontos Negativos</p>
-            </div>
-        </div>
-        <div id="comentario-positivo">
-            <div id="titulo-positivo">
-                <a href="#lightbox-positivo" name="lightbox-positivo" rel="leanModal" id="edita-comentario-positivo">
-                    <img id="lapis-positivo" src="imagens/lapis.png">
-                </a>
-                <p id="texto-positivo">Pontos Positivos</p>
-            </div>
-        </div>
-        <table id="tbl-comentario">
-            <tr>
-                <td id="negativo">
-                    <?php
-                    foreach ($comentariosNegativos as $c) {
-                        ?>
-                        <p class="comentario">
-                        <?php echo $c['comentario']; ?>
-                        </p>
-                        <?php
-                    }
-                    ?>
-                </td>
+        <?php
+        if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {
 
-                <td id="positivo">
-                    <?php
-                    foreach ($comentariosPositivos as $c) {
-                        ?>
-                        <p class="comentario">
-                        <?php echo $c['comentario']; ?>
-                        </p>
-                        <?php
-                    }
-                    ?>
-                </td>
-            </tr>
-        </table>
+        }
+        else {
+            echo "
+             <table id='tbl-comentario'>
+                <tr>
+                    <td id='negativo'>
+                    ";
+                        foreach ($comentariosNegativos as $c) {
+                            echo "
+                            <p class='comentario'>{$c['comentario']}
+                            </p>
+                            ";
+                        }
+                        echo "
+                    </td>
+
+                    <td id='positivo'>
+                    ";
+                        foreach ($comentariosPositivos as $c) {
+                            echo "
+                            <p class='comentario'>{$c['comentario']}
+                            </p>
+                            ";
+                        }
+            echo "
+                    </td>
+                </tr>
+            </table>
+            ";
+        }
+        ?>
+
         <div id="lightbox-negativo" class="caixaComentarios">
             <form action="" class="frmComentarios">
                 <div id="cabecalho-negativo">

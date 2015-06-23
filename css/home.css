@@ -10,24 +10,24 @@ a {
     text-decoration: none;
 }
 
-body {
+html, body {
     background-color: #ffffff;
     font-family: 'Trebuchet MS', sans-serif;
 }
 
 #todo {
     width: 1000px;
-    min-height: 926px;
+    min-height: 906px;
     margin: auto;
     padding-top: 20px;
     background-color: #ebefe8;
-
 }
 
 /**
  *
  */
 
+/** Configuração da div que mostra algum erro na tela principal */
 div#erro{
     color: #991111;
     background-color: #e9c4b2;

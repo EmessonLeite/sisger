@@ -131,6 +131,7 @@ $(document).ready(function () {
             direcao = "baixo";
 
             $('#lista-pessoas').css('top', top + 'px');
+
             setTimeout(function () {
                 if (direcao === "baixo") {
                     $('#setaCima').mousedown();
