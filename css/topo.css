@@ -76,3 +76,29 @@ div#icons {
 div#icons img#config {
     padding-right: 10px;
 }
+
+div#drop-config {
+    position: absolute;
+    width: 200px;
+    height: 110px;
+    z-index: 1000;
+    background-color: #EBEFE8;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+}
+
+div#drop-config p {
+    padding-top: 5px;
+}
+
+div#drop-config a:hover p:hover {
+    color: #666666;
+    text-decoration: underline;
+    padding-top: 5px;
+}
+
+div#drop-config img#seta-cima {
+    position: absolute;
+    margin-top: -23px;
+    margin-left: -12px;
+}

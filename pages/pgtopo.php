@@ -29,7 +29,14 @@
                         </div>
                 </div>
                 <div id="icons">
-                    <a href="#"><img id="config" src="imagens/config.png"></a>
+                    <a href="home"><img id="config" src="imagens/config.png"></a>
+                    <div id="drop-config">
+                        <img id="seta-cima" width="15" height="10" src="imagens/seta-pra-cima.png">
+                        <a href="#"><p>Configurar perfil</p></a>
+                        <a href="#"><p>Cadastrar funcionário</p></a>
+                        <a href="#"><p>Cadastrar cargo</p></a>
+                        <a href="#"><p>Cadastrar avaliação</p></a>
+                    </div>
                     <a href="logout"> <img src="imagens/sair.png"></a>
                 </div>
             </div>
