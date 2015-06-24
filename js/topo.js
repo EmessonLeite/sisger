@@ -1,10 +1,9 @@
 $(document).ready(function () {
     $('#config').click(function () {
-        alert('vfxvfbbx');
+        $('#drop-config').css("visibility", "visible");
     });
+    $('#config').change(function () {
+        $('#drop-config').css("visibility", "hidden");
 
-
-
-
-
+    });
 });
