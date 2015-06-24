@@ -238,7 +238,7 @@ class ConexaoDAO {
 
         /** Executa a consulta e verifica se ocorreu algum erro */
         if (!$this->stmt->execute()) {
-            throw new Exception("Erro ao executar: (" . $this->stmt->errno . ") ", $this->stmt->errno);
+            throw new Exception("Erro ao executar: (" . $this->stmt->error . ") ", $this->stmt->errno);
         }
 
         /** Preenche o array de dados caso haja algum retorno */

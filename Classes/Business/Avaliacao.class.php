@@ -63,7 +63,7 @@ class Avaliacao {
      */
     public function buscarDadosUsuario($idUsuario) {
         /** @var string */
-        $query = "SELECT horasTrabalhadas, folgas, faltas, atrasos, videosLivros, comentarios, cargo
+        $query = "SELECT horasTrabalhadas, folgas, faltas, atrasos, videosLivros, comentarios, c.id as idCargo, idAvaliacao, idUsuario, cargo
                   FROM usuarioavaliacao
                   INNER JOIN avaliacao as a
                   ON a.id = idAvaliacao

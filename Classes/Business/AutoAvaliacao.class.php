@@ -19,21 +19,28 @@ class AutoAvaliacao {
      * @param int ID do usuario selecionado
      */
     public function __construct($avaliacao, $idUsuario) {
+        
+        /** Inicializa a conexao */
         $this->conexao = new ConexaoDAO('autoavaliacao');
+        
+        /** Inicializa a referencia da avalaicao */
         $this->avaliacao = $avaliacao;
+        
+        /** Inicializa o ID do Usuario */
         $this->idUsuario = $idUsuario;
+        
+        /** Inicializa os valores caso não tenha sido cadastrado */
+        $this->inicializarValores();
     }
     
+    
     /**
-     * cadastrar
-     * Cadastra uma nova auto-avaliacao neste usuario
-     * @param array
-     * @return int
+     * 
      */
-    public function cadastrar($dados) {
-        //deletar se já existir e cadastrar uma nova
+    public function editar(){
+        
     }
-
+    
     /**
      * buscar
      * Retorna os dados da avaliacao indicada na variavel $avaliacao
@@ -41,22 +48,88 @@ class AutoAvaliacao {
      * @return array Dados de todas as avaliacoes
      */
     public function buscar() {
-        $query = "SELECT * FROM [tabela] WHERE referente = ? AND idUsuario = ?";
+
+        $query = "SELECT * FROM autoavaliacao as auto
+                  INNER JOIN avaliacao as a
+                  ON auto.idAvaliacao = a.id
+                  WHERE referente = ? AND idUsuario = ?";
         $dados = array($this->avaliacao, $this->idUsuario);
+
+        /** @var array */
+        $resultado = $this->conexao->Buscar($query, $dados);
+        
+        return $resultado[0];
+    }
+    
+    /**
+     * inicializarValores
+     * Inicializa os valores caso a autoAvaliacao ainda não tenha sido inicializada.
+     */
+    private function inicializarValores(){
+        if (!$this->verificarSeExiste()) {
+
+            /** @var Avaliacao */
+            $usuarioAvaliacao = Avaliacao::getInstance($this->avaliacao);
+            
+            /** @var array */
+            $dadosUsuario = $usuarioAvaliacao->buscarDadosUsuario($this->idUsuario);
+            
+            /** @var Quesito */
+            $quesito = Quesito::getInstance($dadosUsuario[0]['idCargo']);
+            
+            /** @var array */
+            $quesitos = $quesito->buscar();
+
+            /** @var array */
+            $dados = array(
+                "idUsuario" => $dadosUsuario[0]['idUsuario'],
+                "idAvaliacao" => $dadosUsuario[0]['idAvaliacao']
+            );
+            
+            for($i = 1; $i <= count($quesitos); $i++){
+                $dados = array_merge($dados, array("quesito{$i}" => $quesitos[$i - 1]['quesito']));
+            }
+            
+            $this->conexao->Cadastrar($dados);
+            
+        }
+    }
+    
+    /**
+     * verificarSeExiste
+     * Verifica se a autoAvaliacao foi inicializada.
+     * 
+     * @return int
+     */
+    private function verificarSeExiste() {
+        $query = "SELECT COUNT(*) as qtd FROM [tabela]
+                 INNER JOIN avaliacao as a
+                 ON a.id = idAvaliacao
+                 WHERE idUsuario = ? AND referente = ?";
+
+        $dados = array($this->idUsuario, $this->avaliacao);
 
         /** @var array */
         $result = $this->conexao->Buscar($query, $dados);
 
-        /** Seta o valor da referencia com o valor retornado da pesquisa */
-        $this->avaliacao = $result[0];
-
-        return $result;
+        return $result[0]['qtd'];
     }
-    
-    private function verificarSeExiste(){
-        $query = "";
-        $dados = array();
-        //$result = $this->
+
+    /**
+     * getInstance
+     * Retorna uma instância única de uma classe.
+     * 
+     * @staticvar Singleton $instance A instância única dessa classe.
+     * @return Singleton A Instância única.
+     */
+    public static function getInstance($avaliacao, $idUsuario) {
+        /** Inicializa a var instance e retorna */
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new static($avaliacao, $idUsuario);
+        }
+
+        return $instance;
     }
 
 }
