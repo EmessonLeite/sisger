@@ -40,5 +40,15 @@ $comentariosPositivos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]
 /** @var array Comentarios positivos deste usuario nesta avaliacao  */
 $comentariosNegativos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]['id'], '0');
 
+/** @var AutoAvaliacao */
+$autoAvalicao = AutoAvaliacao::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
+
+/**
+ * @var array
+ * Dados da autoAvalicao do Usuario selecionado
+ */
+$dadosAutoAvaliacao = $autoAvalicao->buscar();
+
+
 /** Include a pagina home */
 include_once('pages/pghome.php');

@@ -202,7 +202,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>União e cooperação</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito1']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -213,7 +213,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Disciplina</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito2']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -224,7 +224,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Dedicação</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito3']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -235,7 +235,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Consciência Crítica</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito4']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -246,7 +246,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Bom domínio e agilidade nas rotinas</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito5']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -257,7 +257,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Boa organização nos processos</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito6']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -268,7 +268,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Boa criatividade</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito7']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -279,7 +279,7 @@
                         </tr>
                         <tr>
                             <td class="auto-quesito">
-                                <p>Boa interação com seus coordenadores</p>
+                                <p><?php echo $dadosAutoAvaliacao['quesito8']; ?></p>
                             </td>
                             <td class="auto-nota">
                                 <input type="text" maxlength="3" class="nota" name="np">
@@ -288,17 +288,23 @@
                                 <input type="text" maxlength="255" class="obs" name="obs">
                             </td>
                         </tr>
-                        <tr>
-                            <td class="auto-quesito">
-                                <p>Iniciativa</p>
-                            </td>
-                            <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
-                            </td>
-                            <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
-                            </td>
-                        </tr>
+                        <?php
+                            if ($dadosAutoAvaliacao['quesito9'] != NULL) {
+                                echo "
+                                    <tr>
+                                        <td class='auto-quesito'>
+                                            <p>{$dadosAutoAvaliacao['quesito9']}</p>
+                                        </td>
+                                        <td class='auto-nota'>
+                                            <input type='text' maxlength='3' class='nota' name='np'>
+                                        </td>
+                                        <td class='auto-obs'>
+                                            <input type='text' maxlength='255' class='obs' name='obs'>
+                                        </td>
+                                    </tr>
+                                ";
+                            }
+                        ?>
                     </table>
                     <button id="salvar-autoava" type="submit">Salvar</button>
                 </div>

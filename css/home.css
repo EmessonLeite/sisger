@@ -476,7 +476,7 @@ p {
 
 input.nota {
     width: 98%;
-    height: 34px;
+    height: 100%;
     border: 1px solid #ccc;
     color: #282829;
     font-size: 14pt;
@@ -485,7 +485,7 @@ input.nota {
 
 input.obs {
     width: 94%;
-    height: 34px;
+    height: 100%;
     border: 1px solid #ccc;
     color: #282829;
     font-size: 14pt;

@@ -11,8 +11,5 @@ $autoAvalicao = AutoAvaliacao::getInstance($_GET['referencia'], $_GET['id']);
  */
 $dadosAutoAvaliacao = $autoAvalicao->buscar();
 
-var_dump($dadosAutoAvaliacao);
-
-
 /** Include a pagina home */
 include_once('../pages/pgautoav.php');

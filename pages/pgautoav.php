@@ -27,103 +27,110 @@ include_once("../Classes/Config.inc.php");
             </tr>
             <tr>
                 <td>
-                    <label>União e cooperação</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito1']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota1']; ?></label>
                 </td>
                 <td>
-                    <label>dggfdg</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao1']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Disciplina</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito2']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota2']; ?></label>
                 </td>
                 <td>
-                    <label>dfgdgdf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao2']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Dedicação</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito3']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota3']; ?></label>
                 </td>
                 <td>
-                    <label>fgdfg</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao3']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Consciência crítica</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito4']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota4']; ?></label>
                 </td>
                 <td>
-                    <label>sdfdsf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao4']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Bom domínio e agilidade nas rotinas</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito5']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota5']; ?></label>
                 </td>
                 <td>
-                    <label>sdfsdfsdf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao5']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Boa organização nos processos</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito6']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota6']; ?></label>
                 </td>
                 <td>
-                    <label>dfsdfsdf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao6']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Boa criatividade</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito7']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota7']; ?></label>
                 </td>
                 <td>
-                    <label>sdfsdfsdf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao7']; ?></label>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <label>Boa interação com seus coordenadores</label>
+                    <label><?php echo $dadosAutoAvaliacao['quesito8']; ?></label>
                 </td>
                 <td>
-                    <label>100</label>
+                    <label><?php echo $dadosAutoAvaliacao['nota8']; ?></label>
                 </td>
                 <td>
-                    <label>sdfsdfsdf</label>
+                    <label><?php echo $dadosAutoAvaliacao['descricao8']; ?></label>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <label>Iniciativa</label>
-                </td>
-                <td>
-                    <label>100</label>
-                </td>
-                <td>
-                    <label>sdfsdfsdf</label>
-                </td>
-            </tr>
+            <?php
+                if ($dadosAutoAvaliacao['quesito9'] != NULL) {
+                    echo "
+                        <tr>
+                            <td>
+                                <label>{$dadosAutoAvaliacao['quesito9']}</label>
+                            </td>
+                            <td>
+                                <label>{$dadosAutoAvaliacao['nota9']}</label>
+                            </td>
+                            <td>
+                                <label>{$dadosAutoAvaliacao['descricao9']}</label>
+                            </td>
+                        </tr>
+                    ";
+                }
+            ?>
+
         </table>
     </div>
 </div>
