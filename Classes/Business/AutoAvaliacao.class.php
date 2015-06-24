@@ -35,10 +35,21 @@ class AutoAvaliacao {
     
     
     /**
+     * editar
+     * Edita a autoAvaliacao do usuario selecionado.
      * 
+     * @param array
+     * @return int  
      */
-    public function editar(){
+    public function editar($dados){
+        /** @var int */
+        $id = $this->buscarID();        
         
+        /** @var array */
+        $dadosCompletos = array_merge($dados, array('id' => $id));
+        
+        /** @var int */
+        return $this->conexao->Editar($dadosCompletos);
     }
     
     /**
@@ -49,7 +60,8 @@ class AutoAvaliacao {
      */
     public function buscar() {
 
-        $query = "SELECT * FROM autoavaliacao as auto
+        $query = "SELECT auto.*
+                  FROM autoavaliacao as auto
                   INNER JOIN avaliacao as a
                   ON auto.idAvaliacao = a.id
                   WHERE referente = ? AND idUsuario = ?";
@@ -59,6 +71,26 @@ class AutoAvaliacao {
         $resultado = $this->conexao->Buscar($query, $dados);
         
         return $resultado[0];
+    }
+    
+    /**
+     * buscarID
+     * Retorna o id da autoAvaliacao do Usuario nesta avaliacao
+     * 
+     * @return int
+     */
+    private function buscarID(){
+        $query = "SELECT auto.id
+                  FROM autoavaliacao as auto
+                  INNER JOIN avaliacao as a
+                  ON auto.idAvaliacao = a.id
+                  WHERE referente = ? AND idUsuario = ?";
+        $dados = array($this->avaliacao, $this->idUsuario);
+
+        /** @var array */
+        $resultado = $this->conexao->Buscar($query, $dados);
+        
+        return $resultado[0]['id'];
     }
     
     /**

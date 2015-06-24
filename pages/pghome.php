@@ -188,7 +188,7 @@
 
         <!-- div para lightbox auto-avaliação. /-->
         <div id="lightbox-autoava" class="caixaAutoAva">
-            <form action="" class="frmAutoAva">
+            <form method="POST" class="frmAutoAva" id="frmAutoAva">
                 <div id="cabecalho-autoava">
                     <p>Auto-avaliação</p>
                     <a class="modal_close"></a>
@@ -205,10 +205,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito1']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota1" value="<?php echo $dadosAutoAvaliacao['nota1']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao1" value="<?php echo $dadosAutoAvaliacao['descricao1']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -216,10 +216,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito2']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota2" value="<?php echo $dadosAutoAvaliacao['nota2']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao2" value="<?php echo $dadosAutoAvaliacao['descricao2']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -227,10 +227,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito3']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota3" value="<?php echo $dadosAutoAvaliacao['nota3']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao3" value="<?php echo $dadosAutoAvaliacao['descricao3']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -238,10 +238,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito4']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota4" value="<?php echo $dadosAutoAvaliacao['nota4']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao4" value="<?php echo $dadosAutoAvaliacao['descricao4']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -249,10 +249,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito5']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota5" value="<?php echo $dadosAutoAvaliacao['nota5']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao5" value="<?php echo $dadosAutoAvaliacao['descricao5']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -260,10 +260,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito6']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota6" value="<?php echo $dadosAutoAvaliacao['nota6']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao6" value="<?php echo $dadosAutoAvaliacao['descricao6']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -271,10 +271,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito7']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota7" value="<?php echo $dadosAutoAvaliacao['nota7']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao7" value="<?php echo $dadosAutoAvaliacao['descricao7']; ?>">
                             </td>
                         </tr>
                         <tr>
@@ -282,10 +282,10 @@
                                 <p><?php echo $dadosAutoAvaliacao['quesito8']; ?></p>
                             </td>
                             <td class="auto-nota">
-                                <input type="text" maxlength="3" class="nota" name="np">
+                                <input type="text" maxlength="3" class="nota" name="nota8" value="<?php echo $dadosAutoAvaliacao['nota8']; ?>">
                             </td>
                             <td class="auto-obs">
-                                <input type="text" maxlength="255" class="obs" name="obs">
+                                <input type="text" maxlength="255" class="obs" name="descricao8" value="<?php echo $dadosAutoAvaliacao['descricao8']; ?>">
                             </td>
                         </tr>
                         <?php
@@ -296,17 +296,17 @@
                                             <p>{$dadosAutoAvaliacao['quesito9']}</p>
                                         </td>
                                         <td class='auto-nota'>
-                                            <input type='text' maxlength='3' class='nota' name='np'>
+                                            <input type='text' maxlength='3' class='nota' name='nota9' value='{$dadosAutoAvaliacao['nota9']}'>
                                         </td>
                                         <td class='auto-obs'>
-                                            <input type='text' maxlength='255' class='obs' name='obs'>
+                                            <input type='text' maxlength='255' class='obs' name='descricao9' value='{$dadosAutoAvaliacao['descricao9']}'>
                                         </td>
                                     </tr>
                                 ";
                             }
                         ?>
                     </table>
-                    <button id="salvar-autoava" type="submit">Salvar</button>
+                    <input id="salvar-autoava" type="submit" name="salvarAutoAva" value="Salvar" />
                 </div>
             </form>
         </div>

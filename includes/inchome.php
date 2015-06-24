@@ -43,6 +43,15 @@ $comentariosNegativos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]
 /** @var AutoAvaliacao */
 $autoAvalicao = AutoAvaliacao::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
 
+/** Recebe o formulario */
+$form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+if(isset($form['salvarAutoAva'])){
+    unset($form['salvarAutoAva']);
+    $autoAvalicao->editar($form);
+}
+
+
 /**
  * @var array
  * Dados da autoAvalicao do Usuario selecionado
