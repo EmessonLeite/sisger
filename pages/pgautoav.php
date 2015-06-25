@@ -15,9 +15,15 @@ include_once("../Classes/Config.inc.php");
             <div id="titulo-label">
                 <label id="titulo-autoava">Como eu me avaliaria</label>
             </div>
-            <a href="#lightbox-autoava" name="lightbox-autoava" rel="leanModal" id="edita-autoava">
-                <img id="lapis-positivo" src="../imagens/lapis-preto.png" style="color: #000000; position: relative; margin-left: 625px; margin-top: -15px;">
-            </a>
+            <?php
+                if ($idUsuario == $idUsuarioSelecionado) {
+                    echo "
+                        <a href='#lightbox-autoava' name='lightbox-autoava' rel='leanModal' id='edita-autoava'>
+                            <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='color: #000000; position: relative; margin-left: 625px; margin-top: -15px;'>
+                        </a>
+                    ";
+                }
+            ?>
         </div>
         <table id="autoava" cellspacing="0" cellpadding="0">
             <tr>
