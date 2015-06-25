@@ -92,6 +92,27 @@ class Avaliacao {
 
         return $retorno;
     }
+    
+    /**
+     * checarUsuarioAvaliacao
+     * Verifica se o usuario esta cadastrado nesta avaliacao
+     * 
+     * @param int $idUsuario ID do usuario selecionado
+     * @return bool
+     */
+    public function checarUsuarioAvaliacao($idUsuario){
+        $query = "SELECT COUNT(*) as qtd
+                  FROM usuarioavaliacao ua
+                  LEFT JOIN avaliacao a
+                  ON ua.idAvaliacao = a.id
+                  WHERE referente = ? AND idUsuario = ?";
+        
+        $dados = array($this->avaliacao, $idUsuario);
+        
+        $retorno = $this->conexao->Buscar($query, $dados);
+        
+        return $retorno[0]['qtd'];
+    }
 
     /**
      * getInstance

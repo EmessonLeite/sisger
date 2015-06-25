@@ -1,4 +1,5 @@
 <?php
+
 /** @var Usuario */
 $usuarioBusiness = Usuario::getInstance();
 
@@ -32,7 +33,7 @@ $usuariosAvaliacao = $usuarioBusiness->buscarTodos($avaliacao[0]['referente']);
 $avaliacoes = $avaliacaoBusiness->buscarTodas();
 
 /** @var string URL para pgInfogerais */
-$infoURL = "?referencia={$avaliacao[0]['referente']}&id={$idUsuarioSelecionado}" ;
+$infoURL = "?referencia={$avaliacao[0]['referente']}&id={$idUsuarioSelecionado}";
 
 /** @var array Comentarios negativos deste usuario nesta avaliacao */
 $comentariosPositivos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]['id'], '1');
@@ -41,17 +42,19 @@ $comentariosPositivos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]
 $comentariosNegativos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]['id'], '0');
 
 /** @var AutoAvaliacao */
-$autoAvalicao = AutoAvaliacao::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
+if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
+    $autoAvalicao = AutoAvaliacao::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
+}
 
 /** Recebe o formulario */
 $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-if(isset($form['salvarAutoAva'])){
+if (isset($form['salvarAutoAva'])) {
     unset($form['salvarAutoAva']);
     $autoAvalicao->editar($form);
     $conteudoIframe = "includes/incautoav.php{$infoURL}";
     $geral = false;
-}else{
+} else {
     $conteudoIframe = "includes/incinfogerais.php{$infoURL}";
     $geral = true;
 }
@@ -60,8 +63,12 @@ if(isset($form['salvarAutoAva'])){
  * @var array
  * Dados da autoAvalicao do Usuario selecionado
  */
-$dadosAutoAvaliacao = $autoAvalicao->buscar();
+if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
+    $dadosAutoAvaliacao = $autoAvalicao->buscar();
+}
 
+/** Verificar se o usuario logado esta cadastrado na avaliacao atual */
+$usuarioCadastrado = $avaliacaoBusiness->checarUsuarioAvaliacao($idUsuario);
 
 /** Include a pagina home */
 include_once('pages/pghome.php');

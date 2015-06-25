@@ -46,10 +46,10 @@ $(document).ready(function () {
     $('#conteudo').load(function () {
         /** Recebe o tamanho do conteudo do iframe */
         var tamanho = $('#conteudo').contents().find('.tbConteudo').height();
-        
+
         /** Caso o tamanho do conteudo seja maior 390, o tamanho do iframe é aumentado  */
-        if(tamanho != null && tamanho > 390){
-            $('iframe.conteudos').css('height', (tamanho + 15) + 'px');
+        if(tamanho != null && tamanho > 380){
+            $('iframe.conteudos').css('height', (tamanho + 25) + 'px');
         }else{
             $('iframe.conteudos').css('height', '390px');
         }
@@ -97,14 +97,6 @@ $(document).ready(function () {
      */
     $('.info').click(function () {
         mudarCor(this);
-    });
-
-
-    /**
-     * 
-     */
-    $("#lista-pessoas").scroll(function () {
-        alert('dfgh');
     });
 
     /**

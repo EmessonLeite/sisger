@@ -10,7 +10,7 @@
         <select id="avaliacoes">
             <option value="0">Selecione a avaliação</option>
             <?php foreach ($avaliacoes as $av) { ?>
-                <option <?php echo ($av['referente'] == $avaliacao[0]['referente'] ? "selected" : "") ?> value="<?php echo $av['id']; ?>"><?php echo $av['referente']; ?></option>
+                <option <?php echo ($av['referente'] == $avaliacao[0]['referente'] ? "selected" : "") ?> value="<?php echo $idUsuarioSelecionado; ?>"><?php echo $av['referente']; ?></option>
             <?php } ?>
         </select>
         <img id="informacoes" src="imagens/informacoes.png">
@@ -60,19 +60,20 @@
         </div>
     </div>    
     <div id="menu">
-        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info <?php echo ($geral) ? 'clicado' : 'naoClicado' ; ?>" name="infog" target="conteudos">Informações gerais</a>
+        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info <?php echo ($geral) ? 'clicado' : 'naoClicado'; ?>" name="infog" target="conteudos">Informações gerais</a>
         <?php
         if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
 
-            echo "<a href='includes/incautoav.php{$infoURL}' class='info " . ((!$geral) ? 'clicado' : 'naoClicado') . "' name='autoav' target='conteudos'>Como eu me avaliaria</a>";
+            echo "<a href='includes/incautoav.php{$infoURL}' class='info " . ((!$geral) ? 'clicado' : 'naoClicado') . "' name='autoav' target='conteudos'>Como eu me avaliaria</a>
+                  <a href='includes/incavaliacaoPassada.php{$infoURL}' class='info naoClicado' name='avpassada' target='conteudos'>Avaliação passada</a>";
         }
         ?>
-        <a href="includes/incavaliacaoPassada.php<?php echo $infoURL; ?>" class="info naoClicado" name="avpassada" target="conteudos">Avaliação passada</a>
+
     </div>
     <iframe src="<?php echo $conteudoIframe; ?>" class="conteudos" scrolling="no" id="conteudo" name="conteudos" ></iframe>
     <?php
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
-        if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {
+        if ((($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) && $usuarioCadastrado) {
             echo "
                 <div id='comentario-negativo'>
                     <div id='titulo-negativo'>
@@ -91,8 +92,7 @@
                     </div>
                 </div>
             ";
-        }
-        else {
+        } else {
             echo "<div id='erro' style='margin-top: 20px; margin-bottom: 20px;'>Não pode adicionar comentários pois a avaliação já foi fechada.</div>";
             echo "
                 <div id='comentario-negativo'>
@@ -110,31 +110,30 @@
         ?>
         <?php
         if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {
-
-        }
-        else {
+            
+        } else {
             echo "
              <table id='tbl-comentario'>
                 <tr>
                     <td id='negativo'>
                     ";
-                        foreach ($comentariosNegativos as $c) {
-                            echo "
+            foreach ($comentariosNegativos as $c) {
+                echo "
                             <p class='comentario'>{$c['comentario']}
                             </p>
                             ";
-                        }
-                        echo "
+            }
+            echo "
                     </td>
 
                     <td id='positivo'>
                     ";
-                        foreach ($comentariosPositivos as $c) {
-                            echo "
+            foreach ($comentariosPositivos as $c) {
+                echo "
                             <p class='comentario'>{$c['comentario']}
                             </p>
                             ";
-                        }
+            }
             echo "
                     </td>
                 </tr>
@@ -289,8 +288,8 @@
                             </td>
                         </tr>
                         <?php
-                            if ($dadosAutoAvaliacao['quesito9'] != NULL) {
-                                echo "
+                        if ($dadosAutoAvaliacao['quesito9'] != NULL) {
+                            echo "
                                     <tr>
                                         <td class='auto-quesito'>
                                             <p>{$dadosAutoAvaliacao['quesito9']}</p>
@@ -303,7 +302,7 @@
                                         </td>
                                     </tr>
                                 ";
-                            }
+                        }
                         ?>
                     </table>
                     <input id="salvar-autoava" type="submit" name="salvarAutoAva" value="Salvar" />
