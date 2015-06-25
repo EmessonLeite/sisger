@@ -44,6 +44,16 @@ $(document).ready(function () {
      * Clique do botão de auto avalicao dentro do iframe conteudo
      */
     $('#conteudo').load(function () {
+        /** Recebe o tamanho do conteudo do iframe */
+        var tamanho = $('#conteudo').contents().find('.tbConteudo').height();
+        
+        /** Caso o tamanho do conteudo seja maior 390, o tamanho do iframe é aumentado  */
+        if(tamanho != null && tamanho > 390){
+            $('iframe.conteudos').css('height', (tamanho + 15) + 'px');
+        }else{
+            $('iframe.conteudos').css('height', '390px');
+        }
+        
         $('#conteudo').contents().find('#edita-autoava').click(function () {
             $('#edita-autoava-click').click();
         });

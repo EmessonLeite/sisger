@@ -9,7 +9,7 @@ include_once("../Classes/Config.inc.php");
 <script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
 <link rel='stylesheet' type='text/css' href='../css/lightBox.css'>
 
-<div id="tabela-auto">
+<div id="tabela-auto" class="tbConteudo">
     <div id="toda-autoava">
         <div id="titulo">
             <div id="titulo-label">

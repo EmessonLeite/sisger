@@ -2,7 +2,7 @@
 
 ?>
 <link rel='stylesheet' href='../css/avaliacaoPassada.css'/>
-<div id="tabela-ava-passada">
+<div id="tabela-ava-passada" class="tbConteudo">
     <div id="toda-ava-passada">
         <div id="titulo">
             <label>Avaliação Passada</label>

@@ -1,5 +1,5 @@
 <link rel='stylesheet' href='../css/infogerais.css'/>
-<div id="tabela-inf">
+<div id="tabela-inf" class="tbConteudo">
     <div id="toda-infogerais">
         <div id="titulo">
             <label>Informações gerais</label>

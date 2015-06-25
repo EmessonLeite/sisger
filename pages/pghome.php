@@ -60,16 +60,16 @@
         </div>
     </div>    
     <div id="menu">
-        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info clicado" name="infog" target="conteudos">Informações gerais</a>
+        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info <?php echo ($geral) ? 'clicado' : 'naoClicado' ; ?>" name="infog" target="conteudos">Informações gerais</a>
         <?php
         if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
 
-            echo "<a href='includes/incautoav.php{$infoURL}' class='info naoClicado' name='autoav' target='conteudos'>Como eu me avaliaria</a>";
+            echo "<a href='includes/incautoav.php{$infoURL}' class='info " . ((!$geral) ? 'clicado' : 'naoClicado') . "' name='autoav' target='conteudos'>Como eu me avaliaria</a>";
         }
         ?>
         <a href="includes/incavaliacaoPassada.php<?php echo $infoURL; ?>" class="info naoClicado" name="avpassada" target="conteudos">Avaliação passada</a>
     </div>
-    <iframe src="includes/incinfogerais.php<?php echo $infoURL; ?>" class="conteudos" id="conteudo" scrolling="yes" name="conteudos" ></iframe>
+    <iframe src="<?php echo $conteudoIframe; ?>" class="conteudos" scrolling="no" id="conteudo" name="conteudos" ></iframe>
     <?php
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
         if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {

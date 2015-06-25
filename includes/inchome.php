@@ -49,8 +49,12 @@ $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 if(isset($form['salvarAutoAva'])){
     unset($form['salvarAutoAva']);
     $autoAvalicao->editar($form);
+    $conteudoIframe = "includes/incautoav.php{$infoURL}";
+    $geral = false;
+}else{
+    $conteudoIframe = "includes/incinfogerais.php{$infoURL}";
+    $geral = true;
 }
-
 
 /**
  * @var array

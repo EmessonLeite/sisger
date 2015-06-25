@@ -281,20 +281,14 @@ a.info {
 
 iframe.conteudos {
      position: relative;
+     overflow-x: hidden;
+     overflow-y: scroll;
      background-color: #ffffff;
      width: 675px;
-     min-height: 382px;
+     height: 390px;
      margin-left: 24px;
      z-index: 0;
-
  }
-iframe.conteudos::-webkit-scrollbar{
-    display: none;
-}
-
-/**
- *
- */
 
 div#comentario-negativo {
     position: relative;
