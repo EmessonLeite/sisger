@@ -12,8 +12,8 @@
         <link rel='stylesheet' type='text/css' href='css/lightBox.css'>
         <link rel="shortcut icon" href="imagens/icon.ico" type="image/gif">
         <?php
-            echo $arqJS;
-            echo $arqCSS;
+        echo $arqJS;
+        echo $arqCSS;
         ?>
     </head>
     <body>
@@ -32,8 +32,8 @@
             <div id="icons">
                 <a><img id="config" src="imagens/config.png"></a>
                 <div id="drop-config">
-                    <img id="seta-cima" width="15" height="10" src="imagens/seta-pra-cima.png">
-                    <a href="#"><p>Configurar perfil</p></a>
+                    <img id="seta-cima" width="15" height="10" src="imagens/seta-cima-config.png">
+                    <a href="#"><p style="padding-top: 0">Configurar perfil</p></a>
                     <a href="#"><p>Cadastrar funcionário</p></a>
                     <a href="#"><p>Cadastrar cargo</p></a>
                     <a href="#"><p>Cadastrar avaliação</p></a>
