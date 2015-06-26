@@ -33,10 +33,10 @@
                 <a><img id="config" src="imagens/config.png"></a>
                 <div id="drop-config">
                     <img id="seta-cima" width="15" height="10" src="imagens/seta-cima-config.png">
-                    <a href="#"><p style="padding-top: 0">Configurar perfil</p></a>
-                    <a href="#"><p>Cadastrar funcionário</p></a>
-                    <a href="#"><p>Cadastrar cargo</p></a>
-                    <a href="#"><p>Cadastrar avaliação</p></a>
+                    <a href="configPerfil"><p style="padding-top: 0">Configurar perfil</p></a>
+                    <a href="cadastraFunc"><p>Cadastrar funcionário</p></a>
+                    <a href="cadastraCargo"><p>Cadastrar cargo</p></a>
+                    <a href="cadastraAva"><p>Cadastrar avaliação</p></a>
                 </div>
                 <a href="logout"> <img src="imagens/sair.png"></a>
             </div>
