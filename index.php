@@ -3,27 +3,38 @@
 /** Inclui o arquivo de configurações gerais do projeto */
 include_once('Classes/config.inc.php');
 
-/** @var Url*/
+/** @var Url */
 $url = Url::getInstance();
 
+/** @var Permissao */
+$permissao = Permissao::getInstance();
 
 if ($url->getURL(0) == 'recuperaSenha') {
     include_once("includes/inc{$url->getURL(0)}.php");
-}
-else if ($url->getURL(0) == 'redefine'){
+} else if ($url->getURL(0) == 'redefine') {
     include_once("includes/inc{$url->getURL(0)}.php");
-}
-else {
+} else {
     if ($url->getURL(0) != 'login') {
         session_start();
 
-        /**Verifica se a sessão existe */
+        /*         * Verifica se a sessão existe */
         if (isset($_SESSION['id']) && is_int($_SESSION['id']) && is_string($_SESSION['apelido'])) {
             /**
              * ID do usuario logado
              * @var int
              */
             $idUsuario = $_SESSION['id'];
+
+            /**
+             * Permissoes do usuario logado
+             * @var array
+             */
+            $p = $permissao->buscarPorUsuario($idUsuario);
+            $permissoes = array();
+
+            for ($i = 0; $i < count($p); $i++) {
+                $permissoes[$p[$i]['id']] = $p[$i]['nome'];
+            }
 
             /**
              * Apelido do usuario logado

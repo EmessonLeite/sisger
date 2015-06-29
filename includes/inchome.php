@@ -6,7 +6,6 @@ $usuarioBusiness = Usuario::getInstance();
 /** @var Comentario */
 $comentario = Comentario::getInstance();
 
-
 /**
  * Referencia da avaliacao selecionada para visualização
  * @var string 
