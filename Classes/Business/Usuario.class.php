@@ -77,6 +77,57 @@ class Usuario {
     }
 
     /**
+     * editar
+     * Recebe os dados do usuario e atualiza no banco
+     * 
+     * @param array
+     * @return string
+     */
+    public function editarSenha($idUsuario, $senhaAtual, $novaSenha, $confirmarSenha) {
+        if ($this->validarSenha($idUsuario, $senhaAtual)) {
+
+            if ($novaSenha == $confirmarSenha) {
+                /** */
+                $query = "UPDATE [tabela] SET senha = PASSWORD(?) WHERE id = ? ";
+
+                /** */
+                $dados = array($novaSenha, $idUsuario);
+
+                /** */
+                $this->conexao->Buscar($query, $dados);
+                $retorno = "ok";
+            } else {
+                $retorno = "A sua senha não confere.";
+            }
+        } else {
+            $retorno = "senha incorreta";
+        }
+        
+        return $retorno;
+    }
+
+    /**
+     * validarSenha
+     * Verifica se a senha informada esta correta
+     * 
+     * @param type $idUsuario ID do usuario logado
+     * @param type $senha Senha informada pelo usuario
+     * @return int
+     */
+    private function validarSenha($idUsuario, $senha) {
+        /** */
+        $query = "SELECT COUNT(*) as qtd FROM [tabela] WHERE id = ? AND senha = PASSWORD(?)";
+
+        /** */
+        $dados = array($idUsuario, $senha);
+
+        /** */
+        $retorno = $this->conexao->Buscar($query, $dados);
+
+        return $retorno[0]['qtd'];
+    }
+
+    /**
      * usuarioCadastrado
      * Verifica se o usuario esta cadastrado na avaliacao
      * 

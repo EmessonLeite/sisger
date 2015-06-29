@@ -33,7 +33,8 @@
                     <a><img id="config" src="imagens/config.png"></a>
                     <div id="drop-config">
                         <img id="seta-cima" width="15" height="10" src="imagens/seta-cima-config.png">
-                        <a href="configPerfil"><p style="padding-top: 0">Configurar perfil</p></a>
+                        <a href="alterarLogin"><p style="padding-top: 0">Alterar login</p></a>
+                        <a href="alterarSenha"><p style="padding-top: 0">Alterar senha</p></a>
                         <?php
                             /** Índice 1 no array de permissoes indica permissao de Gestão de funcionarios */
                             if (isset($permissoes[1])) {
