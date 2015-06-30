@@ -81,6 +81,8 @@ div#icons img#config:hover {
     cursor: pointer;
 }
 
+/*
+
 div#drop-config {
     position: absolute;
     width: auto;
@@ -98,7 +100,8 @@ div#drop-config {
 
 div#drop-config p {
     position: relative;
-    min-width: 190px;
+    width: 100%;
+    height: auto;
     color: white;
     padding-top: 5px;
     padding-bottom: 10px;
@@ -115,4 +118,62 @@ div#drop-config img#seta-cima {
     position: absolute;
     margin-top: -25px;
     margin-left: -5px;
+}
+*/
+
+div#drop-config {
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    background-color: #545454;
+    color: white;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    visibility: hidden;
+    border-radius: 3px;
+    margin-left: -114px;
+    margin-top: 7px;
+}
+
+div#drop-config p {
+    position: relative;
+    width: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    color: white;
+    border-bottom: 1px solid #666666;
+}
+
+div#drop-config p#alterarLogin {
+    padding-top: 0;
+}
+
+div#drop-config p#permissao1 {
+    width: 181px;
+}
+
+div#drop-config p#permissao2 {
+    width: 133px;
+}
+
+div#drop-config p#permissao3 {
+    width: 165px;
+}
+
+div#drop-config p#permissao4 {
+    width: 178px;
+}
+
+div#drop-config a:hover p:hover {
+    position: relative;
+    color: #b2b2b2;
+    text-decoration: underline;
+    padding-top: 5px;
+}
+
+div#drop-config img#seta-cima {
+    position: absolute;
+    margin-top: -25px;
+    margin-left: 103px;
 }
