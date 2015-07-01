@@ -1,4 +1,4 @@
-<form class="cadastro" id="alterarLogin">
+<form class="cadastro" id="simples">
     <div class="camposFormularioSimples">
         <p id="tituloPrincipal">Alterar Login de acesso</p>
 

@@ -17,7 +17,7 @@ form.cadastro{
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-form.cadastro *{
+form#simples *{
     display: block;
     float: none;
 }
@@ -81,6 +81,25 @@ div.camposFormularioCompleto {
     border-radius: 3px;
     padding-bottom: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form.cadastro p#tituloPrincipal {
+    position: relative;
+    font-size: 14pt;
+    color: #c36539;
+    margin-left: 20px;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+div.camposFormularioCompleto div.inputs{
+    display: inline-block;
+    width: 790px;
+}
+
+div.camposFormularioCompleto div.inputs div{
+    display: inline-block;
+    padding: 5px;
 }
 
 /**********************************************************************************************************************/

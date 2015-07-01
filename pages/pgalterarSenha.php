@@ -1,4 +1,4 @@
-<form class="cadastro" id="alterarSenha">
+<form class="cadastro" id="simples">
     <div class="camposFormularioSimples">
         <p id="tituloPrincipal">Alterar senha de acesso</p>
 
