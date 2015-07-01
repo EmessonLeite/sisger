@@ -6,15 +6,28 @@
  */
 Permissao::validar(isset($permissoes[1]));
 
+/** @var Usuario */
+$usuarioBusiness = Usuario::getInstance();
+
+
 /** Include o formulario de cadastro/edição de funcionarios */
 if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == 'editar')) {
+
+    /** Recebe o formulario */
+    $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    
+    if(isset($form['cadastrar'])){
+        unset($form['cadastrar']);
+        unset($form['tipo']);
+        $usuarioBusiness->cadastrar($form);
+        echo "<script>window.location = '" . RAIZ . "{$url->getURL(0)}';</script>";
+        exit;
+    }
+
     /** Include da pagina de configuração de perfil */
     include_once("pages/pgForm{$url->getURL(0)}.php");
     exit;
 }
-
-/** @var Usuario */
-$usuarioBusiness = Usuario::getInstance();
 
 /** @var array */
 $dadosUsuarios = $usuarioBusiness->buscar();

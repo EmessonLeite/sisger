@@ -14,6 +14,18 @@ class Usuario {
     }
     
     /**
+     * cadastrar
+     * Cadastra um novo usuario
+     * 
+     * @param array $dados
+     * @return int
+     */
+    public function cadastrar($dados){
+        return $this->conexao->Cadastrar($dados);
+    }
+    
+    
+    /**
      * buscar
      * retorna os usuarios cadastrados
      * 
