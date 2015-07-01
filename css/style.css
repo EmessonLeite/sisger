@@ -1,9 +1,20 @@
+/** Tamanha da fonte para o menu de configuração */
+p {
+    font-size: 14pt;
+}
+
+/**********************************************************************************************************************/
+
+/**
+ * Configurção para formulario de cadastro
+ */
 form.cadastro{
     background-color: #ebefe8;
     padding: 20px;
     width: 960px;
     min-height: 500px;
     margin: 0 auto;
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
 form.cadastro *{
@@ -11,7 +22,221 @@ form.cadastro *{
     float: none;
 }
 
-form.cadastro input[type=password], form.cadastro input[type=text]{
+form.cadastro input[type=password], form.cadastro input[type=text], form.cadastro input[type=email]{
     width: 300px;
     height: 25px;
+    margin: 5px 15px 15px 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
 }
+
+form.cadastro input[type=file] {
+    margin-left: 15px;
+}
+
+form.cadastro label {
+    margin: 15px 15px 0 15px;
+    color: #2e2e2e;
+}
+
+form.cadastro p#tituloPrincipal {
+    position: relative;
+    font-size: 14pt;
+    color: #c36539;
+    margin-left: 15px;
+    padding-top: 15px;
+}
+
+/**********************************************************************************************************************/
+
+/**
+ * Configurção para telas que possuem um cadastro simples
+ */
+
+div.camposFormularioSimples {
+    position: relative;
+    background-color: white;
+    width: 332px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/**********************************************************************************************************************/
+
+/**
+ * Configurção para telas que possuem um cadastro completo
+ */
+div.camposFormularioCompleto {
+    position: relative;
+    background-color: white;
+    width: 952px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/**********************************************************************************************************************/
+
+/**
+ * Configuração para telas que possuem listagem
+ */
+section.listagemCadastro {
+    background-color: #ebefe8;
+    padding: 20px;
+    width: 960px;
+    min-height: 500px;
+    margin: 0 auto;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+div.camposSection {
+    position: relative;
+    background-color: white;
+    width: 915px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+table.listagem {
+    position: relative;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 914px;
+}
+
+table.listagem td {
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+}
+
+table.listagem th {
+    background-color: #545454;
+    border: 1px solid #c9c9c9;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+table.listagem tr:nth-child(odd)  td {
+    background-color: #f1f1f1;
+    color: #797979;
+}
+
+table.listagem tr:nth-child(even) td {
+    background-color: #ffffff;
+    color: #797979;
+}
+
+table.listagem tr:hover td {
+    background: #797979;
+    color: #fff;
+}
+
+table.listagem tr td a {
+    color: #c36539;
+    text-decoration: underline;
+}
+
+table.listagem tr:hover td a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/**********************************************************************************************************************/
+
+/**
+ * Configuração geral para os botões
+ */
+
+/*
+div.paginacao {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+}
+
+div.paginacao input[type=text] {
+    width: 30px;
+    height: 28px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #c9c9c9;
+    font-size: 16px;
+}
+*/
+
+.alterar {
+    position: relative;
+    width: auto;
+    background: #c36539;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 4px 10px;
+    margin: 15px;
+}
+
+.novo {
+    position: relative;
+    width: auto;
+    background: #c36539;
+    color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    font-size: 13pt;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin: 0 15px 15px 0;
+}
+
+.pesquisa {
+    width: 230px;
+    height: 10px;
+    border-radius: 15px;
+    border: 1px solid #c9c9c9;
+    background-image: url('../imagens/lupa.gif');
+    background-repeat: no-repeat;
+    background-position: 245px;
+    padding: 10px 35px 10px 10px;
+    float: right;
+}
+
+/*
+.btnPaginacao {
+    position: relative;
+    width: 30px;
+    height: 28px;
+    border: 1px solid #cfcfcf;
+    background: #f1f1f1;
+    color: #797979;
+    cursor: pointer;
+    font-size: 10pt;
+    border-radius: 50px;
+    letter-spacing: -5px;
+    padding: 5px;
+    padding-left: 0;
+}
+*/
+
+/**********************************************************************************************************************/

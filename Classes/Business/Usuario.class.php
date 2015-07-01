@@ -34,6 +34,7 @@ class Usuario {
                   FROM usuarios as u
                   LEFT JOIN cargos as c
                   ON u.cargo = c.id
+                  ORDER BY c.ordem ASC, u.nome ASC
         {$filtro}";
         
         /** Executa e retorna a consulta */

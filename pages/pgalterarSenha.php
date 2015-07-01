@@ -1,15 +1,17 @@
 <form class="cadastro" id="alterarSenha">
-    <h1>Alterar senha de acesso</h1>
-    
-    <label for="senhaAtual">Senha atual:</label>
-    <input type="password" name="senhaAtual" />
-    
-    <label for="novaSenha">Nova senha:</label>
-    <input type="password" name="novaSenha" />
-    
-    <label for="confirmarSenha">Confirmar senha:</label>
-    <input type="password" name="confirmarSenha" />
-    
-    <input name="enviar" type="submit" value="Alterar" />
-    <p id="info"></p>
+    <div class="camposFormularioSimples">
+        <p id="tituloPrincipal">Alterar senha de acesso</p>
+
+        <label for="senhaAtual">Senha atual:</label>
+        <input type="password" name="senhaAtual" />
+
+        <label for="novaSenha">Nova senha:</label>
+        <input type="password" name="novaSenha" />
+
+        <label for="confirmarSenha">Confirmar senha:</label>
+        <input type="password" name="confirmarSenha" />
+
+        <input name="enviar" class="alterar" type="submit" value="Alterar" />
+        <p id="info"></p>
+    </div>
 </form>
