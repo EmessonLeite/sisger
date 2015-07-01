@@ -6,5 +6,10 @@
  */
 Permissao::validar(isset($permissoes[1]));
 
+/** @var Usuario */
+$usuarioBusiness = Usuario::getInstance();
+
+$dadosUsuarios = $usuarioBusiness->buscar();
+
 /** Include da pagina de configuração de perfil */
 include_once('pages/pgcadastraFunc.php');

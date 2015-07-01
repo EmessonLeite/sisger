@@ -12,6 +12,33 @@ class Usuario {
     public function __construct() {
         $this->conexao = new ConexaoDAO('usuarios');
     }
+    
+    /**
+     * buscar
+     * retorna os usuarios cadastrados
+     * 
+     * @param array $dados que serão usuados para filtrar 
+     * @return array
+     */
+    public function buscar($dados = array()){
+        
+        /** @var string */
+        $filtro = "";
+        
+        /** Monta o filtro na consulta */
+        if(count($dados) > 0){
+            $filtro = 'WHERE ' . implode(' = ?, ', array_keys($dados)) . ' = ?';
+        }
+        /** Consulta para retornar os usuarios */
+        $query = "SELECT u.*, c.cargo
+                  FROM usuarios as u
+                  LEFT JOIN cargos as c
+                  ON u.cargo = c.id
+        {$filtro}";
+        
+        /** Executa e retorna a consulta */
+        return $this->conexao->Buscar($query, $dados);
+    }
 
     /**
      * buscarTodos
@@ -87,23 +114,46 @@ class Usuario {
         if ($this->validarSenha($idUsuario, $senhaAtual)) {
 
             if ($novaSenha == $confirmarSenha) {
-                /** */
+                /** Query para alterar senha */
                 $query = "UPDATE [tabela] SET senha = PASSWORD(?) WHERE id = ? ";
 
-                /** */
+                /** Dados para alterar a senha */
                 $dados = array($novaSenha, $idUsuario);
 
-                /** */
+                /** Executa a ação no banco */
                 $this->conexao->Buscar($query, $dados);
-                $retorno = "ok";
+                $retorno = "true";
+                
+            } elseif ($novaSenha != "") {
+                $retorno = "O campo senha não pode ser vazio.";
             } else {
-                $retorno = "A sua senha não confere.";
+                $retorno = "Os campos \"nova senha\" e \"confirmar nova senha\" não conferem, por favor, preencha novamente.";
             }
         } else {
-            $retorno = "senha incorreta";
+            $retorno = "A senha atual não está correta, por favor, preencha novamente com a sua senha atual.";
         }
-        
+
         return $retorno;
+    }
+    
+    /**
+     * editarLogin
+     * Alterar o login de um usuario
+     * 
+     * @param int $idUsuario ID do usuario selecionado
+     * @param string $novoLogin login que será atualizado no banco
+     * @return int
+     */
+    public function editarLogin($idUsuario, $novoLogin){
+        /** Query para atualiza o login do usuario */
+        $query = "UPDATE [tabela] SET login = ? WHERE id = ?";
+        
+        /** Parametros para a consulta */
+        $dados = array($novoLogin, $idUsuario);
+        
+        /** Executar a consulta no banco */
+        $this->conexao->Buscar($query, $dados);
+        return "true";
     }
 
     /**
@@ -115,13 +165,13 @@ class Usuario {
      * @return int
      */
     private function validarSenha($idUsuario, $senha) {
-        /** */
+        /** Query para verificar se a senha esta correta */
         $query = "SELECT COUNT(*) as qtd FROM [tabela] WHERE id = ? AND senha = PASSWORD(?)";
 
-        /** */
+        /** Parametros para a query */
         $dados = array($idUsuario, $senha);
 
-        /** */
+        /** Executa a consulta */
         $retorno = $this->conexao->Buscar($query, $dados);
 
         return $retorno[0]['qtd'];

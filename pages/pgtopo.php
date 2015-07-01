@@ -4,17 +4,16 @@
         <meta charset="utf-8">
         <base href="<?php echo RAIZ; ?>" target="_self">
         <title>Pré-avaliação</title>
+        <link rel='stylesheet' type='text/css' href='css/style.css'>
+        <link rel='stylesheet' type='text/css' href='css/topo.css'>
+        <link rel='stylesheet' type='text/css' href='css/lightBox.css'>
+        <?php echo $arqCSS; ?>
         <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js"></script>
         <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
         <script type="text/javascript" src="js/topo.js"></script>
-        <link rel='stylesheet' type='text/css' href='css/topo.css'>
-        <link rel='stylesheet' type='text/css' href='css/lightBox.css'>
+        <?php echo $arqJS; ?>
         <link rel="shortcut icon" href="imagens/icon.ico" type="image/gif">
-        <?php
-        echo $arqJS;
-        echo $arqCSS;
-        ?>
     </head>
     <body>
         <input type="hidden" value="<?php echo RAIZ; ?>" id="raiz" />
@@ -43,20 +42,19 @@
                         }
 
                         /** Índice 2 no array de permissoes indica permissao de Gestão de cargos */
-                        if(isset($permissoes[2])){
+                        if (isset($permissoes[2])) {
                             echo '<a href="cadastraCargo"><p id="permissao2">Cadastrar cargo</p></a>';
                         }
 
                         /** Índice 3 no array de permissoes indica permissao de Gestão de avaliação */
-                        if(isset($permissoes[3])){
+                        if (isset($permissoes[3])) {
                             echo '<a href="cadastraAva"><p id="permissao3">Cadastrar avaliação</p></a>';
                         }
 
                         /** Índice 4 no array de permissoes indica permissao de Gestão de Permissões */
-                        if(isset($permissoes[4])){
+                        if (isset($permissoes[4])) {
                             echo '<a href="cadastraPermissoes"><p id="permissao4">Cadastrar Permissões</p></a>';
                         }
-
                         ?>
                     </div>
                 </div>

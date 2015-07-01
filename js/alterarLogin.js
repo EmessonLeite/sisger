@@ -1,13 +1,11 @@
 $(document).ready(function () {
-    $('form#alterarSenha').submit(function () {
-        var iSenhaAtual = $('input[name=senhaAtual]').val();
-        var iNovaSenha = $('input[name=novaSenha]').val();
-        var iConfirmarSenha = $('input[name=confirmarSenha]').val();
-
+    $('form#alterarLogin').submit(function () {
+        var iLogin = $('input[name=login]').val();
+        
         $.ajax({
             method: "POST",
-            url: "responses/resalterarSenha.php",
-            data: {senhaAtual: iSenhaAtual, novaSenha: iNovaSenha, confirmarSenha: iConfirmarSenha}
+            url: "responses/resalterarLogin.php",
+            data: {login: iLogin}
         })
                 .done(function (resultado) {
                     if (resultado == "true") {

@@ -1,0 +1,17 @@
+form.cadastro{
+    background-color: #ebefe8;
+    padding: 20px;
+    width: 960px;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+form.cadastro *{
+    display: block;
+    float: none;
+}
+
+form.cadastro input[type=password], form.cadastro input[type=text]{
+    width: 300px;
+    height: 25px;
+}
