@@ -22,7 +22,7 @@ form.cadastro *{
     float: none;
 }
 
-form.cadastro input[type=password], form.cadastro input[type=text], form.cadastro input[type=email]{
+form.cadastro input[type=password], form.cadastro input[type=text], form.cadastro input[type=email], form.cadastro select{
     width: 300px;
     height: 25px;
     margin: 5px 15px 15px 15px;
