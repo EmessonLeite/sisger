@@ -20,7 +20,7 @@
                         <td>{$usuario['email']}</td>
                         <td>{$usuario['cargo']}</td>
                         <td><a href='{$url->getURL(0)}/editar/{$usuario['id']}'>Editar</a></td>
-                        <td><a href='{$url->getURL(0)}/excluir/{$usuario['id']}'>Excluir</a></td>
+                        <td><a class='exluirFuncionario' href='{$usuario['id']}'>Excluir</a></td>
                     </tr>
                 ";
             }
@@ -35,4 +35,25 @@
             </div>
         /-->
     </div>
+    <a href='#frmExcluir' name='frmExcluir' rel='leanModal' id='btnExcluir'>TESTE</a>
 </section>
+
+<script>
+    $(".caixaComentarios").draggable();
+    $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
+</script>
+
+<div id="frmExcluir" class="caixaComentarios">
+    <form action="" class="frmComentarios">
+        <div>
+            <p>Excluir funcionario</p>
+            <a class="modal_close"></a>
+        </div>
+        <div>
+            <p>Deseja excluir este usuario?</p>
+            <input type="button" value="Excluir" id="confirmarExcluir" />
+            <input type="hidden" id="idUsuarioExcluido" />
+            <input type="button" value="Cancelar" />
+        </div>
+    </form>
+</div>

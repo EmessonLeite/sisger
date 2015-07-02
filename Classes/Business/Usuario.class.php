@@ -21,7 +21,39 @@ class Usuario {
      * @return int
      */
     public function cadastrar($dados){
+        
+        if(isset($dados['dataEntrada'])){
+            $dados['dataEntrada'] = datasql($dados['dataEntrada']);
+        }
+        
         return $this->conexao->Cadastrar($dados);
+    }
+    
+    /**
+     * editar
+     * Editar um usuario existente
+     * 
+     * @param array $dados
+     * @return int
+     */
+    public function editar($dados){
+        
+        if(isset($dados['dataEntrada'])){
+            $dados['dataEntrada'] = datasql($dados['dataEntrada']);
+        }
+        
+        return $this->conexao->Editar($dados);
+    }
+    
+    /**
+     * excluir
+     * Exclui um usuario existente
+     * 
+     * @param int
+     * @return int
+     */
+    public function excluir($id){
+        return $this->conexao->Deletar($id);
     }
     
     
@@ -94,7 +126,7 @@ class Usuario {
      * @return array
      */
     public function buscarPorID($id) {
-        $query = "SELECT id, nome, login, foto, apelido, DATE_FORMAT(dataEntrada, '%d/%m/%Y') dataEntrada, telefone, email FROM [tabela] WHERE id = ?";
+        $query = "SELECT id, nome, login, foto, apelido, DATE_FORMAT(dataEntrada, '%d/%m/%Y') dataEntrada, telefone, email, cargo FROM [tabela] WHERE id = ?";
         $dados = array($id);
         return $this->conexao->Buscar($query, $dados);
     }
