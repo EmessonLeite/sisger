@@ -10,9 +10,11 @@
         <?php echo $arqCSS; ?>
         <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
         <script src="js/jquery.mask.js" type="text/javascript"></script>
+        <script src="js/mascaras.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js"></script>
         <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
         <script type="text/javascript" src="js/topo.js"></script>
+        <script type="text/javascript" src="js/datepicker-pt-br.js"></script>
         <?php echo $arqJS; ?>
         <link rel="shortcut icon" href="imagens/icon.ico" type="image/gif">
     </head>

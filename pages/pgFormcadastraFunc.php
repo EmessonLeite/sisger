@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<!--<link rel="stylesheet" href="css/jquery-ui.css">/-->
+
+<script>
+    $(function() {
+        $( "#datepicker" ).datepicker($.datepicker.regional["pt-BR"]);
+    });
+</script>
+
 <section>
     <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">
         <div class="camposFormularioCompleto">
@@ -30,7 +39,7 @@
 
                 <div>
                     <label for="apelido">Data de entrada</label><br/>
-                    <input type="text" class="date" name="dataEntrada" value="" />
+                    <input type="text" id="datepicker" class="date" name="dataEntrada" value="" />
                 </div>
 
                 <div>
