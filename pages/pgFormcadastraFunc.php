@@ -1,5 +1,5 @@
 <section>
-    <form class="cadastro" id="completo" name="formUsuario" method="POST">
+    <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">
         <div class="camposFormularioCompleto">
             <div class="inputs">
                 <p id="tituloPrincipal">Cadastro de funcionário</p>
@@ -25,7 +25,7 @@
 
                 <div>
                     <label for="apelido">Foto</label><br/>
-                    <input type="file" disabled="disabled" name="foto" value="" />
+                    <input type="file" name="foto" value="" />
                 </div>
 
                 <div>

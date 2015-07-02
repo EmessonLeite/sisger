@@ -15,18 +15,32 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     /** Recebe o formulario */
     $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
+    
+    
     /** Verifica se o form foi enviado */
     if (isset($form['cadastrar'])) {
 
         /** Remove o indice cadastrar da array */
         unset($form['cadastrar']);
-
+        
         /** Verifica se o form é de cadastro ou atualização */
         if ($form['tipo'] == 'novo') {
             /** Remove o indice tipo da array */
             unset($form['tipo']);
-
+            
+            $foto = $_FILES["foto"];
+//            /var_dump($foto);
+            if (!empty($foto["name"])) {
+                preg_match("/\.(gif|bmp|png|jpg|jpeg|ico){1}$/i", $foto["name"], $ext);
+ 
+        	// Gera um nome único para a imagem
+        	$nome_imagem = md5(uniqid(time())) . "." . $ext[1];
+ 
+        	// Caminho de onde ficará a imagem
+        	$caminho_imagem = "imagens/perfil/" . $nome_imagem;
+ 
+			// Faz o upload da imagem para seu respectivo caminho
+            move_uploaded_file($foto["tmp_name"], $caminho_imagem);}
             /** Executa o cadastro do usuario */
             $usuarioBusiness->cadastrar($form);
         } else {
