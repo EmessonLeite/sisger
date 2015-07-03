@@ -22,11 +22,7 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
         /** Remove o indice cadastrar da array */
         unset($form['cadastrar']);
 
-        /** Verifica se o form é de cadastro ou atualização */
-        if ($form['tipo'] == 'novo') {
-            /** Remove o indice tipo da array */
-            unset($form['tipo']);
-
+        if (isset($_FILES["foto"])) {
             $foto = $_FILES["foto"];
 
             if (!empty($foto["name"])) {
@@ -40,7 +36,24 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
                 // Faz o upload da imagem para seu respectivo caminho
                 move_uploaded_file($foto["tmp_name"], $caminho_imagem);
+
+                if ($url->getURL(1) == 'editar') {
+                    $dadosUsuario = $usuarioBusiness->buscarPorID($form['id']);
+
+                    if ($dadosUsuario[0]['foto'] != 'default.jpg') {
+                        unlink('imagens/perfil/' . $dadosUsuario[0]['foto']);
+                    }
+                }
+
+                $form['foto'] = $nome_imagem;
             }
+        }
+
+        /** Verifica se o form é de cadastro ou atualização */
+        if ($form['tipo'] == 'novo') {
+            /** Remove o indice tipo da array */
+            unset($form['tipo']);
+
             /** Executa o cadastro do usuario */
             $usuarioBusiness->cadastrar($form);
         } else {
@@ -58,6 +71,10 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     if ($url->getURL(1) == 'editar') {
         $dadosUsuario = $usuarioBusiness->buscarPorID($url->getURL(2));
+        /** Definindo url da foto */
+        $foto = $dadosUsuario[0]['foto'];
+    } else {
+        $foto = "default.jpg";
     }
 
     /** @var Cargo */

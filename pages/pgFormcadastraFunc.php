@@ -1,19 +1,20 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <!--<link rel="stylesheet" href="css/jquery-ui.css">/-->
-
-<script>
-    $(function() {
-        $( "#datepicker" ).datepicker($.datepicker.regional["pt-BR"]);
-    });
-</script>
-
 <section>
     <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">
         <div class="camposFormularioCompleto">
             <div class="inputs">
                 <p id="tituloPrincipal">Cadastro de funcionário</p>
-
-                <input type="hidden" name="tipo" value="novo" />
+                <div>
+                    <img src="imagens/perfil/<?php echo $foto; ?>" alt="" id="fotoAtual" />
+                </div>
+                
+                <div>
+                    <label for="foto">Foto</label><br/>
+                    <input type="file" name="foto" />
+                </div>
+                
+                <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
                 
                 <?php
                     echo (isset($dadosUsuario[0]['id'])) ?  "<input type='hidden' name='id' value='{$dadosUsuario[0]['id']}'>" : "" ;
@@ -32,43 +33,48 @@
                 </div>
 
                 <div>
-                    <label for="apelido">Login</label><br/>
+                    <label for="login">Login</label><br/>
                     <input type="text" name="login" value="<?php echo (isset($dadosUsuario[0]['login'])) ? $dadosUsuario[0]['login'] : ""; ?>" />
                 </div>
 
-                <div>
-                    <label for="apelido">Foto</label><br/>
-                    <input type="file" name="foto" value="" />
-                </div>
+                
 
                 <div>
-                    <label for="apelido">Data de entrada</label><br/>
+                    <label for="dataEntrada">Data de entrada</label><br/>
                     <input type="text" id="datepicker" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">E-mail</label><br/>
+                    <label for="email">E-mail</label><br/>
                     <input type="email" name="email" value="<?php echo (isset($dadosUsuario[0]['email'])) ? $dadosUsuario[0]['email'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">Telefone</label><br/>
+                    <label for="telefone">Telefone</label><br/>
                     <input type="text" class="fone" name="telefone" value="<?php echo (isset($dadosUsuario[0]['telefone'])) ? $dadosUsuario[0]['telefone'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">Cargo</label><br/>
+                    <label for="cargo">Cargo</label><br/>
                     <select name="cargo">
                         <?php
                         foreach ($cargos as $cargo) {
-                            if (isset($dadosUsuario[0]['telefone']) && $dadosUsuario[0]['telefone'] == $cargo['cargo']){
-                                echo "<option selected='selected' value='{$cargo['id']}'>{$cargo['cargo']}</option>";
+                            if(isset($dadosUsuario[0]['cargo']) && $dadosUsuario[0]['cargo'] == $cargo['id']){
+                                $selected = "selected='selected'";
+                            }else{
+                                $selected = "";
                             }
-                            else {
-                                echo "<option value='{$cargo['id']}'>{$cargo['cargo']}</option>";
-                            }
+                            echo "<option {$selected} value='{$cargo['id']}'>{$cargo['cargo']}</option>";
                         }
                         ?>
+                    </select>
+                </div>
+                <div>
+                    <label for="status">Status</label><br/>
+                    <input type="radio" value="0" name="status" />
+                    Ativo
+                    <input type="radio" value="1" name="status" />
+                    Inativo  
                     </select>
                 </div>
 

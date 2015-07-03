@@ -5,3 +5,9 @@ p.erro {
     padding: 10px;
     margin: 0px 3px 20px;
 }
+
+img#fotoAtual{
+    width: 100px;
+    border: 1px solid #ccc;
+    margin-left: 15px;
+}

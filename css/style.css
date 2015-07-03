@@ -31,6 +31,11 @@ form.cadastro input[type=password], form.cadastro input[type=text], form.cadastr
     padding-left: 5px;
 }
 
+form.cadastro input[type=radio]{
+    padding: 0px;
+    margin: 0px 0px 0px 15px ;
+}
+
 form.cadastro input[type=file] {
     margin-left: 15px;
 }
@@ -47,6 +52,8 @@ form.cadastro p#tituloPrincipal {
     margin-left: 15px;
     padding-top: 15px;
 }
+
+
 
 /**********************************************************************************************************************/
 
