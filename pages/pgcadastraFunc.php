@@ -34,15 +34,15 @@
 
 <div id="frmExcluir" class="caixaComentarios">
     <form action="" class="frmComentarios">
-        <div>
+        <div id="cabecalho-excluir">
             <p>Excluir funcionario</p>
             <a class="modal_close"></a>
         </div>
-        <div>
-            <p>Deseja excluir este usuario?</p>
+        <div class="txt-excluir">
+            <p>Você deseja realmente excluir este funcionário?</p>
             <input type="button" value="Excluir" id="confirmarExcluir" />
             <input type="hidden" id="idUsuarioExcluido" />
-            <input type="button" value="Cancelar" />
+            <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
         </div>
     </form>
 </div>

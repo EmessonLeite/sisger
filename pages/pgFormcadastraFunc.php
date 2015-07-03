@@ -28,12 +28,12 @@
 
                 <div>
                     <label for="apelido">Nome de Visualiazação</label><br/>
-                    <input type="text" name="apelido" value="" />
+                    <input type="text" name="apelido" value="<?php echo (isset($dadosUsuario[0]['apelido'])) ? $dadosUsuario[0]['apelido'] : ""; ?>" />
                 </div>
 
                 <div>
                     <label for="apelido">Login</label><br/>
-                    <input type="text" name="login" value="" />
+                    <input type="text" name="login" value="<?php echo (isset($dadosUsuario[0]['login'])) ? $dadosUsuario[0]['login'] : ""; ?>" />
                 </div>
 
                 <div>
@@ -43,17 +43,17 @@
 
                 <div>
                     <label for="apelido">Data de entrada</label><br/>
-                    <input type="text" id="datepicker" class="date" name="dataEntrada" value="" />
+                    <input type="text" id="datepicker" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
                 </div>
 
                 <div>
                     <label for="apelido">E-mail</label><br/>
-                    <input type="email" name="email" value="" />
+                    <input type="email" name="email" value="<?php echo (isset($dadosUsuario[0]['email'])) ? $dadosUsuario[0]['email'] : ""; ?>" />
                 </div>
 
                 <div>
                     <label for="apelido">Telefone</label><br/>
-                    <input type="text" class="fone" name="telefone" value="" />
+                    <input type="text" class="fone" name="telefone" value="<?php echo (isset($dadosUsuario[0]['telefone'])) ? $dadosUsuario[0]['telefone'] : ""; ?>" />
                 </div>
 
                 <div>
@@ -61,7 +61,12 @@
                     <select name="cargo">
                         <?php
                         foreach ($cargos as $cargo) {
-                            echo "<option value='{$cargo['id']}'>{$cargo['cargo']}</option>";
+                            if (isset($dadosUsuario[0]['telefone']) && $dadosUsuario[0]['telefone'] == $cargo['cargo']){
+                                echo "<option selected='selected' value='{$cargo['id']}'>{$cargo['cargo']}</option>";
+                            }
+                            else {
+                                echo "<option value='{$cargo['id']}'>{$cargo['cargo']}</option>";
+                            }
                         }
                         ?>
                     </select>

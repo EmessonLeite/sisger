@@ -278,3 +278,76 @@ button#salvar-autoava {
     cursor: pointer;
     margin-bottom: 20px;
 }
+
+/**
+ * Excluir comentario
+ */
+
+div#frmExcluir {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
+    display: none;
+    padding-bottom: 2px;
+    width: 504px;
+    z-index: 0;
+}
+
+div#cabecalho-excluir {
+    border-bottom: 2px solid #CCCCCC;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+}
+
+div#cabecalho-excluir p {
+    color: #222222;
+    font-size: 18pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+div#frmExcluir div.txt-excluir {
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+div#frmExcluir div.txt-excluir p {
+    margin-bottom: 20px;
+}
+
+input#confirmarExcluir {
+    background: none repeat scroll 0 0 #c36539;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    overflow: visible;
+    padding: 4px 10px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+input#cancelar {
+    background: none repeat scroll 0 0 #c36539;
+    border: medium none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    float: right;
+    height: 28px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 13pt;
+    font-weight: bold;
+    overflow: visible;
+    padding: 4px 10px 4px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    width: auto;
+    cursor: pointer;
+    margin-top: 32px;
+}
