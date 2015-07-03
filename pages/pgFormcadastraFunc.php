@@ -37,8 +37,6 @@
                     <input type="text" name="login" value="<?php echo (isset($dadosUsuario[0]['login'])) ? $dadosUsuario[0]['login'] : ""; ?>" />
                 </div>
 
-                
-
                 <div>
                     <label for="dataEntrada">Data de entrada</label><br/>
                     <input type="text" id="datepicker" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
@@ -69,7 +67,8 @@
                         ?>
                     </select>
                 </div>
-                <div>
+
+                <div id="status">
                     <label for="status">Status</label><br/>
                     <input type="radio" value="0" name="status" />
                     Ativo
@@ -80,6 +79,7 @@
 
                 <div>
                     <input type="submit" class="alterar" name="cadastrar" value="Salvar">
+                    <input type="submit" class="alterar" value="Voltar" onclick="window.location = '<?php echo $url->getURL(0); ?>';">
                 </div>
 
             </div>

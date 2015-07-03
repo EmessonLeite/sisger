@@ -11,3 +11,8 @@ img#fotoAtual{
     border: 1px solid #ccc;
     margin-left: 15px;
 }
+
+div#status {
+    margin-left: 10px;
+    width: 400px;
+}
