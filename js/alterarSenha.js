@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('form#alterarSenha').submit(function () {
+    $('form#simples').submit(function () {
         var iSenhaAtual = $('input[name=senhaAtual]').val();
         var iNovaSenha = $('input[name=novaSenha]').val();
         var iConfirmarSenha = $('input[name=confirmarSenha]').val();

@@ -11,7 +11,7 @@
                 
                 <div>
                     <label for="foto">Foto</label><br/>
-                    <input type="file" name="foto" id="foto" />
+                    <input type="file" name="foto" id="foto" accept="image/*" />
                 </div>
                 
                 <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
@@ -80,6 +80,10 @@
                 <div>
                     <input type="submit" class="alterar" name="cadastrar" value="Salvar">
                     <a href="<?php echo RAIZ . $url->getURL(0); ?>">Voltar a listagem</a>
+                </div>
+                
+                <div>
+                    <p id="info"></p>
                 </div>
 
             </div>

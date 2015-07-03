@@ -1,6 +1,6 @@
 <section class="listagemCadastro">
-    <?php echo $erroExcluir; ?>
     <div class="camposSection">
+        <?php echo $erroExcluir; ?>
         <table class="listagem">
             <input name="enviar" class="novo" type="submit" value="Novo Funcionário" onclick="window.location = '<?php echo $url->getURL(0); ?>/novo';"/>
             <form method="post" name="frmPesquisa" id="frmPesquisa">

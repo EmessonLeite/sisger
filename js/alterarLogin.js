@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('form#alterarLogin').submit(function () {
+    $('form#simples').submit(function () {
         var iLogin = $('input[name=login]').val();
         
         $.ajax({
