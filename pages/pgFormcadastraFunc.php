@@ -11,7 +11,7 @@
                 
                 <div>
                     <label for="foto">Foto</label><br/>
-                    <input type="file" name="foto" />
+                    <input type="file" name="foto" id="foto" />
                 </div>
                 
                 <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
@@ -70,16 +70,16 @@
 
                 <div id="status">
                     <label for="status">Status</label><br/>
-                    <input type="radio" value="0" name="status" />
+                    <input type="radio" value="1" <?php echo ((!isset($dadosUsuario[0]['status']) || $dadosUsuario[0]['status'] == '1') ? 'checked="checked"' : '' ); ?> name="status" />
                     Ativo
-                    <input type="radio" value="1" name="status" />
+                    <input type="radio" value="0" <?php echo ((isset($dadosUsuario[0]['status']) && $dadosUsuario[0]['status'] == '0') ? 'checked="checked"' : '' ); ?> name="status" />
                     Inativo  
                     </select>
                 </div>
 
                 <div>
                     <input type="submit" class="alterar" name="cadastrar" value="Salvar">
-                    <input type="submit" class="alterar" value="Voltar" onclick="window.location = '<?php echo $url->getURL(0); ?>';">
+                    <a href="<?php echo RAIZ . $url->getURL(0); ?>">Voltar a listagem</a>
                 </div>
 
             </div>

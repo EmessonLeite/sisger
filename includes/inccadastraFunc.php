@@ -9,12 +9,11 @@ Permissao::validar(isset($permissoes[1]));
 /** @var Usuario */
 $usuarioBusiness = Usuario::getInstance();
 
-
+/** Recebe o formulario */
+    $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+    
 /** Include o formulario de cadastro/edição de funcionarios */
 if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == 'editar')) {
-
-    /** Recebe o formulario */
-    $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
     /** Verifica se o form foi enviado */
     if (isset($form['cadastrar'])) {
@@ -101,8 +100,18 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
     exit;
 }
 
+
+if(isset($form['filtro'])){
+    $filtro = array(
+        'nome' => "%{$form['filtro']}%",
+        'email' => "%{$form['filtro']}%",
+        'c.cargo' => "%{$form['filtro']}%"
+    );
+}else{
+    $filtro = array();
+}
 /** @var array */
-$dadosUsuarios = $usuarioBusiness->buscar();
+$dadosUsuarios = $usuarioBusiness->buscar($filtro);
 
 if ($url->posicaoExiste(1) && $url->getURL(1) == 'erro') {
 

@@ -4,26 +4,32 @@
         <table class="listagem">
             <input name="enviar" class="novo" type="submit" value="Novo Funcionário" onclick="window.location = '<?php echo $url->getURL(0); ?>/novo';"/>
             <form method="post" name="frmPesquisa" id="frmPesquisa">
-                <input type="text" class="pesquisa" id="filtro" name="filtro" value=""/>
+                <input type="text" class="pesquisa" id="filtro" name="filtro" value="<?php echo (isset($form['filtro']) ? $form['filtro'] : ""); ?>"/>
             </form>
             <tr>
                 <th>Nome Completo</th>
                 <th>E-mail</th>
                 <th>Cargo</th>
+                <th>Status</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>
             <?php
-            foreach ($dadosUsuarios as $usuario) {
-                echo "
+            if (count($dadosUsuarios)) {
+                foreach ($dadosUsuarios as $usuario) {
+                    echo "
                     <tr>
                         <td>{$usuario['nome']}</td>
                         <td>{$usuario['email']}</td>
                         <td>{$usuario['cargo']}</td>
+                        <td><input type='checkbox' disabled='disabled' " . (($usuario['status']) ? "checked='checked'" : "") . " /></td>
                         <td><a href='{$url->getURL(0)}/editar/{$usuario['id']}'>Editar</a></td>
                         <td><a class='exluirFuncionario' href='{$usuario['id']}'>Excluir</a></td>
                     </tr>
                 ";
+                }
+            } else {
+                echo "<tr><td colspan='6'>Nenhum usuário encontrado.</td></tr>";
             }
             ?>
 

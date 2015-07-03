@@ -20,7 +20,7 @@ html, body {
     min-height: 906px;
     margin: auto;
     padding-top: 20px;
-    background-color: #ebefe8;
+    background-image: url('../imagens/background.png');
 }
 
 /**

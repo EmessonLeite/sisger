@@ -71,16 +71,16 @@ class Usuario {
         
         /** Monta o filtro na consulta */
         if(count($dados) > 0){
-            $filtro = 'WHERE ' . implode(' = ?, ', array_keys($dados)) . ' = ?';
+            $filtro = 'WHERE ' . implode(" LIKE ? OR ", array_keys($dados)) . " LIKE ?";
         }
         /** Consulta para retornar os usuarios */
         $query = "SELECT u.*, c.cargo
                   FROM usuarios as u
                   LEFT JOIN cargos as c
                   ON u.cargo = c.id
-                  ORDER BY c.ordem ASC, u.nome ASC
-        {$filtro}";
-        
+                  {$filtro}
+                  ORDER BY status DESC, c.ordem ASC, u.nome ASC";
+                  
         /** Executa e retorna a consulta */
         return $this->conexao->Buscar($query, $dados);
     }
@@ -126,7 +126,7 @@ class Usuario {
      * @return array
      */
     public function buscarPorID($id) {
-        $query = "SELECT id, nome, login, foto, apelido, DATE_FORMAT(dataEntrada, '%d/%m/%Y') dataEntrada, telefone, email, cargo FROM [tabela] WHERE id = ?";
+        $query = "SELECT id, nome, login, foto, apelido, DATE_FORMAT(dataEntrada, '%d/%m/%Y') dataEntrada, telefone, email, cargo, status FROM [tabela] WHERE id = ?";
         $dados = array($id);
         return $this->conexao->Buscar($query, $dados);
     }
