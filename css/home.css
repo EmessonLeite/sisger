@@ -16,10 +16,12 @@ html, body {
 }
 
 #todo {
+    z-index: 10;
     width: 1000px;
     min-height: 906px;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 71px;
+    margin-bottom: 35px;
     background-image: url('../imagens/background.png');
 }
 

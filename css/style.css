@@ -9,7 +9,7 @@ p {
  * Configurção para formulario de cadastro
  */
 form.cadastro{
-    background-color: #ebefe8;
+    background-image: url('../imagens/background.png');
     padding: 20px;
     width: 960px;
     min-height: 500px;
@@ -70,6 +70,7 @@ div.camposFormularioSimples {
     margin-right: auto;
     border-radius: 3px;
     padding-bottom: 5px;
+    margin-top: 50px;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -87,6 +88,7 @@ div.camposFormularioCompleto {
     margin-right: auto;
     border-radius: 3px;
     padding-bottom: 5px;
+    margin-top: 50px;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -115,7 +117,7 @@ div.camposFormularioCompleto div.inputs div{
  * Configuração para telas que possuem listagem
  */
 section.listagemCadastro {
-    background-color: #ebefe8;
+    background-image: url('../imagens/background.png');
     padding: 20px;
     width: 960px;
     min-height: 500px;
@@ -131,6 +133,8 @@ div.camposSection {
     margin-left: auto;
     margin-right: auto;
     border-radius: 3px;
+    margin-top: 50px;
+    margin-bottom: 35px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 20px;
 }
@@ -273,3 +277,21 @@ div.paginacao input[type=text] {
 */
 
 /**********************************************************************************************************************/
+footer#rodape{
+    z-index: 20;
+    position:fixed;
+    display: block;
+    width: 100%;
+    background-color: #282829;
+    bottom: 0px;
+    
+}
+
+footer#rodape p {
+    width: 1000px;
+    text-align: center;
+    padding: 10px;
+    font-size: 10pt;
+    color: white;
+    margin: 0px auto;
+}

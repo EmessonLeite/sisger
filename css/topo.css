@@ -18,12 +18,16 @@ body {
  */
 
 div#topo {
+    z-index: 20;
+    position: fixed;
     width: 100%;
     height: 53px;
     background-color: #c36539;
 }
 
 div#central {
+    z-index: 0;
+    height: 50px;
     width: 1000px;
     margin: auto;
 }
