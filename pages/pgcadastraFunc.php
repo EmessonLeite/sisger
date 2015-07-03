@@ -1,4 +1,5 @@
 <section class="listagemCadastro">
+    <?php echo $erroExcluir; ?>
     <div class="camposSection">
         <table class="listagem">
             <input name="enviar" class="novo" type="submit" value="Novo Funcionário" onclick="window.location = '<?php echo $url->getURL(0); ?>/novo';"/>
@@ -27,21 +28,9 @@
             ?>
 
         </table>
-        <!--
-            <div class="paginacao">
-                <input type="button" class="btnPaginacao" value="◄◄" onclick="window.location = ''"/>
-                <input type="text" value="1"/> / 1
-                <input type="button" class="btnPaginacao" value="►►" onclick="window.location = ''"/>
-            </div>
-        /-->
     </div>
-    <a href='#frmExcluir' name='frmExcluir' rel='leanModal' id='btnExcluir'>TESTE</a>
+    <a href='#frmExcluir' name='frmExcluir' rel='leanModal' id='btnExcluir'></a>
 </section>
-
-<script>
-    $(".caixaComentarios").draggable();
-    $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
-</script>
 
 <div id="frmExcluir" class="caixaComentarios">
     <form action="" class="frmComentarios">

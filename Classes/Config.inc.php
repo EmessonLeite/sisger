@@ -1,16 +1,20 @@
 <?php
 
-// FUNCOES GERAIS DO SISTEMA
-include_once('functions/functions.php');
+// FUNCOES GERAIS DO SISTEMA ###################################################
+if (file_exists('functions/functions.php')) {
+    include_once('functions/functions.php');
+} elseif (file_exists('../functions/functions.php')) {
+    include_once('../functions/functions.php');
+}
 
-// CONFIGRAÇÕES DO SITE ####################
+// CONFIGRAÇÕES DO SITE ########################################################
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
 define('DBSA', 'preavaliacao');
 define('RAIZ', 'http://localhost:8080/preAvaliacaoWEB/');
 
-// AUTO LOAD DE CLASSES ####################
+// AUTO LOAD DE CLASSES ########################################################
 function __autoload($Class) {
 
     $cDir = array('DAO', 'Business', 'Entity', 'Exception');
