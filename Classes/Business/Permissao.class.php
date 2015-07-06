@@ -9,7 +9,7 @@ class Permissao {
      * 
      */
     public function __construct() {
-        $this->conexao = new ConexaoDAO("permissoes");
+        $this->conexao = new ConexaoDAO("pa_permissoes");
     }
 
     /**
@@ -44,8 +44,8 @@ class Permissao {
 
         /** @var string */
         $query = "SELECT p.id, p.nome
-                  FROM permissoes p
-                  INNER JOIN permissoesusuarios pu
+                  FROM pa_permissoes p
+                  INNER JOIN pa_permissoesusuarios pu
                   ON p.id = pu.idPermissao
                   WHERE idUsuario = ?";
 

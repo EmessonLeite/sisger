@@ -10,7 +10,7 @@ class Comentario {
      * Inicializa a conexao
      */
     public function __construct() {
-        $this->conexao = new ConexaoDAO('comentarios');
+        $this->conexao = new ConexaoDAO('pa_comentarios');
     }
 
     /**

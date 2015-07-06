@@ -11,7 +11,7 @@ if (file_exists('functions/functions.php')) {
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
-define('DBSA', 'preavaliacao');
+define('DBSA', 'sisger');
 define('RAIZ', 'http://localhost:8080/preAvaliacaoWEB/');
 
 // AUTO LOAD DE CLASSES ########################################################

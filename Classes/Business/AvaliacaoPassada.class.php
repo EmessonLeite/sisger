@@ -21,7 +21,7 @@ class AvaliacaoPassada {
     public function __construct($avaliacao, $idUsuario) {
         
         /** Inicializa a conexao */
-        $this->conexao = new ConexaoDAO('avaliacaopassada');
+        $this->conexao = new ConexaoDAO('pa_avaliacaopassada');
         
         /** Inicializa a referencia da avalaicao */
         $this->avaliacao = $avaliacao;
@@ -61,8 +61,8 @@ class AvaliacaoPassada {
     public function buscar() {
 
         $query = "SELECT p.*
-                  FROM avaliacaopassada as p
-                  INNER JOIN avaliacao as a
+                  FROM pa_avaliacaopassada as p
+                  INNER JOIN pa_avaliacao as a
                   ON p.idAvaliacao = a.id
                   WHERE referente = ? AND idUsuario = ?";
         $dados = array($this->avaliacao, $this->idUsuario);
@@ -81,8 +81,8 @@ class AvaliacaoPassada {
      */
     private function buscarID(){
         $query = "SELECT p.id
-                  FROM avaliacaopassada as p
-                  INNER JOIN avaliacao as a
+                  FROM pa_avaliacaopassada as p
+                  INNER JOIN pa_avaliacao as a
                   ON p.idAvaliacao = a.id
                   WHERE referente = ? AND idUsuario = ?";
         $dados = array($this->avaliacao, $this->idUsuario);
@@ -135,7 +135,7 @@ class AvaliacaoPassada {
      */
     private function verificarSeExiste() {
         $query = "SELECT COUNT(*) as qtd FROM [tabela]
-                 INNER JOIN avaliacao as a
+                 INNER JOIN pa_avaliacao as a
                  ON a.id = idAvaliacao
                  WHERE idUsuario = ? AND referente = ?";
 

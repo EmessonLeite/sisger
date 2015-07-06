@@ -15,7 +15,7 @@ class Quesito {
      * @param int ID do cargo 
      */
     public function __construct($idCargo) {
-        $this->conexao = new ConexaoDAO('quesitos');
+        $this->conexao = new ConexaoDAO('pa_quesitos');
         $this->idCargo = $idCargo;
     }
     

@@ -106,12 +106,12 @@ class Usuario {
         /** Monta a query que será executada */
         $query = "SELECT u.id, nome, apelido, foto
                   FROM usuarios as u
-                  INNER JOIN usuarioavaliacao
+                  INNER JOIN pa_usuarioavaliacao
                   ON u.id = idUsuario
-                  INNER JOIN avaliacao as a
+                  INNER JOIN pa_avaliacao as a
                   ON a.id = idAvaliacao
                   LEFT OUTER JOIN cargos as c
-                  ON c.id = idCargoAvaliacao 
+                  ON c.id = idCargoAvaliacao
                   {$filtro}
                   ORDER BY ordem, apelido";
 
@@ -140,7 +140,7 @@ class Usuario {
      */
     public function addComentarios($id, $idAvaliacao) {
         if ($this->usuarioCadastrado($id, $idAvaliacao)) {
-            $query = "UPDATE usuarioavaliacao SET comentarios = comentarios + 1 WHERE idUsuario = ? AND idAvaliacao = ?";
+            $query = "UPDATE pa_usuarioavaliacao SET comentarios = comentarios + 1 WHERE idUsuario = ? AND idAvaliacao = ?";
             $dados = array("id" => $id, "idAvaliacao" => $idAvaliacao);
             return $this->conexao->Buscar($query, $dados);
         } else {
@@ -231,7 +231,7 @@ class Usuario {
      * @return array
      */
     private function usuarioCadastrado($id, $idAvaliacao) {
-        $query = "SELECT COUNT(id) FROM usuarioavaliacao WHERE idUsuario = ? AND idAvaliacao = ?";
+        $query = "SELECT COUNT(id) FROM pa_usuarioavaliacao WHERE idUsuario = ? AND idAvaliacao = ?";
         $dados = array("id" => $id, "idAvaliacao" => $idAvaliacao);
         return $this->conexao->Buscar($query, $dados);
     }

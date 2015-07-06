@@ -15,7 +15,7 @@ class Avaliacao {
      * @param string referencia da avaliacao atual
      */
     public function __construct($avaliacao) {
-        $this->conexao = new ConexaoDAO('avaliacao');
+        $this->conexao = new ConexaoDAO('pa_avaliacao');
         $this->avaliacao = $avaliacao;
     }
 
@@ -64,8 +64,8 @@ class Avaliacao {
     public function buscarDadosUsuario($idUsuario) {
         /** @var string */
         $query = "SELECT horasTrabalhadas, folgas, faltas, atrasos, videosLivros, comentarios, c.id as idCargo, idAvaliacao, idUsuario, cargo
-                  FROM usuarioavaliacao
-                  INNER JOIN avaliacao as a
+                  FROM pa_usuarioavaliacao
+                  INNER JOIN pa_avaliacao as a
                   ON a.id = idAvaliacao
                   LEFT OUTER JOIN cargos as c
                   ON idCargoAvaliacao = c.id
@@ -102,8 +102,8 @@ class Avaliacao {
      */
     public function checarUsuarioAvaliacao($idUsuario){
         $query = "SELECT COUNT(*) as qtd
-                  FROM usuarioavaliacao ua
-                  LEFT JOIN avaliacao a
+                  FROM pa_usuarioavaliacao ua
+                  LEFT JOIN pa_avaliacao a
                   ON ua.idAvaliacao = a.id
                   WHERE referente = ? AND idUsuario = ?";
         

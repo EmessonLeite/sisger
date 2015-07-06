@@ -1,3 +1,5 @@
 <section id="conteudo">
-    <img src="imagens/erro404.jpg" alt="" />
+    <div class="imagemSection">
+        <img width="865" src="imagens/erro404.png" alt="" />
+    </div>
 </section>

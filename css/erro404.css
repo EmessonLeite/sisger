@@ -1,8 +1,24 @@
 section#conteudo {
     position: relative;
+    background-image: url('../imagens/background.png');
     width: 949px;
-    height: 347px;
     margin-top: 0px;
+    padding-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 2px;
+}
+
+div.imagemSection {
+    position: relative;
+    background-color: white;
+    width: 865px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
