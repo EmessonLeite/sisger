@@ -53,6 +53,9 @@ form.cadastro p#tituloPrincipal {
     padding-top: 15px;
 }
 
+td#editar, td#excluir, td#status {
+    text-align: center;
+}
 
 
 /**********************************************************************************************************************/

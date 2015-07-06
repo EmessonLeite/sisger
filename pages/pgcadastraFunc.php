@@ -22,9 +22,9 @@
                         <td>{$usuario['nome']}</td>
                         <td>{$usuario['email']}</td>
                         <td>{$usuario['cargo']}</td>
-                        <td><input type='checkbox' disabled='disabled' " . (($usuario['status']) ? "checked='checked'" : "") . " /></td>
-                        <td><a href='{$url->getURL(0)}/editar/{$usuario['id']}'>Editar</a></td>
-                        <td><a class='exluirFuncionario' href='{$usuario['id']}'>Excluir</a></td>
+                        <td id='status'><input type='checkbox' disabled='disabled' " . (($usuario['status']) ? "checked='checked'" : "") . " /></td>
+                        <td id='editar'><a href='{$url->getURL(0)}/editar/{$usuario['id']}'>Editar</a></td>
+                        <td id='excluir'><a class='exluirFuncionario' href='{$usuario['id']}'>Excluir</a></td>
                     </tr>
                 ";
                 }
