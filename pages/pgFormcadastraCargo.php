@@ -5,7 +5,9 @@
         <div class="camposFormularioCompleto">
             <div class="inputs">
                 <p id="tituloPrincipal">Cadastro de cargos</p>
-                
+
+                <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
+
                 <?php
                     echo (isset($dadosCargo[0]['id'])) ?  "<input type='hidden' name='id' value='{$dadosCargo[0]['id']}'>" : "" ;
                 ?>
