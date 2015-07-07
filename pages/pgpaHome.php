@@ -41,7 +41,7 @@
                             echo "<tr>";
                         ?>
                         <td>
-                            <a href="<?php echo "home/{$avaliacao[0]['referente']}/{$usuario['id']}"; ?>" class="funcionarios">
+                            <a href="<?php echo "paHome/{$avaliacao[0]['referente']}/{$usuario['id']}"; ?>" class="funcionarios">
                                 <img class="fotos-perfil" src="imagens/perfil/<?php echo $usuario['foto']; ?>"><br/>
                                 <p class="nomes"><?php echo $usuario['apelido']; ?></p>
                             </a>

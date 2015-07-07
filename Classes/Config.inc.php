@@ -12,7 +12,7 @@ define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
 define('DBSA', 'sisger');
-define('RAIZ', 'http://localhost:8080/preAvaliacaoWEB/');
+define('RAIZ', 'http://localhost:8080/sisger/');
 
 // AUTO LOAD DE CLASSES ########################################################
 function __autoload($Class) {
