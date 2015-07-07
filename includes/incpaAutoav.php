@@ -37,4 +37,4 @@ if (isset($_SESSION['id']) && is_int($_SESSION['id']) && is_string($_SESSION['ap
 }
 
 /** Include a pagina home */
-include_once('../pages/pgautoav.php');
+include_once('../pages/pgpaAutoav.php');

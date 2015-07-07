@@ -60,12 +60,12 @@
         </div>
     </div>    
     <div id="menu">
-        <a href="includes/incinfogerais.php<?php echo $infoURL; ?>" class="info <?php echo ($geral) ? 'clicado' : 'naoClicado'; ?>" name="infog" target="conteudos">Informações gerais</a>
+        <a href="includes/incpaInfogerais.php<?php echo $infoURL; ?>" class="info <?php echo ($geral) ? 'clicado' : 'naoClicado'; ?>" name="infog" target="conteudos">Informações gerais</a>
         <?php
         if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
 
-            echo "<a href='includes/incautoav.php{$infoURL}' class='info " . ((!$geral) ? 'clicado' : 'naoClicado') . "' name='autoav' target='conteudos'>Como eu me avaliaria</a>
-                  <a href='includes/incavaliacaoPassada.php{$infoURL}' class='info naoClicado' name='avpassada' target='conteudos'>Avaliação passada</a>";
+            echo "<a href='includes/incpaAutoav.php{$infoURL}' class='info " . ((!$geral) ? 'clicado' : 'naoClicado') . "' name='autoav' target='conteudos'>Como eu me avaliaria</a>
+                  <a href='includes/incpaAvaliacaoPassada.php{$infoURL}' class='info naoClicado' name='avpassada' target='conteudos'>Avaliação passada</a>";
         }
         ?>
 

@@ -27,4 +27,4 @@ $dadosUsuarioSelecionado = $usuarioBusiness->buscarPorID($idUsuarioSelecionado);
 $dadosUsuarioAvaliacao = $avaliacaoBusiness->buscarDadosUsuario($idUsuarioSelecionado);
 
 /** Include a pagina home */
-include_once('../pages/pginfogerais.php');
+include_once('../pages/pgpaInfogerais.php');

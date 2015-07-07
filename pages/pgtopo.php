@@ -24,9 +24,9 @@
             <div id="central">
                 <img id="logo" src="imagens/logo-branca.png">
                 <div id="usuario">
-                    <label><a id="apelido" href="home"><?php echo $apelido; ?></a></label>
+                    <label><a id="apelido" href="paHome"><?php echo $apelido; ?></a></label>
                     <div id="imgusuario">
-                        <a href="home">
+                        <a href="paHome">
                             <img class="usuario" src="imagens/perfil/<?php echo $foto; ?>">
                         </a>
                     </div>
@@ -46,7 +46,7 @@
 
                         /** Índice 2 no array de permissoes indica permissao de Gestão de cargos */
                         if (isset($permissoes[2])) {
-                            echo '<a href="cadastraCargo"><p id="permissao2">Cadastrar cargo</p></a>';
+                            echo '<a href="paCadastraCargo"><p id="permissao2">Cadastrar cargo</p></a>';
                         }
 
                         /** Índice 3 no array de permissoes indica permissao de Gestão de avaliação */

@@ -12,4 +12,4 @@ $avaliacaoPassada = AvaliacaoPassada::getInstance($_GET['referencia'], $_GET['id
 $dadosAvaliacaoPassada = $avaliacaoPassada->buscar();
 
 /** Include a pagina home */
-include_once('../pages/pgavaliacaoPassada.php');
+include_once('../pages/pgpaAvaliacaoPassada.php');

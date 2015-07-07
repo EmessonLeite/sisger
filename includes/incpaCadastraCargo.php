@@ -46,7 +46,7 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
     }
 
     /** Include da pagina de configuração de perfil */
-    include_once("pages/pgForm{$url->getURL(0)}.php");
+    include_once("pages/pgpaFormCadastraCargo.php");
     exit;
 } elseif ($url->posicaoExiste(1) && $url->getURL(1) == 'excluir') {
 
