@@ -3,6 +3,8 @@
 /** @var Horario */
 $horarioBusiness = Horario::getInstance($idUsuario);
 
-$horarioBusiness->darEntrada();
+$horarioBusiness->corrigir();
+//$horarioBusiness->darEntrada();
 
-var_dump($horarioBusiness->buscar());
+
+//var_dump($horarioBusiness->buscar());

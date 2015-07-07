@@ -22,24 +22,39 @@ class Horario {
     
     public function darEntrada(){
         $horariosAbertos = $this->buscarAberto();
-        var_dump($horariosAbertos);
-        
-        
-        $dados = array('entrada' => date('Y-m-d h:i:s'));
-        $this->conexao->Cadastrar($dados);
+               
+        if(!count($horariosAbertos)){
+            $dados = array('entrada' => date('Y-m-d h:i:s'), 'idUsuario' => $this->idUsuario);
+            $this->conexao->Cadastrar($dados);
+        } else {
+            echo '<br /><br /><br />';
+            echo 'Horário aberto!';
+        }
         
     }
     
     public function darSaida(){
-        $dados = array('entrada' => date('Y-m-d h:i:s'));
-        $this->conexao->Editar($dados);
+        
+        $horariosAbertos = $this->buscarAberto();
+        
+        if(count($horariosAbertos) != 0){
+            $dados = array('saida' => date('Y-m-d h:i:s'), 'id' => $horariosAbertos[0]['id']);
+            $this->conexao->Editar($dados);
+        } else {
+            echo '<br /><br /><br />';
+            echo 'Não há horário aberto!';
+        }
     }
     
     public function corrigir(){
-        
+        $query = "SELECT * FROM [tabela] WHERE idUsuario = ? ";
+        $dados = array('idUsuario' => $this->idUsuario);
+        $corrigir = $this->conexao->Buscar($query, $dados);
+        echo '<br /><br /><br />';
+        var_dump($corrigir);
     }
     
-    private function buscarAberto(){
+    public function buscarAberto(){
         $query = "SELECT id FROM [tabela] WHERE saida IS NULL AND idUsuario = ?";
         $dados = array('idUsuario' => $this->idUsuario);
         return $this->conexao->Buscar($query, $dados);
