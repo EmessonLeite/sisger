@@ -1,0 +1,491 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    background-color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#todo {
+    z-index: 10;
+    width: 1000px;
+    min-height: 906px;
+    margin: auto;
+    padding-top: 71px;
+    margin-bottom: 35px;
+    background-image: url('../imagens/background.png');
+}
+
+/**
+ *
+ */
+
+/** Configuração da div que mostra algum erro na tela principal */
+div#erro{
+    color: #991111;
+    background-color: #e9c4b2;
+    border: 1px solid #991111;
+    padding: 10px;
+    margin: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+select#avaliacoes {
+    position:relative;
+    float: right;
+    width: 225px;
+    height: 29px;
+    margin-top: 0px;
+    margin-right: 25px;
+    border: 1px solid #666666;
+    border-radius: 3px;
+}
+
+div#imgperfil {
+    position: relative;
+    width: 138px;
+    height: 136px;
+    margin-top: -140px;
+    margin-left: 20px;
+    z-index: 10;
+}
+
+img#perfil {
+    position: relative;
+    width: 148px;
+    height: 146px;
+    border-radius: 73px;
+}
+
+img#informacoes {
+    position: relative;
+    z-index: 0;
+    margin-top: 15px;
+    margin-left: 65px;
+}
+
+div#dados {
+    position: relative;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+    margin-top: -190px;
+    margin-left: 180px;
+    z-index: 5;
+    width: 500px;
+}
+
+img#comp-comentario {
+    position: absolute;
+    width: 25px;
+    height: 24px;
+    margin-left: -25px;
+    margin-top: 9px;
+}
+
+label#comentarios {
+    position: relative;
+    background-image: url('../imagens/comentario.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #ffffff;
+    font-size: 13pt;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 120px;
+    text-align: center;
+    top: 65px;
+    left: 5px;
+    margin-left: 0px;
+    padding: 2px 7px ;
+    padding-left: 15px;
+    border-radius: 10px;
+}
+
+label#nome {
+    position: relative;
+    font-size: 1.5em;
+    top: 70px;
+}
+
+label#posto {
+    position: relative;
+    top: 80px;
+}
+
+label#email {
+    position: relative;
+    top: 97px;
+    border-top: 1px solid #f98445;
+    padding-top: 7px;
+}
+
+/**
+ *
+ */
+
+#listagem-geral{
+    height: 515px;
+    overflow:hidden;
+}
+
+div#pessoas{
+    background-color: #282829;
+    width: 256px;
+    height: 650px;
+    border-radius: 5px;
+    margin-left: 72.2% ;
+    margin-top: -1.5%;
+}
+
+label#titulo{
+    position: relative;
+    font-size: 1.7em;
+    font-family: 'Trebuchet MS',sans-serif;
+    color: #c36539;
+    z-index: 10;
+    top: 16px;
+    margin-left: 60%;
+}
+
+div#todo hr.linha{
+    position: relative;
+    width: 205px;
+    color: #c36539;
+    z-index: 10;
+    border-bottom: 1px solid #c36539;
+}
+
+div#lista-pessoas{
+    position: relative;
+    z-index: 10;
+    margin-top: 4px;
+    /*width: 95%;
+    height: 100%;
+    overflow: auto;*/
+}
+/*
+/* ---------------- Barra de rolagem Google Chrome----------------
+::-webkit-scrollbar {
+    width: 10px; /*largura da barra de rolagem
+    height: 5px;
+}
+::-webkit-scrollbar-track-piece {
+    background: #282829; /* Cor do fundo da barra de rolagem
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    background: #ccc; /* Cor da barra de rolagem
+    border-radius: 10px; /* Arredondamento da barra de rolagem
+}
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px; /* Largura da barra de rolagem na horizontal
+    background-color: #FFA500; /* cor da barra de rolagem na horizontal
+}
+*/
+
+table#funcionarios td{
+    width: 150px;
+    text-align: center;
+}
+
+.fotos-perfil{
+    width: 78px;
+    height: 78px;
+    border-radius: 39px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.nomes{position: relative;
+    color: #ffffff;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 80px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#linhaCima{
+    margin-top: 45px;
+    margin-left: 45px;
+    margin-bottom: 10px;
+}
+
+#linhaBaixo{
+    margin-top: 13px;
+    margin-left: 45px;
+}
+
+#setaCima{
+    position: relative;
+    z-index: 11;
+    margin-left: 88%;
+    margin-top: -35px;
+}
+
+#setaBaixo{
+    position: relative;
+    z-index: 11;
+    margin-left: 88%;
+}
+
+/**
+ *
+ */
+
+div#menu {
+    position: relative;
+    margin-left: 13px;
+    margin-bottom: -400px;
+}
+
+a.clicado{
+    background-color: #282829;
+    color: #ffffff;
+}
+
+a.naoClicado{
+    background-color: #ffffff;
+    color: #282829;
+}
+
+a.info {
+    position:relative;
+    margin-left: 49px;
+    top: -460px;
+    margin-left: 11px;
+    padding: 16px 37px 16px 37px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    box-shadow: 1px 1px 5px rgba(94,94,94,0.5);
+    cursor: pointer;
+}
+
+#autoav{
+    margin-left: 9px;
+}
+
+#avpassada{
+    margin-left: 9px;
+}
+
+iframe.conteudos {
+     position: relative;
+     overflow-x: hidden;
+     overflow-y: scroll;
+     background-color: #ffffff;
+     width: 675px;
+     height: 390px;
+     margin-left: 24px;
+     z-index: 0;
+ }
+
+div#comentario-negativo {
+    position: relative;
+    width: 465px;
+    background-color: #ffffff;
+    margin-top: 20px;
+    margin-left: 23px;
+}
+
+div#comentario-positivo {
+    position: relative;
+    width: 465px;
+    background-color: #ffffff;
+    margin-top: -44px;
+    margin-left: 511px;
+}
+
+p#texto-negativo {
+    position: relative;
+    color: #ffffff;
+    width: 150px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    margin-left: 15px;
+    margin-top: -23px;
+}
+
+div#titulo-negativo {
+    position: relative;
+    width: 465px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #282829;
+}
+
+a#edita-comentario-negativo {
+    position: relative;
+    margin-left: 421px;
+    margin-top: 10px;
+    top: 7px;
+    width: 20px;
+}
+
+p#texto-positivo {
+    position: relative;
+    color: #ffffff;
+    width: 150px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    margin-left: 15px;
+    margin-top: -30px;
+}
+
+div#titulo-positivo {
+    position: relative;
+    width: 465px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #282829;
+}
+
+img#lapis-positivo {
+    position: relative;
+    margin-left: 421px;
+    padding-top: 7px;
+}
+
+table#tbl-comentario {
+    position: relative;
+    width: 957px;
+    margin-left: 22px;
+    border-collapse: separate;
+    padding-bottom: 20px;
+}
+
+table#tbl-comentario tr td{
+    position: relative;
+    height: 50px;
+    padding-right: 40px;
+    background-color: #ffffff;
+}
+
+table#tbl-comentario td#positivo {
+    background-color: #ffffff;
+    width: 418px;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+table#tbl-comentario td#negativo {
+    background-color: #ffffff;
+    width: 418px;
+    margin-right: 20px;
+    border-right: 24px solid #ebefe8;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+p.comentario {
+    position: relative;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    margin-right: -10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+/**
+ * Configuração da tabela do ligthbox da auto-avaliação
+ **/
+
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+table#autoava {
+    width: 695px;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-top: 19px;
+    margin-left: 0;
+    text-align: left;
+    font-size: 12pt;
+}
+
+table#autoava th#quesito {
+    background-color: #282829;
+    color: #ffffff;
+    height:34px;
+    border: 1px solid #ffffff;
+    padding-left: 8px;
+    width: 245px
+}
+
+table#autoava th#np {
+    background-color: #282829;
+    color: #ffffff;
+    height: 34px;
+    border: 1px solid #ffffff;
+    width: 35px;
+    text-align: center;
+}
+
+table#autoava th#obs {
+    background-color: #282829;
+    color: #ffffff;
+    height:34px;
+    border: 1px solid #ffffff;
+    padding-left: 8px;
+    width: 205px
+}
+
+table#autoava tr td.auto-quesito {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    padding-left: 8px;
+    height: 30px;
+}
+
+table#autoava tr td.auto-nota {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#autoava tr td.auto-obs {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+p {
+    font-size: 14pt;
+    color: #282829;
+}
+
+input.nota {
+    width: 98%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    text-align: center;
+}
+
+input.obs {
+    width: 94%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
