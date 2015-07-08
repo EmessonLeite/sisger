@@ -1,0 +1,327 @@
+@charset "UTF-8";
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    background-color: #ffffff;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+#todo {
+    z-index: 10;
+    width: 1000px;
+    margin: auto;
+    padding-top: 71px;
+    margin-bottom: 35px;
+    padding-bottom: 19px;
+    background-image: url('../imagens/background.png');
+}
+
+/*********************************************************************************************************************/
+
+/**
+ * Configurção padrão para inputs e selects
+ */
+select{
+    width: 300px;
+    height: 25px;
+    margin: 5px 15px 15px 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+    color: #282829;
+}
+
+input[type=text] {
+    width: 80px;
+    height: 25px;
+    margin: 5px 15px 15px 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding-left: 7px;
+    color: #282829;
+}
+
+input[type=button], input[type=submit] {
+    position: relative;
+    font-size: 12pt;
+    background-color: #c86739;
+    border-radius: 3px;
+    border: 1px solid #76391c;
+    color: white;
+    padding: 8px;
+    margin-right: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+input[type=button]:hover, input[type=submit]:hover {
+    position: relative;
+    font-size: 12pt;
+    background-color: #282829;
+    border-radius: 3px;
+    border: 1px solid #000;
+    color: white;
+    padding: 8px;
+    margin-right: 15px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/*********************************************************************************************************************/
+
+label {
+    position: relative;
+    color: #c36539;
+}
+
+label.subTitulo {
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+/**
+ * Configuração para primeira parte
+ */
+div#entrada {
+    position: relative;
+    width: 940px;
+    height: 85px;
+    background-color: #ffffff;
+    margin: 10px auto 0 auto;
+    padding: 4px 10px 0px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+hr#linhaPonto{
+    position: relative;
+    width: 870px;
+    border-bottom: 1px solid gray;
+    float: right;
+    margin-top: 16px;
+}
+
+/*********************************************************************************************************************/
+
+/**
+ * Configuração para segunda parte
+ */
+div#filtro {
+    width: 940px;
+    background-color: #ffffff;
+    margin: 10px auto;
+    padding: 4px 10px 0px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+div#filtro a {
+    position: relative;
+    color: #c36539;
+    text-decoration: underline;
+}
+
+div#filtro a:hover {
+    position: relative;
+    color: #282829;
+    text-decoration: underline;
+}
+
+hr#linhaFiltro{
+    position: relative;
+    width: 870px;
+    border-bottom: 1px solid gray;
+    float: right;
+    margin-top: 16px;
+}
+
+div#links{
+    margin-left: 430px;
+    margin-top: -50px;
+}
+
+a#mais1Dia {
+    font-size: 11pt;
+    font-weight: bold;
+}
+a#menos1Dia {
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+
+a#hoje{
+    margin-left: 50px;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+a#mesAtual{
+    margin-left: 54px;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+input#pesquisar{
+    position: relative;
+    margin-left: 50px;
+    top: -15px;
+}
+
+/*********************************************************************************************************************/
+
+/**
+ * Configuração para terceira parte
+ */
+div#tabela {
+    width: 940px;
+    background-color: #ffffff;
+    margin: 10px auto;
+}
+
+
+table#informacoesHorarios {
+    clear: left;
+    width: 940px;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table#informacoesHorarios th {
+    height: 35px;
+    background-color: #c36539;
+    color: white;
+    border-right: 1px solid white;
+}
+
+table#informacoesHorarios th.data {
+    min-width: 50px;
+}
+
+table#informacoesHorarios th.atividade {
+    min-width: 200px;
+}
+
+table#informacoesHorarios th.entrada, th.saida, th.total {
+    min-width: 60px;
+}
+
+table#informacoesHorarios td {
+     border: 1px solid #c9c9c9;
+     border-top-width: 0;
+     height: 30px;
+     max-width: 100px;
+ }
+
+table#informacoesHorarios td a {
+    text-decoration: underline;
+    color: #c36539;
+    font-size: 11pt;
+    margin: 5px;
+}
+
+table#informacoesHorarios td label {
+    color: #c36539;
+    font-size: 11pt;
+    margin: 5px;
+}
+
+table#informacoesHorarios tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+table#informacoesHorarios tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+table#informacoesHorarios tr#aberto {
+    background-color: #faffbd;
+}
+
+table#informacoesHorarios tr td.corrigido {
+    background-color: #fed03f;
+}
+
+table#informacoesHorarios tr:hover td {
+    background: #797979;
+    color: #fff;
+}
+
+table#informacoesHorarios tr:hover a {
+    color: #fff;
+}
+
+table#informacoesHorarios tr:hover label {
+    color: #fff;
+}
+
+table#informacoesHorarios tr td input[type=checkbox] {
+    margin: 5px;
+}
+
+/*********************************************************************************************************************/
+
+/**
+ * Configuração para quarta parte
+ */
+div#meta {
+    position: relative;
+    width: 940px;
+    height: 85px;
+    background-color: #ffffff;
+    margin: 10px auto;
+    padding: 4px 10px 0px 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c76f46;
+}
+
+div#metaTotal {
+    position: relative;
+    float: right;
+}
+
+div#aberto {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #faffbd;
+    border: 1px solid #bbbbbb;
+    margin-top: 10px;
+}
+
+div#ajustado {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    background-color: #fed03f;
+    border: 1px solid #bbbbbb;
+    margin-top: -5px;
+}
+
+span#horarioAberto {
+    position: relative;
+    top: -16px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+span#horarioAjustado {
+    position: relative;
+    top: -16px;
+    margin-left: 20px;
+    font-weight: normal;
+}
+
+/*********************************************************************************************************************/

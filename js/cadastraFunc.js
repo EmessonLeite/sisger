@@ -1,9 +1,6 @@
 $(document).ready(function () {
 
-    /** Configuração de mascaras dos inputs */
     $("#datepicker").datepicker($.datepicker.regional["pt-BR"]);
-    $('.date').mask('00/00/0000');
-    $('.fone').mask('(00) 00000-0000');
     
     /**Validação do form */
     $('form#completo').submit(function(){
