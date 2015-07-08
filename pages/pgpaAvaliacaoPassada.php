@@ -5,6 +5,9 @@
         <div id="titulo">
             <label>Avaliação Passada</label>
         </div>
+        <a href='#lightboxAvaliacaoPassada' rel='leanModal' id='editaAvaliacaoPassada'>
+            <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='position: relative; margin-left: 570px; margin-top: -20px; z-index: 100;'>
+        </a>
         <table id="ava-passada" cellspacing="0" cellpadding="0">
             <tr>
                 <th id="quesito">Quesito:</th>

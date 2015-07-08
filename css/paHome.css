@@ -489,3 +489,167 @@ input.obs {
     padding-right: 7px;
 }
 
+/**
+ * Configuração da tabela do ligthbox da avaliação passada
+ **/
+
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+table#avaliacaoPassada {
+    width: 695px;
+    height: 120px;
+    margin-bottom: 20px;
+    margin-top: 19px;
+    margin-left: 0;
+    text-align: left;
+    font-size: 12pt;
+}
+
+table#avaliacaoPassada th#quesito {
+    background-color: #282829;
+    color: #ffffff;
+    height:34px;
+    border: 1px solid #ffffff;
+    padding-left: 8px;
+    width: 245px
+}
+
+table#avaliacaoPassada th#pa {
+    background-color: #282829;
+    color: #ffffff;
+    height: 34px;
+    border: 1px solid #ffffff;
+    width: 35px;
+    text-align: center;
+}
+
+table#avaliacaoPassada th#ab {
+    background-color: #282829;
+    color: #ffffff;
+    height: 34px;
+    border: 1px solid #ffffff;
+    width: 35px;
+    text-align: center;
+}
+
+table#avaliacaoPassada th#pq {
+    background-color: #282829;
+    color: #ffffff;
+    height: 34px;
+    border: 1px solid #ffffff;
+    width: 105px;
+    text-align: center;
+}
+
+table#avaliacaoPassada th#obs {
+    background-color: #282829;
+    color: #ffffff;
+    height:34px;
+    border: 1px solid #ffffff;
+    padding-left: 8px;
+    width: 105px
+}
+
+table#avaliacaoPassada tr td.ava-quesito {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    padding-left: 8px;
+    height: 30px;
+}
+
+table#avaliacaoPassada tr td.ava-pa {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#avaliacaoPassada tr td.ava-ab {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#avaliacaoPassada tr td.ava-pq {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#avaliacaoPassada tr td.ava-obs {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+table#avaliacaoPassada tr td.ava-total {
+    border: 1px solid #ffffff;
+    background-color: #dedede;
+    height: 30px;
+    padding: 0;
+}
+
+
+p {
+    font-size: 14pt;
+    color: #282829;
+}
+
+input.pa {
+    width: 98%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    text-align: center;
+}
+
+input.ab {
+    width: 98%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    text-align: center;
+}
+
+input.pq {
+    width: 98%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    text-align: center;
+}
+
+input.obsAva {
+    width: 90%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+}
+
+input.total {
+    width: 90%;
+    height: 100%;
+    border: 1px solid #ccc;
+    color: #282829;
+    font-size: 14pt;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+}
+
+table#avaliacaoPassada tr td.inativo {
+    visibility: hidden;
+}
+

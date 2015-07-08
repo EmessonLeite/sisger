@@ -59,8 +59,28 @@ $(document).ready(function () {
         });
     });
 
+    /**
+     * Clique do botão de avaliação passada dentro do iframe conteudo
+     */
+    $('#conteudo').load(function () {
+        /** Recebe o tamanho do conteudo do iframe */
+        var tamanho = $('#conteudo').contents().find('.tbConteudo').height();
+
+        /** Caso o tamanho do conteudo seja maior 390, o tamanho do iframe é aumentado  */
+        if(tamanho != null && tamanho > 380){
+            $('iframe.conteudos').css('height', (tamanho + 25) + 'px');
+        }else{
+            $('iframe.conteudos').css('height', '390px');
+        }
+
+        $('#conteudo').contents().find('#editaAvaliacaoPassada').click(function () {
+            $('#editaAvaliacaoPassadaClick').click();
+        });
+    });
+
     $(".caixaComentarios").draggable();
     $(".caixaAutoAva").draggable();
+    $(".caixaAvaliacaoPassada").draggable();
 
     $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
 

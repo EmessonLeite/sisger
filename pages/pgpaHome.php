@@ -185,6 +185,15 @@
             </div>
         </div>
 
+        <div id="comentario-positivo" style="visibility: hidden">
+            <div id="titulo-positivo">
+                <a href="#lightboxAvaliacaoPassada" name="lightbox-positivo" rel="leanModal" id="editaAvaliacaoPassadaClick">
+                    <img id="lapis-positivo" src="imagens/lapis.png">
+                </a>
+                <p id="texto-positivo">Pontos Positivos</p>
+            </div>
+        </div>
+
         <!-- div para lightbox auto-avaliação. /-->
         <div id="lightbox-autoava" class="caixaAutoAva">
             <form method="POST" class="frmAutoAva" id="frmAutoAva">
@@ -306,6 +315,71 @@
                         ?>
                     </table>
                     <input id="salvar-autoava" type="submit" name="salvarAutoAva" value="Salvar" />
+                </div>
+            </form>
+        </div>
+
+        <!-- div para lightbox avaliação passada. /-->
+        <div id="lightboxAvaliacaoPassada" class="caixaAvaliacaoPassada">
+            <form method="POST" class="frmAvaliacaoPassada" id="frmAvaliacaoPassada">
+                <div id="cabecalhoAvaliacaoPassada">
+                    <p>Avaliação passada</p>
+                    <a class="modal_close"></a>
+                </div>
+                <div class="txt-cabecalhoAvaliacaoPassada">
+                    <table id="avaliacaoPassada" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <th id="quesito">Quesito:</th>
+                            <th id="pa">PA:</th>
+                            <th id="ab">AB:</th>
+                            <th id="pq">PQ:</th>
+                            <th id="obs">Obs:</th>
+                        </tr>
+                        <tr>
+                            <td class="ava-quesito">
+                                <p><?php echo $dadosAutoAvaliacao['quesito1']; ?></p>
+                            </td>
+                            <td class="ava-pa">
+                                <input type="text" maxlength="3" class="pa" name="nota1" value="10">
+                            </td>
+                            <td class="ava-ab">
+                                <input type="text" maxlength="3" class="ab" name="descricao1" value="11">
+                            </td>
+                            <td class="ava-pq">
+                                <input type="text" maxlength="5" class="pq" name="descricao1" value="1111">
+                            </td>
+                            <td class="ava-obs">
+                                <input type="text" maxlength="3" class="obsAva" name="descricao1" value="100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ava-quesito">
+                                <p><?php echo $dadosAutoAvaliacao['quesito2']; ?></p>
+                            </td>
+                            <td class="ava-pa">
+                                <input type="text" maxlength="3" class="pa" name="nota1" value="10">
+                            </td>
+                            <td class="ava-ab">
+                                <input type="text" maxlength="3" class="ab" name="descricao1" value="11">
+                            </td>
+                            <td class="ava-pq">
+                                <input type="text" maxlength="5" class="pq" name="descricao1" value="1111">
+                            </td>
+                            <td class="ava-obs">
+                                <input type="text" maxlength="3" class="obsAva" name="descricao1" value="100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="inativo"></td>
+                            <td class="inativo"></td>
+                            <td class="inativo"></td>
+                            <td class="inativo"></td>
+                            <td class="ava-total">
+                                <input type="text" maxlength="3" class="total" name="descricao1" value="100">
+                            </td>
+                        </tr>
+                    </table>
+                    <input id="salvarAvaliacaoPassada" type="submit" name="salvarAutoAva" value="Salvar" />
                 </div>
             </form>
         </div>

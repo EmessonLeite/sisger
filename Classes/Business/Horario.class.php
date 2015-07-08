@@ -40,9 +40,9 @@ class Horario {
         if(count($horariosAbertos) != 0){
             $dados = array('saida' => date('Y-m-d h:i:s'), 'id' => $horariosAbertos[0]['id']);
             $this->conexao->Editar($dados);
-        } else {
+        } else {/*
             echo '<br /><br /><br />';
-            echo 'Não há horário aberto!';
+            echo 'Não há horário aberto!';*/
         }
     }
     
@@ -50,8 +50,7 @@ class Horario {
         $query = "SELECT * FROM [tabela] WHERE idUsuario = ? ";
         $dados = array('idUsuario' => $this->idUsuario);
         $corrigir = $this->conexao->Buscar($query, $dados);
-        echo '<br /><br /><br />';
-        var_dump($corrigir);
+        /*echo '<br /><br /><br />';*/
     }
     
     public function buscarAberto(){
