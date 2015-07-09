@@ -1,9 +1,20 @@
 <?php
+
 /** Inclui o arquivo de configurações gerais do projeto */
 include_once('../Classes/config.inc.php');
 
+/** Valida os dados enviados via URL */
+if (is_string($_GET['referencia']) && is_numeric($_GET['id'])) {
+    $idUsuarioSelecionado = $_GET['id'];
+    $referencia = $_GET['referencia'];
+}else{
+    echo "ERRO AO CARREGAR AUTOAVALIAÇÃO";
+    exit;
+}
+
+
 /** @var AutoAvaliacao */
-$autoAvalicao = AutoAvaliacao::getInstance($_GET['referencia'], $_GET['id']);
+$autoAvalicao = AutoAvaliacao::getInstance($referencia, $idUsuarioSelecionado);
 
 /**
  * @var array
@@ -11,11 +22,9 @@ $autoAvalicao = AutoAvaliacao::getInstance($_GET['referencia'], $_GET['id']);
  */
 $dadosAutoAvaliacao = $autoAvalicao->buscar();
 
-$idUsuarioSelecionado = $_GET['id'];
-
 session_start();
 
-/**Verifica se a sessão existe */
+/* * Verifica se a sessão existe */
 if (isset($_SESSION['id']) && is_int($_SESSION['id']) && is_string($_SESSION['apelido'])) {
     /**
      * ID do usuario logado

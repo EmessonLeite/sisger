@@ -20,15 +20,20 @@ class Horario {
     }
     
     
-    public function darEntrada(){
+    public function darEntrada($dados){
+        /** Buscar horarios abertos */
         $horariosAbertos = $this->buscarAberto();
                
         if(!count($horariosAbertos)){
-            $dados = array('entrada' => date('Y-m-d h:i:s'), 'idUsuario' => $this->idUsuario);
+            /** Dados que serão cadastrados no novo horario */
+            $dados = array_merge($dados, array('entrada' => date('Y-m-d h:i:s'), 'idUsuario' => $this->idUsuario));
+            
+            /** Cadastrar novo horario */
             $this->conexao->Cadastrar($dados);
         } else {
-            echo '<br /><br /><br />';
-            echo 'Horário aberto!';
+            /** gera um novo erro */
+            $message = "Não é possível abrir um novo horário.";
+            throw new Exception($message);
         }
         
     }
@@ -40,9 +45,9 @@ class Horario {
         if(count($horariosAbertos) != 0){
             $dados = array('saida' => date('Y-m-d h:i:s'), 'id' => $horariosAbertos[0]['id']);
             $this->conexao->Editar($dados);
-        } else {/*
+        } else {
             echo '<br /><br /><br />';
-            echo 'Não há horário aberto!';*/
+            echo 'Não há horário aberto!';
         }
     }
     
@@ -50,7 +55,8 @@ class Horario {
         $query = "SELECT * FROM [tabela] WHERE idUsuario = ? ";
         $dados = array('idUsuario' => $this->idUsuario);
         $corrigir = $this->conexao->Buscar($query, $dados);
-        /*echo '<br /><br /><br />';*/
+        echo '<br /><br /><br />';
+        var_dump($corrigir);
     }
     
     public function buscarAberto(){

@@ -100,23 +100,23 @@
 
     <!-- Tela para ligthBox /-->
     <div id="lightboxPontoEntrarSair" class="caixaLightBox">
-        <form action="" class="">
+        <form method="POST" class="">
             <div id="cabecalhoPontoEntrarSair">
                 <p>Ponto</p>
                 <a class="modal_close"></a>
             </div>
             <div class="txtPontoEntrarSair">
-                <label>Atividade</label>
-                <input type="text" value="" />
-                <label>Célula/Mídia</label>
-                <input type="text" value="" />
-                <label>Coordenador</label>
-                <input type="text" value="" />
-                <label>Remunerado</label>
-                <input type="checkbox" value="" />
+                <label for="atividade">Atividade</label>
+                <input type="text" name="atividade" value="" />
+                <label for="celulaMidia">Célula/Mídia</label>
+                <input name="celulaMidia" type="text" value="" />
+                <label for="coordenador">Coordenador</label>
+                <input name="coordenador" type="text" value="" />
+                <label for="remunerado">Remunerado</label>
+                <input name="remunerado" type="checkbox" value="1" />
             </div>
             <div class="enviarCancelarPontoEntrarSair">
-                <input type="submit" value="Salvar" id="confirmarSalvar" />
+                <input type="submit" name="abrirHorario" value="Salvar" id="confirmarSalvar" />
                 <input type="hidden" id="idUsuarioExcluido" />
                 <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
             </div>

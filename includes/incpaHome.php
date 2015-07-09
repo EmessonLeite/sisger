@@ -43,14 +43,21 @@ $comentariosNegativos = $comentario->buscar($idUsuarioSelecionado, $avaliacao[0]
 /** @var AutoAvaliacao */
 if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
     $autoAvalicao = AutoAvaliacao::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
+    $avaliacaoPassada = AvaliacaoPassada::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
 }
 
 /** Recebe o formulario */
 $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
+/**Verifica qual das abas deve ser selecionada */
 if (isset($form['salvarAutoAva'])) {
     unset($form['salvarAutoAva']);
     $autoAvalicao->editar($form);
+    $conteudoIframe = "includes/incpaAutoav.php{$infoURL}";
+    $geral = false;
+} elseif (isset($form['salvarAvaliacaoPassada'])) {
+    unset($form['salvarAutoAva']);
+    $avaliacaoPassada->editar($form);
     $conteudoIframe = "includes/incpaAutoav.php{$infoURL}";
     $geral = false;
 } else {

@@ -2,8 +2,17 @@
 /** Inclui o arquivo de configurações gerais do projeto */
 include_once('../Classes/config.inc.php');
 
+/** Valida os dados enviados via URL */
+if (is_string($_GET['referencia']) && is_numeric($_GET['id'])) {
+    $idUsuarioSelecionado = $_GET['id'];
+    $referencia = $_GET['referencia'];
+}else{
+    echo "ERRO AO CARREGAR AVALIAÇÃO PASSADA.";
+    exit;
+}
+
 /** @var AutoAvaliacao */
-$avaliacaoPassada = AvaliacaoPassada::getInstance($_GET['referencia'], $_GET['id']);
+$avaliacaoPassada = AvaliacaoPassada::getInstance($referencia, $idUsuarioSelecionado);
 
 /**
  * @var array
