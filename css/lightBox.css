@@ -811,6 +811,7 @@ div#lightboxPontoExcluir input#confirmarExcluir {
     width: auto;
     cursor: pointer;
     margin-bottom: 20px;
+    float: left;
 }
 
 div#lightboxPontoExcluir input#cancelar {
