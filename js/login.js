@@ -32,7 +32,7 @@ $(document).ready(function(){
                           .addClass('logado');
                   
                 /** Redireciona para a home caso o usuario seja vádido */
-                window.location = $('#raiz').val() + "paHome";
+                window.location = $('#raiz').val() + "home";
             }else{
                 $('#info').html("Login ou senha inválido.")
                           .addClass('erro');

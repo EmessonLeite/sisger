@@ -24,9 +24,9 @@
             <div id="central">
                 <img id="logo" src="imagens/logo-branca.png">
                 <div id="usuario">
-                    <label><a id="apelido" href="paHome"><?php echo $apelido; ?></a></label>
+                    <label><a id="apelido" href="home"><?php echo $apelido; ?></a></label>
                     <div id="imgusuario">
-                        <a href="paHome">
+                        <a href="home">
                             <img class="usuario" src="imagens/perfil/<?php echo $foto; ?>">
                         </a>
                     </div>

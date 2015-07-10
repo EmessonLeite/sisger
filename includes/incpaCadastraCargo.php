@@ -45,8 +45,9 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
         $dadosCargo = $cargoBusiness->buscarPorID($url->getURL(2));
     }
 
-    /** Include da pagina de configuração de perfil */
+    /** Include da pagina de configuração de perfil e o rodape */
     include_once("pages/pgpaFormCadastraCargo.php");
+    include_once('includes/incrodape.php');
     exit;
 } elseif ($url->posicaoExiste(1) && $url->getURL(1) == 'excluir') {
 
