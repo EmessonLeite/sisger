@@ -46,6 +46,15 @@ if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
     $avaliacaoPassada = AvaliacaoPassada::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
 }
 
+/** @var AutoAvaliacao */
+$avaliacaoPassada = AvaliacaoPassada::getInstance($avaliacao[0]['referente'], $idUsuarioSelecionado);
+
+/**
+ * @var array
+ * Dados da autoAvalicao do Usuario selecionado
+ */
+$dadosAvaliacaoPassada = $avaliacaoPassada->buscar();
+
 /** Recebe o formulario */
 $form = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
@@ -56,9 +65,9 @@ if (isset($form['salvarAutoAva'])) {
     $conteudoIframe = "includes/incpaAutoav.php{$infoURL}";
     $geral = false;
 } elseif (isset($form['salvarAvaliacaoPassada'])) {
-    unset($form['salvarAutoAva']);
+    unset($form['salvarAvaliacaoPassada']);
     $avaliacaoPassada->editar($form);
-    $conteudoIframe = "includes/incpaAutoav.php{$infoURL}";
+    $conteudoIframe = "includes/incpaAvaliacaoPassada.php{$infoURL}";
     $geral = false;
 } else {
     $conteudoIframe = "includes/incpaInfogerais.php{$infoURL}";

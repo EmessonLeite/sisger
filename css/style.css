@@ -12,7 +12,6 @@ form.cadastro{
     background-image: url('../imagens/background.png');
     padding: 20px;
     width: 960px;
-    min-height: 500px;
     margin: 0 auto;
     font-family: 'Trebuchet MS', sans-serif;
 }

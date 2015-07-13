@@ -44,7 +44,7 @@
             ?>
             <tr>
                 <td class="inativo"></td>
-                <td class="obs" colspan="4">71,5</td>
+                <td class="obs" colspan="4"><?php echo $dadosAvaliacaoPassada["total"]; ?></td>
             </tr>
         </table>
     </div>

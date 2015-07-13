@@ -335,51 +335,42 @@
                             <th id="pq">PQ:</th>
                             <th id="obs">Obs:</th>
                         </tr>
-                        <tr>
-                            <td class="ava-quesito">
-                                <p><?php echo $dadosAutoAvaliacao['quesito1']; ?></p>
-                            </td>
-                            <td class="ava-pa">
-                                <input type="text" maxlength="3" class="pa" name="nota1" value="10">
-                            </td>
-                            <td class="ava-ab">
-                                <input type="text" maxlength="3" class="ab" name="descricao1" value="11">
-                            </td>
-                            <td class="ava-pq">
-                                <input type="text" maxlength="5" class="pq" name="descricao1" value="1111">
-                            </td>
-                            <td class="ava-obs">
-                                <input type="text" maxlength="3" class="obsAva" name="descricao1" value="100">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="ava-quesito">
-                                <p><?php echo $dadosAutoAvaliacao['quesito2']; ?></p>
-                            </td>
-                            <td class="ava-pa">
-                                <input type="text" maxlength="3" class="pa" name="nota1" value="10">
-                            </td>
-                            <td class="ava-ab">
-                                <input type="text" maxlength="3" class="ab" name="descricao1" value="11">
-                            </td>
-                            <td class="ava-pq">
-                                <input type="text" maxlength="5" class="pq" name="descricao1" value="1111">
-                            </td>
-                            <td class="ava-obs">
-                                <input type="text" maxlength="3" class="obsAva" name="descricao1" value="100">
-                            </td>
-                        </tr>
+                        <?php
+                        for ($i = 1, $j = 0; $j < count($dadosAvaliacaoPassada); $i++, $j+=4) {
+                            if(isset($dadosAvaliacaoPassada["quesito{$i}"]) && $dadosAvaliacaoPassada["quesito{$i}"] != ""){
+                                ?>
+                                <tr>
+                                    <td class="ava-quesito">
+                                        <p><?php echo $dadosAvaliacaoPassada["quesito{$i}"]; ?></p>
+                                    </td>
+                                    <td class="ava-pa">
+                                        <input type="text" maxlength="3" class="pa" name="pa<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["pa{$i}"]; ?>">
+                                    </td>
+                                    <td class="ava-ab">
+                                        <input type="text" maxlength="3" class="ab" name="ab<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["ab{$i}"]; ?>">
+                                    </td>
+                                    <td class="ava-pq">
+                                        <input type="text" maxlength="5" class="pq" name="pq<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["pq{$i}"]; ?>">
+                                    </td>
+                                    <td class="ava-obs">
+                                        <input type="text" maxlength="3" class="obsAva" name="obs<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["obs{$i}"]; ?>">
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                        }
+                        ?>
                         <tr>
                             <td class="inativo"></td>
                             <td class="inativo"></td>
                             <td class="inativo"></td>
                             <td class="inativo"></td>
                             <td class="ava-total">
-                                <input type="text" maxlength="3" class="total" name="descricao1" value="100">
+                                <input type="text" maxlength="5" class="total" name="total" value="<?php echo $dadosAvaliacaoPassada["total"]; ?>">
                             </td>
                         </tr>
                     </table>
-                    <input id="salvarAvaliacaoPassada" type="submit" name="salvarAutoAva" value="Salvar" />
+                    <input id="salvarAvaliacaoPassada" type="submit" name="salvarAvaliacaoPassada" value="Salvar" />
                 </div>
             </form>
         </div>
