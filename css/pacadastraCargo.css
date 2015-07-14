@@ -1,0 +1,10 @@
+table#quesitosPorCargo td, table#quesitosPorCargo th{
+    border: 1px solid black;
+}
+
+div#infoQuesitos input{
+    border: 1px solid green;
+}
+
+ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
+li { margin: 5px; padding: 5px; width: 150px; }

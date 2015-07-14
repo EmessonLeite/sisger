@@ -18,15 +18,33 @@ class Quesito {
         $this->conexao = new ConexaoDAO('pa_quesitos');
         $this->idCargo = $idCargo;
     }
-    
+
     /**
      * cadastrar
      * Cadastra uma nova auto-avaliacao neste usuario
+     * 
      * @param array
      * @return int
      */
     public function cadastrar($dados) {
-        //Implementar o cadastro de cargos
+        return $this->conexao->Cadastrar($dados);
+    }
+
+    /**
+     * excluirTodos
+     * Exclui todos os quesitos cadastrados para um cargo
+     * 
+     * @param int $idCargo
+     */
+    public function excluirTodos() {
+        /** Query para exclusão dos dados */
+        $query = "DELETE FROM [tabela] WHERE idCargo = ?";
+
+        /** ID do cargo onde os quesitos serão excluidos */
+        $dados = array($this->idCargo);
+
+        /** Executa a consulta */
+        $this->conexao->Buscar($query, $dados);
     }
 
     /**
@@ -44,7 +62,7 @@ class Quesito {
 
         return $result;
     }
-    
+
     /**
      * getInstance
      * Retorna uma instância única de uma classe.

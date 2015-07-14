@@ -43,6 +43,10 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     if ($url->getURL(1) == 'editar') {
         $dadosCargo = $cargoBusiness->buscarPorID($url->getURL(2));
+        
+        $quesitosBusiness = Quesito::getInstance($url->getURL(2));
+        
+        $quesitos = $quesitosBusiness->buscar();
     }
 
     /** Include da pagina de configuração de perfil e o rodape */
@@ -92,6 +96,3 @@ if ($url->posicaoExiste(1) && $url->getURL(1) == 'erro') {
 
 /** Include da pagina de configuração de perfil */
 include_once("pages/pg{$url->getURL(0)}.php");
-
-
-?>

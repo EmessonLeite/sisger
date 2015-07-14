@@ -20,9 +20,29 @@ class Cargo {
      * @param array $dados
      * @return int
      */
-    public function cadastrar($dados){
+    public function cadastrar($dados) {
+        /** @var array */
+        $quesitos = json_decode($dados['quesitos']);
 
-        return $this->conexao->Cadastrar($dados);
+        /** Remove o indice quesitos do array de dados */
+        unset($dados['quesitos']);
+
+        /** Remove o indice quesitoAdd do array de dados */
+        unset($dados['quesitoAdd']);
+
+        /** @var int */
+        $idCargo = $this->conexao->Cadastrar($dados);
+
+        for ($i = 1; $i <= count($quesitos); $i++) {
+            $quesitoBusiness = Quesito::getInstance($idCargo);
+            $quesitoBusiness->cadastrar(array(
+                'ordem' => $i,
+                'quesito' => $quesitos[$i - 1],
+                'idCargo' => $idCargo
+            ));
+        }
+
+        return $idCargo;
     }
 
     /**
@@ -32,9 +52,32 @@ class Cargo {
      * @param array $dados
      * @return int
      */
-    public function editar($dados){
+    public function editar($dados) {
+        /** @var array */
+        $quesitos = json_decode($dados['quesitos']);
 
-        return $this->conexao->Editar($dados);
+        /** Remove o indice quesitos do array de dados */
+        unset($dados['quesitos']);
+
+        /** Remove o indice quesitoAdd do array de dados */
+        unset($dados['quesitoAdd']);
+
+        /** @var int */
+        $this->conexao->Editar($dados);
+
+        $quesitoBusiness = Quesito::getInstance($dados['id']);
+        $quesitoBusiness->excluirTodos();
+
+        for ($i = 1; $i <= count($quesitos); $i++) {
+
+            $quesitoBusiness->cadastrar(array(
+                'ordem' => $i,
+                'quesito' => $quesitos[$i - 1],
+                'idCargo' => $dados['id']
+            ));
+        }
+
+        return $dados['id'];
     }
 
     /**
@@ -44,7 +87,7 @@ class Cargo {
      * @param int
      * @return int
      */
-    public function excluir($id){
+    public function excluir($id) {
         return $this->conexao->Deletar($id);
     }
 
@@ -55,13 +98,13 @@ class Cargo {
      * @param array $dados que serão usuados para filtrar
      * @return array
      */
-    public function buscar($dados = array()){
+    public function buscar($dados = array()) {
 
         /** @var string */
         $filtro = "";
 
         /** Monta o filtro na consulta */
-        if(count($dados) > 0){
+        if (count($dados) > 0) {
             $filtro = 'WHERE ' . implode(" LIKE ? OR ", array_keys($dados)) . " LIKE ?";
         }
 
