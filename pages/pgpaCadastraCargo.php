@@ -20,7 +20,7 @@
                         <td>{$cargo['ordem']}</td>
                         <td>{$cargo['cargo']}</td>
                         <td id='editar'><a href='{$url->getURL(0)}/editar/{$cargo['id']}'>Editar</a></td>
-                        <td id='excluir'><a class='exluirFuncionario' href='{$url->getURL(0)}/excluir/{$cargo['id']}'>Excluir</a></td>
+                        <td id='excluir'><a class='exluirCargo' href='{$url->getURL(0)}/excluir/{$cargo['id']}'>Excluir</a></td>
                     </tr>
                 ";
                 }
@@ -43,7 +43,7 @@
         <div class="txt-excluir">
             <p>Você deseja realmente excluir este cargo?</p>
             <input type="button" value="Excluir" id="confirmarExcluir" />
-            <input type="hidden" id="idUsuarioExcluido" />
+            <input type="hidden" id="idCargoExcluido" />
             <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
         </div>
     </form>
