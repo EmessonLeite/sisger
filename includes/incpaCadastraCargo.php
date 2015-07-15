@@ -89,7 +89,7 @@ if ($url->posicaoExiste(1) && $url->getURL(1) == 'erro') {
     /** Dados usuario erro ao exlcuir */
     $dadosCargoErro = $cargoBusiness->buscarPorID($url->getURL(2));
 
-    $erroExcluir = "<p class='erro'>Erro ao exlcuir o cargo.</p>";
+    $erroExcluir = "<p class='erroCargo'>Erro ao exlcuir o cargo.</p>";
 } else {
     $erroExcluir = "";
 }

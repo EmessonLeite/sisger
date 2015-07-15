@@ -353,7 +353,7 @@
                                         <input type="text" maxlength="5" class="pq" name="pq<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["pq{$i}"]; ?>">
                                     </td>
                                     <td class="ava-obs">
-                                        <input type="text" maxlength="3" class="obsAva" name="obs<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["obs{$i}"]; ?>">
+                                        <input type="text" maxlength="5" class="obsAva" name="obs<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["obs{$i}"]; ?>">
                                     </td>
                                 </tr>
                             <?php

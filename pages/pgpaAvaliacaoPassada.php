@@ -35,7 +35,7 @@
                         <label><?php echo $dadosAvaliacaoPassada["pq{$i}"]; ?></label>
                     </td>
                     <td class="obs">
-                        <label><?php echo $dadosAvaliacaoPassada["obs{$i}"]; ?></label>
+                        <label><?php echo round($dadosAvaliacaoPassada["obs{$i}"], 2); ?></label>
                     </td>
                 </tr>
                 <?php
@@ -44,7 +44,7 @@
             ?>
             <tr>
                 <td class="inativo"></td>
-                <td class="obs" colspan="4"><?php echo $dadosAvaliacaoPassada["total"]; ?></td>
+                <td class="obs" colspan="4"><?php echo round($dadosAvaliacaoPassada["total"],2); ?></td>
             </tr>
         </table>
     </div>

@@ -193,7 +193,15 @@ p.erro {
     background-color: #E9C4B2;
     border: 1px solid #911;
     padding: 10px;
-    margin: 0px 20px 20px;
+    margin: 0px 19px 15px;
+}
+
+p.erroCargo {
+    color: #911;
+    background-color: #E9C4B2;
+    border: 1px solid #911;
+    padding: 10px;
+    margin: 0px 1px 15px;
 }
 /**********************************************************************************************************************/
 
