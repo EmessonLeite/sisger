@@ -12,6 +12,14 @@ if (is_string($_GET['referencia']) && is_numeric($_GET['id'])) {
     exit;
 }
 
+/** @var Avaliacao */
+$avaliacaoBusiness = Avaliacao::getInstance($referencia);
+
+/**
+ * Referencia da avaliacao selecionada para visualização
+ * @var string
+ */
+$avaliacao = $avaliacaoBusiness->buscar();
 
 /** @var AutoAvaliacao */
 $autoAvalicao = AutoAvaliacao::getInstance($referencia, $idUsuarioSelecionado);

@@ -16,7 +16,7 @@ include_once("../Classes/Config.inc.php");
                 <label id="titulo-autoava">Como eu me avaliaria</label>
             </div>
             <?php
-                if ($idUsuario == $idUsuarioSelecionado) {
+                if (($idUsuario == $idUsuarioSelecionado) && (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL))) {
                     echo "
                         <a href='#lightbox-autoava' name='lightbox-autoava' rel='leanModal' id='edita-autoava'>
                             <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='color: #000000; position: relative; margin-left: 625px; margin-top: -15px;'>
