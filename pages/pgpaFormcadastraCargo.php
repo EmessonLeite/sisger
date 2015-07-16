@@ -25,14 +25,13 @@
 
                 <div id="infoQuesitos">
                     <label for="quesitoAdd">Quesito</label>
-                    <input name="quesitoAdd" />
-                    <input type="button" id="add" value="Adicionar" />
-
+                    <input type="text" name="quesitoAdd" />
+                    <input type="button" class="alterar" id="add" value="Adicionar" />
                     <ul id="sortable">
                         <?php
                         if(isset($quesitos) && count($quesitos))
                         foreach ($quesitos as $q){
-                            echo "<li class='ui-state-default'><div class='quesito'>{$q['quesito']}</div><a href='' class='excluirQuesito'>x</a></li>";
+                            echo "<li class='ui-state-default'><div class='quesito'>{$q['quesito']}</div><a href='' class='excluirQuesito'><img src='imagens/lixeira.gif'></a></li>";
                         }
                         
                         ?>

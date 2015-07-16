@@ -1,10 +1,31 @@
 table#quesitosPorCargo td, table#quesitosPorCargo th{
+    position: relative;
     border: 1px solid black;
 }
 
 div#infoQuesitos input{
-    border: 1px solid green;
+    position: relative;
+    margin-right: 600px;
 }
 
-ul { list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
-li { margin: 5px; padding: 5px; width: 150px; }
+p#infoQuesitos {
+    position: relative;
+    margin-left: 15px;
+}
+
+ul {
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+li {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    min-width: 150px;
+    margin-left: 15px;
+    margin-right: -3px;
+}
