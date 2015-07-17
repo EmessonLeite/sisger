@@ -28,4 +28,19 @@ li {
     min-width: 150px;
     margin-left: 15px;
     margin-right: -3px;
+    color: #282829;
+    background-color: #dedede;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+div#infoQuesitos {
+    position: relative;
+    width: 925px;
+}
+
+p#txtQuesito {
+    position: relative;
+    width: 875px;
+    font-weight: normal;
+    font-size: 12pt;
 }

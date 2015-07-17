@@ -69,7 +69,7 @@ $(document).ready(function () {
         } else if (repetido) {
             $('p#infoQuesitos').html('O quesito "' + quesito + '" já foi adicionado neste cargo.');
         } else {
-            var row = '<li class="ui-state-default"><div class="quesito">' + quesito + '</div><a href="" class="excluirQuesito"><img src="imagens/lixeira.gif"></a></li>';
+            var row = '<li class="ui-state-default"><div class="quesito"><p id="txtQuesito">' + quesito + '</p></div><a href="" class="excluirQuesito"><img src="imagens/lixeira.gif"></a></li>';
             $('ul#sortable').append(row);
             $('p#infoQuesitos').html('');
         }

@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <section>
     <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">
         <div class="camposFormularioCompleto">
@@ -31,7 +30,7 @@
                         <?php
                         if(isset($quesitos) && count($quesitos))
                         foreach ($quesitos as $q){
-                            echo "<li class='ui-state-default'><div class='quesito'>{$q['quesito']}</div><a href='' class='excluirQuesito'><img src='imagens/lixeira.gif'></a></li>";
+                            echo "<li class='ui-state-default'><div class='quesito'><p id='txtQuesito'>{$q['quesito']}</p></div><a href='' class='excluirQuesito'><img src='imagens/lixeira.gif'></a></li>";
                         }
                         
                         ?>
