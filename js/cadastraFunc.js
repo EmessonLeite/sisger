@@ -30,6 +30,18 @@ $(document).ready(function () {
        
     });
     
+    $("input#editar").mouseenter(function(){
+        $("input#editar").animate({dispaly: 'block', height: '100%', opacity: '1'}, "slow");             
+    });
+        
+    $("input#editar").click(function(){
+         $("input#foto").click();
+    });
+    
+    $("div#fotoPerfil").mouseleave(function(){
+        $("input#editar").animate({height: '20px', opacity: '0.8'}, "slow");        
+    });
+    
     /** Configurações do lightbox */
     $(".caixaComentarios").draggable();
     $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
