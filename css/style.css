@@ -134,7 +134,7 @@ div.camposFormularioCompleto div.inputs div#status {
 section.listagemCadastro {
     background-image: url('../imagens/background.png');
     padding: 20px;
-    width: 960px;
+    width: 83%;
     min-height: 500px;
     margin: 0 auto;
     font-family: 'Trebuchet MS', sans-serif;
@@ -143,7 +143,7 @@ section.listagemCadastro {
 div.camposSection {
     position: relative;
     background-color: white;
-    width: 915px;
+    width: 95%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -160,7 +160,7 @@ table.listagem {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    min-width: 914px;
+    min-width: 100%;
 }
 
 table.listagem td {
