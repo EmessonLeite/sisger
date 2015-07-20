@@ -131,6 +131,8 @@ div.camposFormularioCompleto div.inputs div#status {
 /**
  * Configuração para telas que possuem listagem
  */
+
+
 section.listagemCadastro {
     background-image: url('../imagens/background.png');
     padding: 20px;
@@ -138,6 +140,20 @@ section.listagemCadastro {
     min-height: 500px;
     margin: 0 auto;
     font-family: 'Trebuchet MS', sans-serif;
+}
+
+@media (min-width: 1200px){
+    section.listagemCadastro {
+        width: 52%;
+        min-width: 1026px;
+    }
+}
+
+@media (max-width: 1200px){
+    section.listagemCadastro {
+        width: 80%;
+        background-color: red;
+    }
 }
 
 div.camposSection {
