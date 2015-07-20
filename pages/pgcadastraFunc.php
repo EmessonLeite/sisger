@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/CadastraFunc.css">
 <section class="listagemCadastro">
     <div class="camposSection">
         <?php echo $erroExcluir; ?>

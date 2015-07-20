@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/formCadastraFunc.css">
 <!--<link rel="stylesheet" href="css/jquery-ui.css">/-->
 <section>
     <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">

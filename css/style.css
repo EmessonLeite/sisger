@@ -26,23 +26,23 @@ form.cadastro input[type=password], form.cadastro input[type=text], form.cadastr
     width: 32%;
     min-width: 180px;
     height: 25px;
-    margin: 0.5% 1.6% 1.6% 1.6%;
+    margin: 5px  15px 15px 0;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    padding-left: 0.5%;
+    padding-left: 5px;
 }
 
 form.cadastro input[type=radio]{
     padding: 0px;
-    margin: 0px 0px 0px 1.6% ;
+    margin: 0px 0px 0px 0 ;
 }
 
 form.cadastro input[type=file] {
-    margin-left: 1.6%;
+    margin-left: 0;
 }
 
 form.cadastro label {
-    margin: 1.6% 1.6% 0 1.6%;
+    margin: 15px 15px 0 0;
     color: #2e2e2e;
 }
 
@@ -117,9 +117,9 @@ div.camposFormularioCompleto div.inputs{
 
 div.camposFormularioCompleto div.inputs div:not(#fotoPerfil){
     display: inline-block;
-    padding: 5px;
+    //padding: 5px;
     margin: auto;
-    min-width: 191px;
+    //min-width: 191px;
 }
 
 div.camposFormularioCompleto div.inputs div#status {
@@ -135,9 +135,10 @@ div.camposFormularioCompleto div.inputs div#status {
 
 section.listagemCadastro {
     background-image: url('../imagens/background.png');
-    padding: 20px;
-    width: 83%;
-    min-height: 500px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    //width: 52%;
+    max-width: 1000px;
     margin: 0 auto;
     font-family: 'Trebuchet MS', sans-serif;
 }
@@ -145,7 +146,7 @@ section.listagemCadastro {
 @media (min-width: 1200px){
     section.listagemCadastro {
         width: 52%;
-        min-width: 1026px;
+        min-width: 1000px;
     }
 }
 
@@ -159,7 +160,7 @@ section.listagemCadastro {
 div.camposSection {
     position: relative;
     background-color: white;
-    width: 95%;
+    width: 90%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
@@ -268,7 +269,7 @@ div.paginacao input[type=text] {
     font-weight: bold;
     border-radius: 3px;
     padding: 4px 10px;
-    margin: 0 15px 15px 15px ;
+    margin: 0 15px 15px 0px ;
 }
 
 .novo {
