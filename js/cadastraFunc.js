@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $("#datepicker").datepicker($.datepicker.regional["pt-BR"]);
+    $(".dateTime").datepicker($.datepicker.regional["pt-BR"]);
     
     /**Validação do form */
     $('form#completo').submit(function(){

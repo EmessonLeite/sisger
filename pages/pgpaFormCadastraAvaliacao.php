@@ -3,7 +3,7 @@
     <form class="cadastro" id="completo" name="formUsuario" method="POST" enctype="multipart/form-data">
         <div class="camposFormularioCompleto">
             <div class="inputs">
-                <p id="tituloPrincipal">Cadastro de avaliaÁıes</p>
+                <p id="tituloPrincipal">Cadastro de avalia√ß√µes</p>
 
                 <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
                 
@@ -19,33 +19,33 @@
                 </div>
 
                 <div>
-                    <label for="apelido">Data inÌcio</label><br/>
-                    <input type="text" id="datepicker" name="inicio" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicio'])) ? $dadosAvaliacao[0]['inicio'] : ""; ?>" />
+                    <label for="apelido">Data in√≠cio</label><br/>
+                    <input type="text" name="inicio" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicio'])) ? $dadosAvaliacao[0]['inicio'] : ""; ?>" />
                 </div>
 
                 <div>
                     <label for="apelido">Data fim</label><br/>
-                    <input type="text" id="datepicker" name="fim" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fim'])) ? $dadosAvaliacao[0]['fim'] : ""; ?>" />
+                    <input type="text" name="fim" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fim'])) ? $dadosAvaliacao[0]['fim'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">InÌcio coment·rios</label><br/>
-                    <input type="text" id="datepicker" name="inicioComentario" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicioComentario'])) ? $dadosAvaliacao[0]['inicioComentario'] : ""; ?>" />
+                    <label for="apelido">In√≠cio coment√°rios</label><br/>
+                    <input type="text" name="inicioComentario" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicioComentario'])) ? $dadosAvaliacao[0]['inicioComentario'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">Fim coment·rios</label><br/>
-                    <input type="text" id="datepicker" name="fimComentario" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fimComentario'])) ? $dadosAvaliacao[0]['fimComentario'] : ""; ?>" />
+                    <label for="apelido">Fim coment√°rios</label><br/>
+                    <input type="text" name="fimComentario" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fimComentario'])) ? $dadosAvaliacao[0]['fimComentario'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">InÌcio autoavaliaÁ„o</label><br/>
-                    <input type="text" id="datepicker" name="inicioAutoAva" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicioAutoAva'])) ? $dadosAvaliacao[0]['inicioAutoAva'] : ""; ?>" />
+                    <label for="apelido">In√≠cio autoavalia√ß√£o</label><br/>
+                    <input type="text" name="inicioAutoAva" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['inicioAutoAva'])) ? $dadosAvaliacao[0]['inicioAutoAva'] : ""; ?>" />
                 </div>
 
                 <div>
-                    <label for="apelido">Fim autoavaliaÁ„o</label><br/>
-                    <input type="text" id="datepicker" name="fimAutoAva" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fimAutoAva'])) ? $dadosAvaliacao[0]['fimAutoAva'] : ""; ?>" />
+                    <label for="apelido">Fim autoavalia√ß√£o</label><br/>
+                    <input type="text" name="fimAutoAva" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fimAutoAva'])) ? $dadosAvaliacao[0]['fimAutoAva'] : ""; ?>" />
                 </div>
 
                 <div style="display: block;">

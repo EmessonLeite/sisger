@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
-    $("#datepicker").datepicker($.datepicker.regional["pt-BR"]);
+    $(".dateTime").datepicker($.datepicker.regional["pt-BR"]);
+    
+    $('input.dateTime').focus(function(){
+        $('input#datepicker').attr('id', '1');
+        $(this).attr('id', 'datepicker');
+    });
 
     /** Configurações do lightbox */
     $(".caixaComentarios").draggable();
