@@ -20,6 +20,47 @@ class Avaliacao {
     }
 
     /**
+     * cadastrar
+     * Cadastra um novo cargo
+     *
+     * @param array $dados
+     * @return int
+     */
+    public function cadastrar($dados) {
+
+        /** @var int */
+        $idCargo = $this->conexao->Cadastrar($dados);
+
+        return $idCargo;
+    }
+
+    /**
+     * editar
+     * Editar um cargo existente
+     *
+     * @param array $dados
+     * @return int
+     */
+    public function editar($dados) {
+
+        /** @var int */
+        $this->conexao->Editar($dados);
+
+        return $dados['id'];
+    }
+
+    /**
+     * excluir
+     * Exclui um cargo existente
+     *
+     * @param int
+     * @return int
+     */
+    public function excluir($id) {
+        return $this->conexao->Deletar($id);
+    }
+
+    /**
      * buscar
      * Retorna os dados da avaliacao indicada na variavel $avaliacao
      * 
@@ -27,10 +68,10 @@ class Avaliacao {
      */
     public function buscar() {
         if ($this->avaliacao != "") {
-            $query = "SELECT id, inicio, fim, referente FROM [tabela] WHERE referente = ?";
+            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente FROM [tabela] WHERE referente = ?";
             $dados = array($this->avaliacao);
         } else {
-            $query = "SELECT id, inicio, fim, referente FROM [tabela] WHERE NOW() > inicio ORDER BY inicio DESC LIMIT 0, 1";
+            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente FROM [tabela] WHERE NOW() > inicio ORDER BY inicio DESC LIMIT 0, 1";
             $dados = array();
         }
 
@@ -49,9 +90,33 @@ class Avaliacao {
      * 
      * @return array Dados de todas as avaliacoes
      */
-    public function buscarTodas() {
-        $query = "SELECT id, referente, inicio, fim FROM [tabela] ORDER BY inicio";
-        return $this->conexao->buscar($query);
+    public function buscarTodas($dados = array()) {
+
+        /** @var string */
+        $filtro = "";
+
+        /** Monta o filtro na consulta */
+        if (count($dados) > 0) {
+            $filtro = 'WHERE ' . implode(" LIKE ? OR ", array_keys($dados)) . " LIKE ?";
+        }
+
+        /** Consulta para retornar as avaliacoes */
+        $query = "SELECT id, referente, inicio, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, fim FROM [tabela] {$filtro} ORDER BY inicio";
+
+        /** Executa e retorna a consulta */
+        return $this->conexao->Buscar($query, $dados);
+    }
+
+    /**
+     * buscarPorID
+     * Retorna os dados de um cargo especifico
+     * @param string
+     * @return array
+     */
+    public function buscarPorID($id) {
+        $query = "SELECT id, referente, inicio, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, fim FROM [tabela] WHERE id = ?";
+        $dados = array($id);
+        return $this->conexao->Buscar($query, $dados);
     }
 
     /**

@@ -51,7 +51,7 @@
 
                         /** Índice 3 no array de permissoes indica permissao de Gestão de avaliação */
                         if (isset($permissoes[3])) {
-                            echo '<a href="cadastraAva"><p id="permissao3">Cadastrar avaliação</p></a>';
+                            echo '<a href="paCadastraAva"><p id="permissao3">Cadastrar avaliação</p></a>';
                         }
 
                         /** Índice 4 no array de permissoes indica permissao de Gestão de Permissões */

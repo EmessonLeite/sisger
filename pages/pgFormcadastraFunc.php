@@ -31,7 +31,7 @@
                     <label for="apelido">Nome de Visualiazação</label><br/>
                     <input type="text" name="apelido" value="<?php echo (isset($dadosUsuario[0]['apelido'])) ? $dadosUsuario[0]['apelido'] : ""; ?>" />
                 </div>
-                
+
                 <div class="left">
                     <label for="dataEntrada">Data de entrada</label><br/>
                     <input type="text" id="datepicker" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
@@ -79,10 +79,10 @@
                     <label for="rg">RG</label><br/>
                     <input type="text" name="rg" value="<?php echo (isset($dadosUsuario[0]['rg'])) ? $dadosUsuario[0]['rg'] : ""; ?>" />
                 </div>
-                
+
                 <div>
                     <label for="dataNascimento">Data de Nascimento</label><br/>
-                    <input type="text" name="dataNascimento" class="date" value="<?php echo (isset($dadosUsuario[0]['dataNascimento'])) ? $dadosUsuario[0]['dataNascimento'] : ""; ?>" />
+                    <input type="text" id="datepicker" name="dataNascimento" class="date" value="<?php echo (isset($dadosUsuario[0]['dataNascimento'])) ? $dadosUsuario[0]['dataNascimento'] : ""; ?>" />
                 </div>
                 
                 <div>
