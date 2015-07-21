@@ -35,7 +35,7 @@
 
                 <div class="left">
                     <label for="dataEntrada">Data de entrada</label><br/>
-                    <input type="text" id="datepicker" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
+                    <input type="text" class="date" name="dataEntrada" value="<?php echo (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] : ""; ?>" />
                 </div>
 
                 <div>
@@ -83,7 +83,7 @@
 
                 <div>
                     <label for="dataNascimento">Data de Nascimento</label><br/>
-                    <input type="text" id="datepicker" name="dataNascimento" class="date" value="<?php echo (isset($dadosUsuario[0]['dataNascimento'])) ? $dadosUsuario[0]['dataNascimento'] : ""; ?>" />
+                    <input type="text" name="dataNascimento" class="date" value="<?php echo (isset($dadosUsuario[0]['dataNascimento'])) ? $dadosUsuario[0]['dataNascimento'] : ""; ?>" />
                 </div>
                 
                 <div>
