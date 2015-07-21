@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="css/CadastraFunc.css">
-<section class="listagemCadastro">
+<section class="listagemCadastro" style="padding-bottom: 38px;">
     <div class="camposSection">
         <?php echo $erroExcluir; ?>
         <table class="listagem">
