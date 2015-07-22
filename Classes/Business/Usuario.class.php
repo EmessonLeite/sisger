@@ -21,10 +21,9 @@ class Usuario {
      * @return int
      */
     public function cadastrar($dados){
-        
-        if(isset($dados['dataEntrada'])){
-            $dados['dataEntrada'] = datasql($dados['dataEntrada']);
-        }
+
+        (isset($dados['dataEntrada'])) ? $dados['dataEntrada'] = dateTimesql($dados['dataEntrada']) : '' ;
+        (isset($dados['dataNascimento'])) ? $dados['dataNascimento'] = dateTimesql($dados['dataNascimento']) : '' ;
         
         return $this->conexao->Cadastrar($dados);
     }
@@ -37,10 +36,9 @@ class Usuario {
      * @return int
      */
     public function editar($dados){
-        
-        if(isset($dados['dataEntrada'])){
-            $dados['dataEntrada'] = datasql($dados['dataEntrada']);
-        }
+
+        (isset($dados['dataEntrada'])) ? $dados['dataEntrada'] = dateTimesql($dados['dataEntrada']) : '' ;
+        (isset($dados['dataNascimento'])) ? $dados['dataNascimento'] = dateTimesql($dados['dataNascimento']) : '' ;
         
         return $this->conexao->Editar($dados);
     }
@@ -126,7 +124,7 @@ class Usuario {
      * @return array
      */
     public function buscarPorID($id) {
-        $query = "SELECT id, nome, login, foto, apelido, DATE_FORMAT(dataEntrada, '%d/%m/%Y') dataEntrada, telefone, email, cargo, status FROM [tabela] WHERE id = ?";
+        $query = "SELECT id, nome, login, foto, apelido, dataEntrada, telefone, email, cargo, status, cep, cpf, rg, dataNascimento, endereco, bairro, sexo, nomePai, nomeMae FROM [tabela] WHERE id = ?";
         $dados = array($id);
         return $this->conexao->Buscar($query, $dados);
     }

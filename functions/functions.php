@@ -5,7 +5,7 @@ function databr($datasql) {
     if (!empty($datasql)) {
         $p_dt = explode('-', $datasql);
         $data_br = $p_dt[2] . '/' . $p_dt[1] . '/' . $p_dt[0];
-        return print $data_br;
+        return $data_br;
     }
 }
 
@@ -24,7 +24,7 @@ function dateTimebr($dateTimeSql) {
         $dateTimeSeparado = explode(' ', $dateTimeSql);
         $p_dt = explode('-', $dateTimeSeparado[0]);
         $dateTime_br = $p_dt[2] . '/' . $p_dt[1] . '/' . $p_dt[0] . ' ' . $dateTimeSeparado[1];
-        return print $dateTime_br;
+        return $dateTime_br;
     }
 }
 

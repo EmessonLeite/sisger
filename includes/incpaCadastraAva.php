@@ -43,6 +43,12 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     if ($url->getURL(1) == 'editar') {
         $dadosAvaliacao = $avaliacaoBusiness->buscarPorID($url->getURL(2));
+        (isset($dadosAvaliacao[0]['inicio'])) ? $dadosAvaliacao[0]['inicio'] = dateTimebr($dadosAvaliacao[0]['inicio']) : '' ;
+        (isset($dadosAvaliacao[0]['fim'])) ? $dadosAvaliacao[0]['fim'] = dateTimebr($dadosAvaliacao[0]['fim']) : '' ;
+        (isset($dadosAvaliacao[0]['inicioComentario'])) ? $dadosAvaliacao[0]['inicioComentario'] = dateTimebr($dadosAvaliacao[0]['inicioComentario']) : '' ;
+        (isset($dadosAvaliacao[0]['fimComentario'])) ? $dadosAvaliacao[0]['fimComentario'] = dateTimebr($dadosAvaliacao[0]['fimComentario']) : '' ;
+        (isset($dadosAvaliacao[0]['inicioAutoAva'])) ? $dadosAvaliacao[0]['inicioAutoAva'] = dateTimebr($dadosAvaliacao[0]['inicioAutoAva']) : '' ;
+        (isset($dadosAvaliacao[0]['fimAutoAva'])) ? $dadosAvaliacao[0]['fimAutoAva'] = dateTimebr($dadosAvaliacao[0]['fimAutoAva']) : '' ;
     }
 
     /** Include da pagina de configuração de perfil e o rodape */

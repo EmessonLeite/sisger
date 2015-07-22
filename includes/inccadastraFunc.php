@@ -70,6 +70,9 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     if ($url->getURL(1) == 'editar') {
         $dadosUsuario = $usuarioBusiness->buscarPorID($url->getURL(2));
+        (isset($dadosUsuario[0]['dataEntrada'])) ? $dadosUsuario[0]['dataEntrada'] = dateTimebr($dadosUsuario[0]['dataEntrada']) : '' ;
+        (isset($dadosUsuario[0]['dataNascimento'])) ? $dadosUsuario[0]['dataNascimento'] = dateTimebr($dadosUsuario[0]['dataNascimento']) : '' ;
+
         /** Definindo url da foto */
         $foto = $dadosUsuario[0]['foto'];
     } else {
