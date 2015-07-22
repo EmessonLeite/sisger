@@ -27,6 +27,12 @@ class Avaliacao {
      * @return int
      */
     public function cadastrar($dados) {
+        (isset($dados['inicio'])) ? $dados['inicio'] = dateTimesql($dados['inicio']) : '' ;
+        (isset($dados['fim'])) ? $dados['fim'] = dateTimesql($dados['fim']) : '' ;
+        (isset($dados['inicioComentario'])) ? $dados['inicioComentario'] = dateTimesql($dados['inicioComentario']) : '' ;
+        (isset($dados['fimComentario'])) ? $dados['fimComentario'] = dateTimesql($dados['fimComentario']) : '' ;
+        (isset($dados['inicioAutoAva'])) ? $dados['inicioAutoAva'] = dateTimesql($dados['inicioAutoAva']) : '' ;
+        (isset($dados['fimAutoAva'])) ? $dados['fimAutoAva'] = dateTimesql($dados['fimAutoAva']) : '' ;
 
         /** @var int */
         $idCargo = $this->conexao->Cadastrar($dados);
@@ -42,6 +48,12 @@ class Avaliacao {
      * @return int
      */
     public function editar($dados) {
+        (isset($dados['inicio'])) ? $dados['inicio'] = dateTimesql($dados['inicio']) : '' ;
+        (isset($dados['fim'])) ? $dados['fim'] = dateTimesql($dados['fim']) : '' ;
+        (isset($dados['inicioComentario'])) ? $dados['inicioComentario'] = dateTimesql($dados['inicioComentario']) : '' ;
+        (isset($dados['fimComentario'])) ? $dados['fimComentario'] = dateTimesql($dados['fimComentario']) : '' ;
+        (isset($dados['inicioAutoAva'])) ? $dados['inicioAutoAva'] = dateTimesql($dados['inicioAutoAva']) : '' ;
+        (isset($dados['fimAutoAva'])) ? $dados['fimAutoAva'] = dateTimesql($dados['fimAutoAva']) : '' ;
 
         /** @var int */
         $this->conexao->Editar($dados);

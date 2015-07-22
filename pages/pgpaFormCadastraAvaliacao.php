@@ -6,8 +6,6 @@
                 <p id="tituloPrincipal">Cadastro de avaliações</p>
 
                 <input type="hidden" name="tipo" value="<?php echo $url->getURL(1); ?>" />
-                
-                <input type="hidden" name="quesitos" />
 
                 <?php
                 echo (isset($dadosAvaliacao[0]['id'])) ? "<input type='hidden' name='id' value='{$dadosAvaliacao[0]['id']}'>" : "";
