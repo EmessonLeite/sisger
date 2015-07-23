@@ -24,7 +24,7 @@
                 <div>
                     <label for="apelido">Data fim</label><br/>
                     <input type="text" name="fim" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fim'])) ? $dadosAvaliacao[0]['fim'] : ""; ?>" />
-                </div>
+                </div><br/>
 
                 <div>
                     <label for="apelido">Início comentários</label><br/>
