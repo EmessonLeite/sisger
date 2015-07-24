@@ -26,5 +26,8 @@ $idUsuarioSelecionado = $_GET['id'];
 $dadosUsuarioSelecionado = $usuarioBusiness->buscarPorID($idUsuarioSelecionado);
 $dadosUsuarioAvaliacao = $avaliacaoBusiness->buscarDadosUsuario($idUsuarioSelecionado);
 
+/** Transformando a data para o formato br */
+(isset($dadosUsuarioSelecionado[0]['dataEntrada'])) ? $dadosUsuarioSelecionado[0]['dataEntrada'] = dateTimebr($dadosUsuarioSelecionado[0]['dataEntrada']) : '' ;
+
 /** Include a pagina home */
 include_once('../pages/pgpaInfogerais.php');
