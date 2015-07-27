@@ -73,27 +73,29 @@
     <iframe src="<?php echo $conteudoIframe; ?>" class="conteudos" scrolling="no" id="conteudo" name="conteudos" ></iframe>
     <?php
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
-        if ((($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) && $usuarioCadastrado) {
+        date_default_timezone_set('America/Sao_Paulo');
+
+        if (($usuarioCadastrado) && (($avaliacao[0]['inicioComentario'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioComentario'] != NULL) && (($avaliacao[0]['fimComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimComentario']))))) {
             echo "
-                <div id='comentario-negativo'>
-                    <div id='titulo-negativo'>
-                        <a href='#lightbox-negativo' name='lightbox-negativo' rel='leanModal' id='edita-comentario-negativo'>
-                            <img id='lapis-negativo' src='imagens/lapis.png'>
-                        </a>
-                        <p id='texto-negativo'>Pontos Negativos</p>
-                    </div>
+            <div id='comentario-negativo'>
+                <div id='titulo-negativo'>
+                    <a href='#lightbox-negativo' name='lightbox-negativo' rel='leanModal' id='edita-comentario-negativo'>
+                        <img id='lapis-negativo' src='imagens/lapis.png'>
+                    </a>
+                    <p id='texto-negativo'>Pontos Negativos</p>
                 </div>
-                <div id='comentario-positivo'>
-                    <div id='titulo-positivo'>
-                        <a href='#lightbox-positivo' name='lightbox-positivo' rel='leanModal' id='edita-comentario-positivo'>
-                            <img id='lapis-positivo' src='imagens/lapis.png'>
-                        </a>
-                        <p id='texto-positivo'>Pontos Positivos</p>
-                    </div>
+            </div>
+            <div id='comentario-positivo'>
+                <div id='titulo-positivo'>
+                    <a href='#lightbox-positivo' name='lightbox-positivo' rel='leanModal' id='edita-comentario-positivo'>
+                        <img id='lapis-positivo' src='imagens/lapis.png'>
+                    </a>
+                    <p id='texto-positivo'>Pontos Positivos</p>
                 </div>
+            </div>
             ";
         } else {
-            echo "<div id='erro' style='margin-top: 20px; margin-bottom: 20px;'>Não pode adicionar comentários pois a avaliação já foi fechada.</div>";
+            echo "<div id='erro' style='margin-top: 20px; margin-bottom: 20px;'>Não é permitido adicionar comentários.</div>";
             echo "
                 <div id='comentario-negativo'>
                     <div id='titulo-negativo'>
@@ -109,7 +111,7 @@
         }
         ?>
         <?php
-        if (($avaliacao[0]['fim'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fim'] == NULL)) {
+        if (($avaliacao[0]['visualizarComentarios'] == '0') || ($avaliacao[0]['visualizarComentarios'] == NULL)) {
             
         } else {
             echo "

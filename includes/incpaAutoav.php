@@ -53,5 +53,8 @@ if (isset($_SESSION['id']) && is_int($_SESSION['id']) && is_string($_SESSION['ap
     $foto = $_SESSION['foto'];
 }
 
+/** Verificar se o usuario logado esta cadastrado na avaliacao atual */
+$usuarioCadastrado = $avaliacaoBusiness->checarUsuarioAvaliacao($idUsuario);
+
 /** Include a pagina home */
 include_once('../pages/pgpaAutoav.php');

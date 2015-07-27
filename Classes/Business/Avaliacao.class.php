@@ -80,10 +80,10 @@ class Avaliacao {
      */
     public function buscar() {
         if ($this->avaliacao != "") {
-            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente FROM [tabela] WHERE referente = ?";
+            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente, visualizarComentarios FROM [tabela] WHERE referente = ?";
             $dados = array($this->avaliacao);
         } else {
-            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente FROM [tabela] WHERE NOW() > inicio ORDER BY inicio DESC LIMIT 0, 1";
+            $query = "SELECT id, inicio, fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, referente, visualizarComentarios FROM [tabela] WHERE NOW() > inicio ORDER BY inicio DESC LIMIT 0, 1";
             $dados = array();
         }
 
@@ -113,7 +113,7 @@ class Avaliacao {
         }
 
         /** Consulta para retornar as avaliacoes */
-        $query = "SELECT id, referente, inicio, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, fim FROM [tabela] {$filtro} ORDER BY inicio";
+        $query = "SELECT id, referente, DATE_FORMAT(inicio, '%d/%m/%Y') inicio, DATE_FORMAT(fim, '%d/%m/%Y') fim, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, visualizarComentarios FROM [tabela] {$filtro} ORDER BY inicio";
 
         /** Executa e retorna a consulta */
         return $this->conexao->Buscar($query, $dados);
@@ -126,7 +126,7 @@ class Avaliacao {
      * @return array
      */
     public function buscarPorID($id) {
-        $query = "SELECT id, referente, inicio, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, fim FROM [tabela] WHERE id = ?";
+        $query = "SELECT id, referente, inicio, inicioComentario, fimComentario, inicioAutoAva, fimAutoAva, fim, visualizarComentarios FROM [tabela] WHERE id = ?";
         $dados = array($id);
         return $this->conexao->Buscar($query, $dados);
     }
