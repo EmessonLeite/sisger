@@ -45,6 +45,15 @@
                     <label for="apelido">Fim autoavaliação</label><br/>
                     <input type="text" name="fimAutoAva" class="dateTime" value="<?php echo (isset($dadosAvaliacao[0]['fimAutoAva'])) ? $dadosAvaliacao[0]['fimAutoAva'] : ""; ?>" />
                 </div>
+                
+                <div>
+                    <label for="sexo">Visualizar comentários</label><br/>
+                    <input type="radio" value="1" <?php echo ((!isset($dadosAvaliacao[0]['visualizarComentarios']) || $dadosAvaliacao[0]['visualizarComentarios'] == '1') ? 'checked="checked"' : '' ); ?> name="visualizarComentarios" />
+                    Sim
+                    <input type="radio" value="0" <?php echo ((isset($dadosAvaliacao[0]['visualizarComentarios']) && $dadosAvaliacao[0]['visualizarComentarios'] == '0') ? 'checked="checked"' : '' ); ?> name="visualizarComentarios" />
+                    Não
+                    </select>
+                </div>
 
                 <div style="display: block;">
                     <input type="submit" class="alterar" name="cadastrar" value="Salvar">

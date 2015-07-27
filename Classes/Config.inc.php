@@ -8,11 +8,14 @@ if (file_exists('functions/functions.php')) {
 }
 
 // CONFIGRAÇÕES DO SITE ########################################################
+/** @var string */
+$host = is_string($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : "" ;
+
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
 define('DBSA', 'sisger');
-define('RAIZ', "http://{$_SERVER["HTTP_HOST"]}/sisger/");
+define('RAIZ', "http://{$host}/sisger/");
 
 // AUTO LOAD DE CLASSES ########################################################
 function __autoload($Class) {

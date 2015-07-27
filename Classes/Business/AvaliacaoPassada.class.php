@@ -19,21 +19,20 @@ class AvaliacaoPassada {
      * @param int ID do usuario selecionado
      */
     public function __construct($avaliacao, $idUsuario) {
-        
+
         /** Inicializa a conexao */
         $this->conexao = new ConexaoDAO('pa_avaliacaopassada');
-        
+
         /** Inicializa a referencia da avalaicao */
         $this->avaliacao = $avaliacao;
-        
+
         /** Inicializa o ID do Usuario */
         $this->idUsuario = $idUsuario;
-        
+
         /** Inicializa os valores caso não tenha sido cadastrado */
         $this->inicializarValores();
     }
-    
-    
+
     /**
      * editar
      * Edita a AvaliacaoPassada do usuario selecionado.
@@ -41,17 +40,17 @@ class AvaliacaoPassada {
      * @param array
      * @return int  
      */
-    public function editar($dados){
+    public function editar($dados) {
         /** @var int */
-        $id = $this->buscarID();        
-        
+        $id = $this->buscarID();
+
         /** @var array */
         $dadosCompletos = array_merge($dados, array('id' => $id));
-        
+
         /** @var int */
         return $this->conexao->Editar($dadosCompletos);
     }
-    
+
     /**
      * buscar
      * Retorna os dados da avaliacao indicada na variavel $avaliacao
@@ -69,17 +68,17 @@ class AvaliacaoPassada {
 
         /** @var array */
         $resultado = $this->conexao->Buscar($query, $dados);
-        
-        return $resultado[0];
+
+        return isset($resultado[0]) ? $resultado[0] : array();
     }
-    
+
     /**
      * buscarID
      * Retorna o id da avaliacaoPassada do Usuario nesta avaliacao
      * 
      * @return int
      */
-    private function buscarID(){
+    private function buscarID() {
         $query = "SELECT p.id
                   FROM pa_avaliacaopassada as p
                   INNER JOIN pa_avaliacao as a
@@ -89,44 +88,47 @@ class AvaliacaoPassada {
 
         /** @var array */
         $resultado = $this->conexao->Buscar($query, $dados);
-        
+
         return $resultado[0]['id'];
     }
-    
+
     /**
      * inicializarValores
      * Inicializa os valores caso a avaliacaoPassada ainda não tenha sido inicializada.
      */
-    private function inicializarValores(){
+    private function inicializarValores() {
         if (!$this->verificarSeExiste()) {
-
+            
             /** @var Avaliacao */
             $usuarioAvaliacao = Avaliacao::getInstance($this->avaliacao);
-            
-            /** @var array */
-            $dadosUsuario = $usuarioAvaliacao->buscarDadosUsuario($this->idUsuario);
-            
-            /** @var Quesito */
-            $quesito = Quesito::getInstance($dadosUsuario[0]['idCargo']);
-            
-            /** @var array */
-            $quesitos = $quesito->buscar();
 
             /** @var array */
-            $dados = array(
-                "idUsuario" => $dadosUsuario[0]['idUsuario'],
-                "idAvaliacao" => $dadosUsuario[0]['idAvaliacao']
-            );
-            
-            for($i = 1; $i <= count($quesitos); $i++){
-                $dados = array_merge($dados, array("quesito{$i}" => $quesitos[$i - 1]['quesito']));
+            $dadosUsuario = $usuarioAvaliacao->buscarDadosUsuario($this->idUsuario);
+
+            if (isset($dadosUsuario[0]['idCargo'])) {
+
+
+                /** @var Quesito */
+                $quesito = Quesito::getInstance($dadosUsuario[0]['idCargo']);
+
+                /** @var array */
+                $quesitos = $quesito->buscar();
+
+                /** @var array */
+                $dados = array(
+                    "idUsuario" => $dadosUsuario[0]['idUsuario'],
+                    "idAvaliacao" => $dadosUsuario[0]['idAvaliacao']
+                );
+
+                for ($i = 1; $i <= count($quesitos); $i++) {
+                    $dados = array_merge($dados, array("quesito{$i}" => $quesitos[$i - 1]['quesito']));
+                }
+
+                $this->conexao->Cadastrar($dados);
             }
-            
-            $this->conexao->Cadastrar($dados);
-            
         }
     }
-    
+
     /**
      * verificarSeExiste
      * Verifica se a avaliacaoPassada foi inicializada.
