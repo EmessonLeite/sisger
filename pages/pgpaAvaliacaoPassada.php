@@ -5,9 +5,19 @@
         <div id="titulo">
             <label>Avaliação Passada</label>
         </div>
-        <a href='#lightboxAvaliacaoPassada' rel='leanModal' id='editaAvaliacaoPassada'>
-            <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='position: relative; margin-left: 570px; margin-top: -20px; z-index: 100;'>
-        </a>
+
+        <?php
+
+        /** Índice 5 no array de permissoes indica permissao de Cadastro de avaliação passada */
+        if (isset($permissoes[5])) {
+            echo "
+                  <a href='#lightboxAvaliacaoPassada' rel='leanModal' id='editaAvaliacaoPassada'>
+                        <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='position: relative; margin-left: 570px; margin-top: -20px; z-index: 100;'>
+                  </a>
+            ";
+        }
+        ?>
+
         <table id="ava-passada" cellspacing="0" cellpadding="0">
             <tr>
                 <th id="quesito">Quesito:</th>
