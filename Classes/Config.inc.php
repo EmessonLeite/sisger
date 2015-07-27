@@ -12,7 +12,7 @@ define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', 'vertrigo');
 define('DBSA', 'sisger');
-define('RAIZ', 'http://localhost:8080/sisger/');
+define('RAIZ', "http://{$_SERVER["HTTP_HOST"]}/sisger/");
 
 // AUTO LOAD DE CLASSES ########################################################
 function __autoload($Class) {
