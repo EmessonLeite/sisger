@@ -75,7 +75,7 @@
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
         date_default_timezone_set('America/Sao_Paulo');
 
-        if (($usuarioCadastrado) && (($avaliacao[0]['inicioComentario'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioComentario'] != NULL) && (($avaliacao[0]['fimComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimComentario']))))) {
+        if (($usuarioCadastrado) && ((($avaliacao[0]['inicioComentario'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioComentario'] != NULL) && (strtotime(date("Y-m-d h:i:s")) >= strtotime($avaliacao[0]['inicioComentario']))) && (($avaliacao[0]['fimComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimComentario'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimComentario']))))) {
             echo "
             <div id='comentario-negativo'>
                 <div id='titulo-negativo'>

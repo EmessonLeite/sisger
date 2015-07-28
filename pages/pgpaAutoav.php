@@ -18,7 +18,7 @@ include_once("../Classes/Config.inc.php");
             <?php
                 date_default_timezone_set('America/Sao_Paulo');
 
-                if (($idUsuario == $idUsuarioSelecionado) && (($avaliacao[0]['inicioAutoAva'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioAutoAva'] != NULL) && (($avaliacao[0]['fimAutoAva'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimAutoAva']))))) {
+                if (($idUsuario == $idUsuarioSelecionado) && ((($avaliacao[0]['inicioAutoAva'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioAutoAva'] != NULL) && (strtotime(date("Y-m-d h:i:s")) >= strtotime($avaliacao[0]['inicioAutoAva']))) && (($avaliacao[0]['fimAutoAva'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimAutoAva']))))) {
                     echo "
                         <a href='#lightbox-autoava' name='lightbox-autoava' rel='leanModal' id='edita-autoava'>
                             <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='color: #000000; position: relative; margin-left: 625px; margin-top: -15px;'>
