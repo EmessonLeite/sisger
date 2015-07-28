@@ -48,14 +48,14 @@
                 
                 <div>
                     <label for="sexo">Visualizar comentários</label><br/>
-                    <input type="radio" value="1" <?php echo ((!isset($dadosAvaliacao[0]['visualizarComentarios']) || $dadosAvaliacao[0]['visualizarComentarios'] == '1') ? 'checked="checked"' : '' ); ?> name="visualizarComentarios" />
+                    <input style="position: relative; margin-top: 8px;" type="radio" value="1" <?php echo ((!isset($dadosAvaliacao[0]['visualizarComentarios']) || $dadosAvaliacao[0]['visualizarComentarios'] == '1') ? 'checked="checked"' : '' ); ?> name="visualizarComentarios" />
                     Sim
                     <input type="radio" value="0" <?php echo ((isset($dadosAvaliacao[0]['visualizarComentarios']) && $dadosAvaliacao[0]['visualizarComentarios'] == '0') ? 'checked="checked"' : '' ); ?> name="visualizarComentarios" />
                     Não
                     </select>
                 </div>
 
-                <div style="display: block;">
+                <div style="display: block; margin-top: 15px;">
                     <input type="submit" class="alterar" name="cadastrar" value="Salvar">
                     <a href="<?php echo RAIZ . $url->getURL(0); ?>">Voltar a listagem</a>
                     <p id="infoQuesitos"></p>
