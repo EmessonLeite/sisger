@@ -21,6 +21,7 @@ html, body {
     min-height: 906px;
     margin: auto;
     padding-top: 71px;
+    padding-bottom: 20px;
     margin-bottom: 35px;
     background-image: url('../imagens/background.png');
 }
@@ -36,7 +37,9 @@ div#erro{
     border: 1px solid #991111;
     padding: 10px;
     margin: 20px;
-    margin-top: 0px;
+    width: 931px;
+    margin-left: 23px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -363,7 +366,6 @@ table#tbl-comentario {
     width: 957px;
     margin-left: 22px;
     border-collapse: separate;
-    padding-bottom: 20px;
 }
 
 table#tbl-comentario tr td{

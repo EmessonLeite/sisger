@@ -74,3 +74,14 @@ table#autoava tr td {
     height: 30px;
 }
 
+div#erro{
+    color: #991111;
+    background-color: #e9c4b2;
+    border: 1px solid #991111;
+    padding: 10px;
+    margin: 20px;
+    width: 621px;
+    margin-left: -42px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
