@@ -25,6 +25,14 @@ html, body {
     background-image: url('../imagens/background.png');
 }
 
+div#erro{
+    color: #991111;
+    background-color: #e9c4b2;
+    border: 1px solid #991111;
+    padding: 10px;
+    margin: 15px 30px;
+}
+
 /*********************************************************************************************************************/
 
 /**
@@ -217,11 +225,11 @@ table#informacoesHorarios th.entrada, th.saida, th.total {
 }
 
 table#informacoesHorarios td {
-     border: 1px solid #c9c9c9;
-     border-top-width: 0;
-     height: 30px;
-     max-width: 100px;
- }
+    border: 1px solid #c9c9c9;
+    border-top-width: 0;
+    height: 30px;
+    max-width: 100px;
+}
 
 table#informacoesHorarios td a {
     text-decoration: underline;
@@ -244,7 +252,7 @@ table#informacoesHorarios tr:nth-child(even) {
     background-color: #ffffff;
 }
 
-table#informacoesHorarios tr#aberto {
+table#informacoesHorarios tr.aberto {
     background-color: #faffbd;
 }
 
