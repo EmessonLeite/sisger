@@ -1,12 +1,14 @@
 <?php ?>
 
 <div id="todo">
+
+    <?php echo $erro; ?>
     <div id="entrada">
         <label class="titulo">Ponto</label> <hr id="linhaPonto">
         <form method="post">
             <input type="hidden" name="acao" value="" />
-            <a href="#lightboxPontoEntrarSair" rel="leanModal">
-                <input type="submit" value="Dar Entrada" name="entradaSaida" id="entradaSaida" />
+            <a <?php echo ($btnLabel === "Dar entrada") ? 'href="#lightboxPontoEntrarSair" rel="leanModal"' : ''; ?>>
+                <input type="submit" value="<?php echo $btnLabel; ?>" name="entradaSaida" id="entradaSaida" />
             </a>
             <a href="#lightboxPontoCorrigir" rel="leanModal">
                 <input type="button" value="Corrigir" name="corrigir" />
@@ -19,18 +21,26 @@
         <div id="pessoas">
             <label class="subTitulo">Pessoas:</label>
             <select id="usuarios">
-                <option value="">Usuarios</option>
+                <option value="<?php echo $idUsuario ?>"><?php echo $apelido; ?></option>
+                <optgroup label="..."></optgroup>
+                <?php
+                foreach ($usuarios as $usuario) {
+                    echo "<option value='{$usuario['id']}'>{$usuario['apelido']}</option>";
+                }
+                ?>
             </select>
         </div>
-        <div id="infoPesquisa">
-            <label class="subTitulo">Data Início:</label> <input type="text" id="inicio" class="" value="">
-            <label class="subTitulo">Data Fim:</label> <input type="text" id="fim" value="">
-            <div id="links">
-                <a href="#" id="mais1Dia">+1 dia</a><a  href="#" id="hoje">Hoje</a><br>
-                <a href="#" id="menos1Dia">-1 dia</a><a id="mesAtual"  href="#">Mês Atual</a>
-                <input type="button" value="Pesquisar" id="pesquisar" />
+        <form method="post">
+            <div id="infoPesquisa">
+                <label class="subTitulo">Data Início:</label> <input type="text" id="inicio" class="" value="">
+                <label class="subTitulo">Data Fim:</label> <input type="text" id="fim" value="">
+                <div id="links">
+                    <a href="#" id="mais1Dia">+1 dia</a><a  href="#" id="hoje">Hoje</a><br>
+                    <a href="#" id="menos1Dia">-1 dia</a><a id="mesAtual"  href="#">Mês Atual</a>
+                    <input type="button" value="Pesquisar" id="pesquisar" />
+                </div>
             </div>
-        </div>
+        </form>
     </div>
 
     <div id="tabela">
@@ -47,45 +57,39 @@
                 <th class="editar">Editar</th>
                 <th class="excluir">Excluir</th>
             </tr>
-
-            <tr id="aberto">
-                <td><label>08/07/2015</label></td>
-                <td><label>12:50</label></td>
-                <td><label></label></td>
-                <td><label></label></td>
-                <td><label><input type="checkbox" disabled checked="checked"/></label></td>
-                <td><label>Sistema Pré-avaliacao</label></td>
-                <td><label>Programação</label></td>
-                <td><label></label></td>
-                <td><a href="#lightboxPontoEditar" id="editar" rel="leanModal" name="modal">Editar</a></td>
-                <td><a href="#lightboxPontoExcluir" id="excluir" rel="leanModal" name="modal">Excluir</a></td>
-            </tr>
-
-            <tr>
-                <td><label>08/07/2015</label></td>
-                <td class="corrigido"><label>09:45</label></td>
-                <td ><label>12:00</label></td>
-                <td><label>02:15</label></td>
-                <td><label><input type="checkbox" disabled checked="checked"/></label></td>
-                <td><label>Sistema Pré-avaliacao</label></td>
-                <td><label>Programação</label></td>
-                <td><label></label></td>
-                <td><a href="#lightboxPontoEditar" id="editar" rel="leanModal" name="modal">Editar</a></td>
-                <td><a href="#lightboxPontoExcluir" id="excluir" rel="leanModal" name="modal">Excluir</a></td>
-            </tr>
-
-            <tr>
-                <td><label>08/07/2015</label></td>
-                <td><label>07:30</label></td>
-                <td class="corrigido"><label>09:30</label></td>
-                <td><label>02:00</label></td>
-                <td><label><input type="checkbox" disabled checked="checked"/></label></td>
-                <td><label>Sistema Pré-avaliacao</label></td>
-                <td><label>Programação</label></td>
-                <td><label></label></td>
-                <td><a href="#lightboxPontoEditar" id="editar" rel="leanModal" name="modal">Editar</a></td>
-                <td><a href="#lightboxPontoExcluir" id="excluir" rel="leanModal" name="modal">Excluir</a></td>
-            </tr>
+            <?php
+            if (count($horarios)) {
+                foreach ($horarios as $horario) {
+                    
+                    /** Verifica se o ponto esta aberto */
+                    $tipo = (!$horario['saida']) ? "aberto" : "";
+                    
+                    /** Verifica se a entrada foi corrigida */
+                    $entradaCorrigida = ($horario['entradaAjuste']) ? 'class="corrigido"' : "" ; 
+                    
+                    /** Verifica se a saida foi corrigida */
+                    $saidaCorrigida = ($horario['saidaAjuste']) ? 'class="corrigido"' : "" ; 
+                    
+                    
+                    echo "
+                    <tr class='{$tipo}'>
+                        <td><label>{$horario['data']}</label></td>
+                        <td {$entradaCorrigida}><label>{$horario['entrada']}</label></td>
+                        <td {$saidaCorrigida}><label>{$horario['saida']}</label></td>
+                        <td><label>{$horario['total']}</label></td>
+                        <td><label><input type='checkbox' disabled " . (($horario['remuneracao']) ? "checked='checked'" : "" ) . "/></label></td>
+                        <td><label>{$horario['atividade']}</label></td>
+                        <td><label>{$horario['celulaMidia']}</label></td>
+                        <td><label>{$horario['coordenador']}</label></td>
+                        <td><a href='#lightboxPontoEditar' id='editar' rel='leanModal' name='modal'>Editar</a></td>
+                        <td>
+                            <a href='#lightboxPontoExcluir' id='excluir' rel='leanModal' name='modal'>Excluir</a>
+                            <input type='hidden' class='idHorario' value='{$horario['id']}' />
+                        </td>
+                    </tr>";
+                }
+            }
+            ?>
         </table>
     </div>
 
@@ -113,7 +117,7 @@
                 <label for="coordenador">Coordenador</label>
                 <input name="coordenador" type="text" value="" />
                 <label for="remunerado">Remunerado</label>
-                <input name="remunerado" type="checkbox" value="1" />
+                <input name="remuneracao" type="checkbox" value="1" />
             </div>
             <div class="enviarCancelarPontoEntrarSair">
                 <input type="submit" name="abrirHorario" value="Salvar" id="confirmarSalvar" />
@@ -121,60 +125,50 @@
                 <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
             </div>
         </form>
-        <!--
-            <div id="erro">
-                <p class="erro">Giselou bastante</p>
-            </div>
-        /-->
     </div>
 
     <div id="lightboxPontoCorrigir" class="caixaLightBox">
-        <form action="" class="">
+        <form method="post">
             <div id="cabecalhoPontoCorrigir">
                 <p>Corrigir</p>
                 <a class="modal_close"></a>
             </div>
             <div class="txtPontoCorrigir">
-                <label>Atividade</label>
-                <input type="text" value="" />
+                <label for="atividade">Atividade</label>
+                <input type="text" name="atividade" value="" />
 
-                <label>Célula/Mídia</label>
-                <input type="text" value="" />
+                <label for="celulaMidia">Célula/Mídia</label>
+                <input name="celulaMidia" type="text" value="" />
 
-                <label>Coordenador</label>
-                <input type="text" value="" />
+                <label for="coordenador">Coordenador</label>
+                <input name="coordenador" type="text" value="" />
 
-                <label>Remunerado</label>
-                <input type="checkbox" value="" />
+                <label for="remuneracao">Remunerado</label>
+                <input name="remuneracao" type="checkbox" value="1" />
 
-                <label>Data</label>
-                <select>
-                    <option>08/07/2015</option>
-                    <option>07/07/2015</option>
+                <label for="data">Data</label>
+                <select name="data">
+                    <option value="<?php echo date('Y-m-d'); ?>"><?php echo date('d/m/Y'); ?></option>
+                    <option value="<?php echo date("Y-m-d", strtotime("yesterday"));  ?>"><?php echo date("d/m/Y", strtotime("yesterday"));  ?></option>
                 </select>
 
-                <label>*Entrada</label>
-                <input type="text" class="data" value="" />
+                <label for="entrada">*Entrada</label>
+                <input name="entrada" type="text" class="data" value="" />
 
-                <label>Saída</label>
-                <input type="text" class="data" value="" />
+                <label for="saida">Saída</label>
+                <input name="saida" type="text" class="data" value="" />
 
-                <label>*Motivo</label>
-                <input type="text" value="" />
+                <label for="motivoAjuste">*Motivo</label>
+                <input name="motivoAjuste" type="text" value="" />
 
                 <label id="obrigatorio">(*)Campos de preenchimento obrigatório.</label>
             </div>
             <div class="enviarCancelarPontoCorrigir">
-                <input type="submit" value="Salvar" id="confirmarSalvar" />
+                <input type="submit" name="corrigir" value="Salvar" id="confirmarSalvar" />
                 <input type="hidden" id="idUsuarioExcluido" />
                 <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
             </div>
         </form>
-        <!--
-            <div id="erro">
-                <p class="erro">Giselou bastante</p>
-            </div>
-        /-->
     </div>
 
     <div id="lightboxPontoEditar" class="caixaLightBox">
@@ -216,27 +210,22 @@
             </div>
             <div class="enviarCancelarPontoEditar">
                 <input type="submit" value="Salvar" id="confirmarSalvar" />
-                <input type="hidden" id="idUsuarioExcluido" />
+                <input type="hidden" id="idHorarioEditado" />
                 <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
             </div>
         </form>
-        <!--
-            <div id="erro">
-                <p class="erro">Giselou bastante</p>
-            </div>
-        /-->
     </div>
 
     <div id="lightboxPontoExcluir" class="caixaLightBox">
-        <form action="" class="">
+        <form action="" method="post">
             <div id="cabecalhoPontoExcluir">
                 <p>Atenção</p>
                 <a class="modal_close"></a>
             </div>
             <div class="txtPontoExcluir">
                 <p>Você deseja realmente excluir este horário?</p>
-                <input type="submit" value="Excluir" id="confirmarExcluir" />
-                <input type="hidden" id="idUsuarioExcluido" />
+                <input type="submit" name="excluir" value="Excluir" id="confirmarExcluir" />
+                <input type="hidden" name="idExcluido" id="idHorariooExcluido" />
                 <input type="button" class="modal_close" value="Cancelar" id="cancelar" />
             </div>
         </form>
