@@ -127,6 +127,10 @@ div.camposFormularioCompleto div.inputs div#status {
     max-width: 191px;
 }
 
+span.obrigatorio {
+    color: red;
+}
+
 /**********************************************************************************************************************/
 
 /**

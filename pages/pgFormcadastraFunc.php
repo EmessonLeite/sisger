@@ -24,12 +24,12 @@
                 <input type="hidden" name="senha" value="*23AE809DDACAF96AF0FD78ED04B6A265E05AA257" />
 
                 <div class="left">
-                    <label for="nome">Nome completo</label><br/>
+                    <label for="nome">Nome completo<span class="obrigatorio">*</span></label><br/>
                     <input type="text" name="nome" value="<?php echo (isset($dadosUsuario[0]['nome'])) ? $dadosUsuario[0]['nome'] : ""; ?>" />
                 </div>
 
                 <div class="left">
-                    <label for="apelido">Nome de Visualiazação</label><br/>
+                    <label for="apelido">Nome de Visualiazação<span class="obrigatorio">*</span></label><br/>
                     <input type="text" name="apelido" value="<?php echo (isset($dadosUsuario[0]['apelido'])) ? $dadosUsuario[0]['apelido'] : ""; ?>" />
                 </div>
 
@@ -39,7 +39,7 @@
                 </div>
 
                 <div>
-                    <label for="login">Login</label><br/>
+                    <label for="login">Login<span class="obrigatorio">*</span></label><br/>
                     <input type="text" name="login" value="<?php echo (isset($dadosUsuario[0]['login'])) ? $dadosUsuario[0]['login'] : ""; ?>" />
                 </div>
                 
@@ -140,7 +140,7 @@
                     <a href="<?php echo RAIZ . $url->getURL(0); ?>">Voltar a listagem</a>
                 </div>
                 
-                <div>
+                <div style="display: block;">
                     <p id="info"></p>
                 </div>
 
