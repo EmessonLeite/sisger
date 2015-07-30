@@ -18,7 +18,7 @@ include_once("../Classes/Config.inc.php");
             <?php
                 date_default_timezone_set('America/Sao_Paulo');
 
-                if (($idUsuario == $idUsuarioSelecionado) && (($avaliacao[0]['inicioAutoAva'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioAutoAva'] != NULL) && (($avaliacao[0]['fimAutoAva'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimAutoAva']))))) {
+                if (($idUsuario == $idUsuarioSelecionado) && ((($avaliacao[0]['inicioAutoAva'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioAutoAva'] != NULL) && (strtotime(date("Y-m-d h:i:s")) >= strtotime($avaliacao[0]['inicioAutoAva']))) && (($avaliacao[0]['fimAutoAva'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimAutoAva']))))) {
                     echo "
                         <a href='#lightbox-autoava' name='lightbox-autoava' rel='leanModal' id='edita-autoava'>
                             <img id='lapis-positivo' src='../imagens/lapis-preto.png' style='color: #000000; position: relative; margin-left: 625px; margin-top: -15px;'>
@@ -27,6 +27,24 @@ include_once("../Classes/Config.inc.php");
                 }
             ?>
         </div>
+        <?php
+        if (($avaliacao[0]['fim'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fim'] != NULL)) {
+            echo "<div id='erro'>Não é permitido fazer autoavaliação, a avaliação já foi fechada.</div>";
+        }
+        else {
+            if (($avaliacao[0]['inicioAutoAva'] == '0000-00-00 00:00:00') || ($avaliacao[0]['inicioAutoAva'] == NULL)) {
+                echo "<div id='erro'>A autoavaliação ainda não foi aberta.</div>";
+            }
+
+            if (strtotime(date("Y-m-d h:i:s")) < strtotime($avaliacao[0]['inicioAutoAva'])) {
+                echo "<div id='erro'>A autoavaliação só será aberta dia <strong>\"" . dateTimebr($avaliacao[0]['inicioAutoAva']) . "\"</strong>.</div>";
+            }
+
+            if ((strtotime(date("Y-m-d h:i:s")) > strtotime($avaliacao[0]['fimAutoAva'])) && (($avaliacao[0]['fimAutoAva'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fimAutoAva'] != NULL))) {
+                echo "<div id='erro'>O período para fazer autoavaliação já encerrou.</div>";
+            }
+        }
+        ?>
         <table id="autoava" cellspacing="0" cellpadding="0">
             <tr>
                 <th id="quesito">Quesito:</th>

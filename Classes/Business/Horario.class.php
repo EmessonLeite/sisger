@@ -104,6 +104,13 @@ class Horario extends ConexaoDAO {
 
         /** cadastra o novo horario no banco e retorna o ID */
         return parent::Cadastrar($dados);
+
+        parent::Editar($dados);
+        } else {
+            /** gera uma exception caso o usuario não possa inserir um novo horario */
+            $message = "Não há horário aberto.";
+            throw new Exception($message);
+        }
     }
 
     public function buscarAberto($idUsuario) {

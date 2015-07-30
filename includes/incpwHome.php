@@ -52,6 +52,7 @@ if (isset($form['corrigir'])) {
         $erro = "<div id='erro'>{$e->getMessage()}</div>";
     }
 }
+
 //EXCLUIR HORARIO ##############################################################
 if(isset($form['excluir'])) {
     $horarioBusiness->Deletar($form['idExcluido']);

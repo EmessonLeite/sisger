@@ -75,7 +75,7 @@
     if (!isset($dadosUsuarioAvaliacao[0]['erro'])) {
         date_default_timezone_set('America/Sao_Paulo');
 
-        if (($usuarioCadastrado) && (($avaliacao[0]['inicioComentario'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioComentario'] != NULL) && (($avaliacao[0]['fimComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimAutoAva'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimComentario']))))) {
+        if (($usuarioCadastrado) && ((($avaliacao[0]['inicioComentario'] != '0000-00-00 00:00:00' && $avaliacao[0]['inicioComentario'] != NULL) && (strtotime(date("Y-m-d h:i:s")) >= strtotime($avaliacao[0]['inicioComentario']))) && (($avaliacao[0]['fimComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['fimComentario'] == NULL) || (strtotime(date("Y-m-d h:i:s")) <= strtotime($avaliacao[0]['fimComentario']))))) {
             echo "
             <div id='comentario-negativo'>
                 <div id='titulo-negativo'>
@@ -95,7 +95,23 @@
             </div>
             ";
         } else {
-            echo "<div id='erro' style='margin-top: 20px; margin-bottom: 20px;'>Não é permitido adicionar comentários.</div>";
+            if (($avaliacao[0]['fim'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fim'] != NULL)) {
+                echo "<div id='erro'>Não é permitido adicionar comentários, a avaliação já foi fechada.</div>";
+            }
+            else {
+                if (($avaliacao[0]['inicioComentario'] == '0000-00-00 00:00:00') || ($avaliacao[0]['inicioComentario'] == NULL)) {
+                    echo "<div id='erro'>Os comentários ainda não foram abertos.</div>";
+                }
+
+                if (strtotime(date("Y-m-d h:i:s")) < strtotime($avaliacao[0]['inicioComentario'])) {
+                    echo "<div id='erro'>Os comentários só serão abertos dia <strong>\"" . dateTimebr($avaliacao[0]['inicioComentario']) . "\"</strong>.</div>";
+                }
+
+                if ((strtotime(date("Y-m-d h:i:s")) > strtotime($avaliacao[0]['fimComentario'])) && (($avaliacao[0]['fimComentario'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fimComentario'] != NULL))) {
+                    echo "<div id='erro'>O período para fazer comentários já encerrou.</div>";
+                }
+            }
+
             echo "
                 <div id='comentario-negativo'>
                     <div id='titulo-negativo'>
