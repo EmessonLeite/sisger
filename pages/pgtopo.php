@@ -58,6 +58,11 @@
                         if (isset($permissoes[4])) {
                             echo '<a href="cadastraPermissoes"><p id="permissao4">Cadastrar Permissões</p></a>';
                         }
+
+                        /** Índice 6 no array de permissoes indica permissao de Previsualização de Comentários */
+                        if (isset($permissoes[6])) {
+                            echo '<a href="paVisualizarComentarios"><p id="permissao6">Previsualizar Comentários</p></a>';
+                        }
                         ?>
                     </div>
                 </div>

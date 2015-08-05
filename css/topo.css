@@ -169,6 +169,10 @@ div#drop-config p#permissao4 {
     width: 178px;
 }
 
+div#drop-config p#permissao6 {
+    width: 217px;
+}
+
 div#drop-config a:hover p:hover {
     position: relative;
     color: #b2b2b2;
