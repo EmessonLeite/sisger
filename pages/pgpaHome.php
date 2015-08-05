@@ -95,7 +95,7 @@
             </div>
             ";
         } else {
-            if (($avaliacao[0]['fim'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fim'] != NULL)) {
+            if (($avaliacao[0]['fim'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fim'] != NULL) && (strtotime(date("Y-m-d h:i:s")) > strtotime($avaliacao[0]['fim']))) {
                 echo "<div id='erro'>Não é permitido adicionar comentários, a avaliação já foi fechada.</div>";
             }
             else {

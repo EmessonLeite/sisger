@@ -156,7 +156,10 @@ class Usuario {
     public function editarSenha($idUsuario, $senhaAtual, $novaSenha, $confirmarSenha) {
         if ($this->validarSenha($idUsuario, $senhaAtual)) {
 
-            if ($novaSenha == $confirmarSenha) {
+            if ($novaSenha == "") {
+                $retorno = "O campo nova senha não pode ser vazio.";
+            }
+            elseif ($novaSenha == $confirmarSenha) {
                 /** Query para alterar senha */
                 $query = "UPDATE [tabela] SET senha = PASSWORD(?) WHERE id = ? ";
 
@@ -167,9 +170,8 @@ class Usuario {
                 $this->conexao->Buscar($query, $dados);
                 $retorno = "true";
                 
-            } elseif ($novaSenha != "") {
-                $retorno = "O campo senha não pode ser vazio.";
-            } else {
+            }
+            else {
                 $retorno = "Os campos \"nova senha\" e \"confirmar nova senha\" não conferem, por favor, preencha novamente.";
             }
         } else {
