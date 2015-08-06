@@ -80,15 +80,16 @@ if(isset($form['filtro'])){
 /** @var array */
 $dadosUsuarios = $usuarioBusiness->buscar($filtro);
 
+/*
 if ($url->posicaoExiste(1) && $url->getURL(1) == 'erro') {
 
-    /** Dados usuario erro ao exlcuir */
+    /** Dados usuario erro ao exlcuir
     $dadosUsuarioErro = $usuarioBusiness->buscarPorID($url->getURL(2));
 
     $erroExcluir = "<p class='erro'>Erro ao exlcuir o usuário '{$dadosUsuarioErro[0]['apelido']}'. Ele(a) está cadastrado em alguma das avaliações.</p>";
 } else {
     $erroExcluir = "";
-}
+}*/
 
 /** Include da pagina de configuração de perfil */
 include_once("pages/pg{$url->getURL(0)}.php");
