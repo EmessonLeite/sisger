@@ -44,8 +44,6 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
     if ($url->getURL(1) == 'editar') {
         $dadosUsuario = $usuarioBusiness->buscarPorID($url->getURL(2));
 
-    } else {
-        $foto = "default.jpg";
     }
 
     /** Include da pagina de configuração de perfil e o rodape */
@@ -56,7 +54,7 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     $erro = "";
 
-    /** Executa a exclusão de um usuario */
+    /** Executa a exclusão de um comentário */
     try {
         $usuarioBusiness->excluir($url->getURL(2));
         echo "<script>window.location = '" . RAIZ . "{$url->getURL(0)}';</script>";
@@ -66,7 +64,6 @@ if ($url->posicaoExiste(1) && ($url->getURL(1) == 'novo' || $url->getURL(1) == '
 
     exit;
 }
-
 
 if(isset($form['filtro'])){
     $filtro = array(
@@ -80,16 +77,16 @@ if(isset($form['filtro'])){
 /** @var array */
 $dadosUsuarios = $usuarioBusiness->buscar($filtro);
 
-/*
+
 if ($url->posicaoExiste(1) && $url->getURL(1) == 'erro') {
 
-    /** Dados usuario erro ao exlcuir
+    /** Dados usuario erro ao exlcuir*/
     $dadosUsuarioErro = $usuarioBusiness->buscarPorID($url->getURL(2));
 
     $erroExcluir = "<p class='erro'>Erro ao exlcuir o usuário '{$dadosUsuarioErro[0]['apelido']}'. Ele(a) está cadastrado em alguma das avaliações.</p>";
 } else {
     $erroExcluir = "";
-}*/
+}
 
 /** Include da pagina de configuração de perfil */
 include_once("pages/pg{$url->getURL(0)}.php");
