@@ -34,6 +34,17 @@ class Comentario {
     }
 
     /**
+     * excluir
+     * Exclui um usuario existente
+     *
+     * @param int
+     * @return int
+     */
+    public function excluir($id){
+        return $this->conexao->Deletar($id);
+    }
+
+    /**
      * buscar
      * Retorna os comentarios de um usuario em uma determinada avaliacao
      * @param int $idUsuario
@@ -42,7 +53,7 @@ class Comentario {
      * @return array
      */
     public function buscar($idUsuario, $idAvaliacao, $tipo) {
-        $query = "SELECT comentario FROM [tabela] WHERE tipo = ? AND idUsuario = ? AND idAvaliacao = ?";
+        $query = "SELECT id, comentario FROM [tabela] WHERE tipo = ? AND idUsuario = ? AND idAvaliacao = ?";
         $dados = array($tipo, $idUsuario, $idAvaliacao);
 
         return $this->conexao->Buscar($query, $dados);

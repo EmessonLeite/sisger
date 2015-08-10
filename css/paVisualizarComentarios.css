@@ -1,0 +1,139 @@
+/** Configuração da div que mostra algum erro na tela principal */
+div#erro{
+    color: #991111;
+    background-color: #e9c4b2;
+    border: 1px solid #991111;
+    padding: 10px;
+    margin: 20px;
+    width: 931px;
+    margin-left: 23px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/**
+ *
+ */
+
+div#lista-pessoas{
+    position: relative;
+    z-index: 10;
+    margin-top: 4px;
+}
+
+table#funcionarios td{
+    width: 200px;
+    text-align: center;
+}
+
+.fotos-perfil{
+    width: 148px;
+    height: 148px;
+    border-radius: 100px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #c36539;
+}
+
+p.nomes{position: relative;
+    color: #c36539;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ *
+ */
+
+div#comentario-negativo {
+    position: relative;
+    width: 465px;
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+div#comentario-positivo {
+    position: relative;
+    width: 465px;
+    background-color: #ffffff;
+}
+
+p#texto-negativo {
+    position: relative;
+    color: #ffffff;
+    width: 150px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    margin-left: 15px;
+    margin-top: -23px;
+}
+
+div#titulo-negativo {
+    position: relative;
+    width: 435px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #282829;
+}
+
+p#texto-positivo {
+    position: relative;
+    color: #ffffff;
+    width: 150px;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+    margin-left: 15px;
+    margin-top: -30px;
+}
+
+div#titulo-positivo {
+    position: relative;
+    width: 435px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: #282829;
+}
+
+table#tbl-comentario {
+    position: relative;
+    width: 887px;
+    border-collapse: separate;
+}
+
+table#tbl-comentario tr td{
+    position: relative;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+table#tbl-comentario td#positivo {
+    background-color: #ffffff;
+    width: 418px;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+table#tbl-comentario td#negativo {
+    background-color: #ffffff;
+    width: 418px;
+    margin-right: 20px;
+    vertical-align: top;
+    padding-top: 30px;
+}
+
+p.comentario {
+    position: relative;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    margin-right: -10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+}
+
+div.camposSection {
+    padding-top: 10px;
+    padding-bottom: 0;
+}
