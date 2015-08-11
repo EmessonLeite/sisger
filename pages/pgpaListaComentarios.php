@@ -17,7 +17,7 @@
     foreach ($comentariosNegativos as $c) {
         echo "
                             <p class='comentario'>{$c['comentario']}
-                            <a class='exluirCargo' href='{$url->getURL(0)}/excluir/{$c['id']}'><img src='imagens/lixeira.gif'></a>
+                            <a class='exluirComentario' href='{$url->getURL(0)}/excluir/{$c['id']}'><img src='imagens/lixeira.gif'></a>
                             </p>
                             ";
     }

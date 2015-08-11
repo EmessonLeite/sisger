@@ -135,5 +135,8 @@ p.comentario {
 
 div.camposSection {
     padding-top: 10px;
-    padding-bottom: 0;
+}
+
+section#listagemCadastro {
+    padding-bottom: 40px;
 }
