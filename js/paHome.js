@@ -82,7 +82,7 @@ $(document).ready(function () {
     $(".caixaAutoAva").draggable();
     $(".caixaAvaliacaoPassada").draggable();
 
-    $("a[rel*=leanModal]").leanModal({top: 200, overlay: 0.4, closeButton: ".modal_close"});
+    $("a[rel*=leanModal]").leanModal({top: 200, overlay: 1.0, closeButton: ".modal_close"});
 
     /**
      * 

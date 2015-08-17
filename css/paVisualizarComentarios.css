@@ -143,3 +143,11 @@ div.camposSection {
 section#listagemCadastro {
     padding-bottom: 40px;
 }
+
+table#funcionarios {
+    width: 901px;
+}
+
+div.camposSection {
+    margin-bottom: 57px;
+}

@@ -60,7 +60,7 @@
                         }
 
                         /** Índice 6 no array de permissoes indica permissao de Previsualização de Comentários */
-                        if (isset($permissoes[6])) {
+                        if ((isset($permissoes[6]) && strtotime(date("Y-m-d h:i:s")) > strtotime($avaliacao[0]['fimComentario']) && ($avaliacao[0]['fimComentario'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fimComentario'] != NULL))) {
                             echo '<a href="paVisualizarComentarios"><p id="permissao6">Previsualizar Comentários</p></a>';
                         }
                         ?>
