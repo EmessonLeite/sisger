@@ -371,7 +371,7 @@
                                         <input type="text" maxlength="5" class="pq" name="pq<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["pq{$i}"]; ?>">
                                     </td>
                                     <td class="ava-obs">
-                                        <input type="text" maxlength="5" class="obsAva" name="obs<?php echo $i;?>" value="<?php echo $dadosAvaliacaoPassada["obs{$i}"]; ?>">
+                                        <input type="text" maxlength="5" class="obsAva" name="obs<?php echo $i;?>" value="<?php echo round($dadosAvaliacaoPassada["obs{$i}"], 2); ?>">
                                     </td>
                                 </tr>
                             <?php
@@ -384,7 +384,7 @@
                             <td class="inativo"></td>
                             <td class="inativo"></td>
                             <td class="ava-total">
-                                <input type="text" maxlength="5" class="total" name="total" value="<?php echo $dadosAvaliacaoPassada["total"]; ?>">
+                                <input type="text" maxlength="5" class="total" name="total" value="<?php echo round($dadosAvaliacaoPassada["total"],2); ?>">
                             </td>
                         </tr>
                     </table>

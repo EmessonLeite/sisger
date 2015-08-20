@@ -16,7 +16,10 @@ $avaliacaoBusiness = Avaliacao::getInstance($referenciaAvaliacao);
  * Referencia da avaliacao selecionada para visualização
  * @var string
  */
-$avaliacao = $avaliacaoBusiness->buscar();
+$editar = ($url->posicaoExiste(1)) ? $url->getURL(1) : "";
+if ($editar != 'editar') {
+    $avaliacao = $avaliacaoBusiness->buscar();
+}
 
 /**Verifica se o arquivo de js da pagina atual existe */
 if(file_exists("js/{$url->getURL(0)}.js")){

@@ -64,5 +64,13 @@ if ($url->posicaoExiste(1)) {
     exit;
 }
 
-/** Include da pagina de configuração de perfil */
-include_once("pages/pg{$url->getURL(0)}.php");
+if (strtotime(date("Y-m-d h:i:s")) > strtotime($avaliacao[0]['fimComentario']) && ($avaliacao[0]['fimComentario'] != '0000-00-00 00:00:00') && ($avaliacao[0]['fimComentario'] != NULL)) {
+    /** Include da pagina de configuração de perfil */
+    include_once("pages/pg{$url->getURL(0)}.php");
+}
+else{
+    echo '<script language= "JavaScript">
+            location.href="' . RAIZ . 'erro404";
+          </script>';
+    exit;
+}
